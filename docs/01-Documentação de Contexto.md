@@ -1,43 +1,25 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A pandemia acelerou a transformação digital em todo o mundo, forçando empresas e negócios de todos os tamanhos a se adaptarem a uma nova realidade de vendas online. Em resposta a essa demanda, o "SimpleStore" surge como uma plataforma de comércio eletrônico simples, acessível e eficiente, projetada para facilitar pequenas empresas e vendedores locais a entrar no mundo digital. Focada em proporcionar uma experiência direta e sem complicações, a plataforma permite que vendedores listem seus produtos e realizem vendas online, enquanto os detalhes de entrega ou retirada são combinados diretamente entre comprador e vendedor. 
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Pequenos negócios muitas vezes enfrentam desafios significativos para se manterem competitivos no mercado atual. A falta de visibilidade digital e os altos custos associados à logística de entrega são obstáculos que dificultam o crescimento e a sustentabilidade desses empreendimentos. Ao mesmo tempo, muitos consumidores desejam apoiar os comerciantes de sua própria comunidade, mas encontram dificuldades em encontrar opções locais de maneira rápida e prática. Com isso, surge a necessidade de uma plataforma digital que permita aos pequenos comerciantes aumentar seu alcance sem a complexidade e o custo de gerenciar entregas, ao mesmo tempo que facilita a descoberta de produtos locais para os consumidores. 
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O objetivo principal da plataforma é criar um ambiente digital acessível e eficiente que conecte pequenos negócios locais a consumidores de suas cidades ou regiões. Os objetivos específicos incluem: 
+•	Facilitar a venda de produtos locais: Fornecer uma plataforma intuitiva onde os comerciantes possam listar e vender seus produtos online. 
+•	Simplificar a comunicação entre comprador e vendedor: Utilizar o WhatsApp comercial para que os compradores possam combinar diretamente com os vendedores os detalhes de entrega ou retirada dos produtos. 
+•	Aumentar a visibilidade de pequenos negócios: Oferecer um espaço dedicado onde pequenos comerciantes possam promover seus produtos e alcançar mais clientes na sua localidade. 
+•	Fomentar a economia local: Incentivar a compra de produtos locais, promovendo a sustentabilidade e o fortalecimento de comunidades. 
+•	Reduzir custos de logística: Permitir que os vendedores definam suas próprias políticas de entrega e retirada, evitando custos adicionais e complexidade para a plataforma. 
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo. Ou, o grupo poderá consultar e justificar o impacto do problema para o público-alvo por meio de pesquisas em outras fontes. Neste caso, é essencial que todos os dados apresentados estejam acompanhados de suas fontes (conforme padrão ABNT).
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+A criação dessa plataforma é justificada pela crescente demanda por soluções de e-commerce que sejam práticas, econômicas e que valorizem o comércio local. Em um cenário onde as grandes plataformas de marketplace dominam o mercado e exigem altos custos de adesão e de logística, pequenos comerciantes acabam perdendo competitividade. Ao simplificar o processo de venda e permitir que os próprios vendedores gerenciem suas entregas ou retiradas, a plataforma proporciona um meio mais acessível e ágil para que esses negócios prosperem. Além disso, ao fomentar o consumo local, contribui-se para o desenvolvimento econômico das cidades e para a criação de uma rede de apoio entre comerciantes e consumidores. 
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O público-alvo da plataforma é composto por dois segmentos principais: 
+•	Pequenos Negócios Locais: Comerciantes, produtores e artesãos de uma cidade ou região que desejam expandir sua presença digital, aumentar suas vendas e conectar-se de maneira mais direta e personalizada com os clientes. Esses negócios incluem lojas de roupas, produtos alimentícios, itens de decoração, artesanato, entre outros. 
+•	Consumidores Locais: Pessoas que desejam comprar a preços justos, com baixas taxas de intermédio da plataforma, pessoas que querem apoiar o comércio local e comprar de pequenos negócios da sua cidade ou bairro. Esse grupo é composto por consumidores que valorizam a qualidade, a personalização e a conveniência de comprar localmente, além de preferirem uma interação mais direta com os vendedores. 
