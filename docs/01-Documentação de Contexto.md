@@ -8,11 +8,11 @@ Pequenos negócios muitas vezes enfrentam desafios significativos para se manter
 ## Objetivos
 
 O objetivo principal da plataforma é criar um ambiente digital acessível e eficiente que conecte pequenos negócios locais a consumidores de suas cidades ou regiões. Os objetivos específicos incluem: 
-•	Facilitar a venda de produtos locais: Fornecer uma plataforma intuitiva onde os comerciantes possam listar e vender seus produtos online. 
-•	Simplificar a comunicação entre comprador e vendedor: Utilizar o WhatsApp comercial para que os compradores possam combinar diretamente com os vendedores os detalhes de entrega ou retirada dos produtos. 
-•	Aumentar a visibilidade de pequenos negócios: Oferecer um espaço dedicado onde pequenos comerciantes possam promover seus produtos e alcançar mais clientes na sua localidade. 
-•	Fomentar a economia local: Incentivar a compra de produtos locais, promovendo a sustentabilidade e o fortalecimento de comunidades. 
-•	Reduzir custos de logística: Permitir que os vendedores definam suas próprias políticas de entrega e retirada, evitando custos adicionais e complexidade para a plataforma. 
+-	Facilitar a venda de produtos locais: Fornecer uma plataforma intuitiva onde os comerciantes possam listar e vender seus produtos online. 
+-	Simplificar a comunicação entre comprador e vendedor: Utilizar o WhatsApp comercial para que os compradores possam combinar diretamente com os vendedores os detalhes de entrega ou retirada dos produtos. 
+-	Aumentar a visibilidade de pequenos negócios: Oferecer um espaço dedicado onde pequenos comerciantes possam promover seus produtos e alcançar mais clientes na sua localidade. 
+-	Fomentar a economia local: Incentivar a compra de produtos locais, promovendo a sustentabilidade e o fortalecimento de comunidades. 
+-	Reduzir custos de logística: Permitir que os vendedores definam suas próprias políticas de entrega e retirada, evitando custos adicionais e complexidade para a plataforma. 
 
 ## Justificativa
 
@@ -21,5 +21,5 @@ A criação dessa plataforma é justificada pela crescente demanda por soluçõe
 ## Público-Alvo
 
 O público-alvo da plataforma é composto por dois segmentos principais: 
-•	Pequenos Negócios Locais: Comerciantes, produtores e artesãos de uma cidade ou região que desejam expandir sua presença digital, aumentar suas vendas e conectar-se de maneira mais direta e personalizada com os clientes. Esses negócios incluem lojas de roupas, produtos alimentícios, itens de decoração, artesanato, entre outros. 
-•	Consumidores Locais: Pessoas que desejam comprar a preços justos, com baixas taxas de intermédio da plataforma, pessoas que querem apoiar o comércio local e comprar de pequenos negócios da sua cidade ou bairro. Esse grupo é composto por consumidores que valorizam a qualidade, a personalização e a conveniência de comprar localmente, além de preferirem uma interação mais direta com os vendedores. 
+-	Pequenos Negócios Locais: Comerciantes, produtores e artesãos de uma cidade ou região que desejam expandir sua presença digital, aumentar suas vendas e conectar-se de maneira mais direta e personalizada com os clientes. Esses negócios incluem lojas de roupas, produtos alimentícios, itens de decoração, artesanato, entre outros. 
+-	Consumidores Locais: Pessoas que desejam comprar a preços justos, com baixas taxas de intermédio da plataforma, pessoas que querem apoiar o comércio local e comprar de pequenos negócios da sua cidade ou bairro. Esse grupo é composto por consumidores que valorizam a qualidade, a personalização e a conveniência de comprar localmente, além de preferirem uma interação mais direta com os vendedores. 
