@@ -17,7 +17,7 @@ A proposta deste projeto é desenvolver uma plataforma de e-commerce local volta
 
 ## Orientador
 
-Carlos Alberto Marques Pietrobon
+* Carlos Alberto Marques Pietrobon
 
 ## Instruções de utilização
 
