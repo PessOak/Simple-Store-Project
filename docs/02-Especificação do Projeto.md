@@ -53,16 +53,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência| ALTA | 
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio    | ALTA |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas | ALTA |
+|RF-001| O site deve permitir o cadastro de perfil e usuário| ALTA | 
+|RF-002| O site deve permitir o registro de produtos em seu perfil de usuário   | ALTA |
+|RF-003| O site deve permitir criação de listas de produtos | ALTA |
+|RF-004| O sistema deve permitir filtro de comerciantes por tipo de produto | ALTA |
+|RF-004| O sistema deve permitir filtro de comerciantes por geolocalização | ALTA |
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| Uso de design responsivo nas interfaces gráficas | MÉDIA | 
+|RNF-002| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Microsoft Edge, Firefox) |  BAIXA | 
+|RNF-003| O sistema deve funcionar 24 h por dia e 7 dias por semana | ALTA | 
+|RNF-004| O sistema deve garantir a segurança e privacidade dos dados dos usuários | ALTA |
+|RNF-005| O sistema deve suportar mais 200 mil acesso de uma vez | ALTA | 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
