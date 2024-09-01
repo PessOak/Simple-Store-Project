@@ -1,23 +1,23 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
-`DISCIPLINA`
+`PROJETO: DESENVOLVIMENTO DE UMA APLICAÇÃO INTERATIVA`
 
-`SEMESTRE`
+`2º SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+A proposta deste projeto é desenvolver uma plataforma de e-commerce local voltada para pequenos negócios, similar ao modelo do iFood, mas que não se limita à venda de alimentos e com foco em conectar vendedores e compradores de uma mesma cidade ou região. A plataforma funcionará como um marketplace digital onde pequenos comerciantes podem listar seus produtos e realizar vendas online de forma prática e direta. A principal diferença está na logística: a entrega ou retirada dos produtos será combinada diretamente entre vendedor e comprador, sem a intervenção da plataforma. Essa abordagem visa fortalecer o comércio local, proporcionando uma ferramenta acessível para que pequenos empreendedores aumentem sua visibilidade e alcance no mercado. 
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Diego Chaves dos
+* Erasmo Alves da Silva Júnior
+* Gustavo Vinicius de Souza Oliveira
+* Rafael Pessoa de Carvalho
 
 ## Orientador
 
-* Nome completo do professor 1
+Carlos Alberto Marques Pietrobon
 
 ## Instruções de utilização
 
