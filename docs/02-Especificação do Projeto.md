@@ -5,12 +5,14 @@
 
 ## Personas
 
-Identifique, em torno de, 5 personas. Para cada persona, lembre-se de descrever suas angústicas, frustrações e expectativas de vida relacionadas ao problema. Além disso, defina uma "aparência" para a persona. Para isso, você poderá utilizar sites como [https://this-person-does-not-exist.com/pt#google_vignette](https://this-person-does-not-exist.com/pt) ou https://thispersondoesnotexist.com/ 
+### Persona 1
+![image](https://github.com/user-attachments/assets/e906c522-4813-47be-8773-a66ef00dd3c6)
 
-Utilize também como referência o exemplo abaixo:
+### Persona 2
+![image](https://github.com/user-attachments/assets/903df5ee-e64b-4e18-bf18-8936348eb27b)
 
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/IntApplicationProject-Template/blob/main/docs/img/AnaClara1.png" alt="Persona1"/>
-
+### Persona 3
+![image](https://github.com/user-attachments/assets/f333ed74-fd8c-4b7c-a64e-b6671b522087)
 
 ## Histórias de Usuários
 
