@@ -35,7 +35,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-002| O site deve permitir o registro de produtos em seu perfil de usuário   | ALTA |
 |RF-003| O site deve permitir criação de listas de produtos | ALTA |
 |RF-004| O sistema deve permitir filtro de comerciantes por tipo de produto | ALTA |
-|RF-004| O sistema deve permitir filtro de comerciantes por geolocalização | ALTA |
+|RF-005| O sistema deve permitir filtro de comerciantes por geolocalização | ALTA |
 
 ### Requisitos não Funcionais
 
