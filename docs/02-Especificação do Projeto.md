@@ -34,7 +34,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema deve permitir o cadastro de compradores, com informações como nome, e-mail, telefone, e endereço para entrega.| ALTA | 
+|RF_01| O sistema deve permitir o cadastro de compradores, com informações como nome, e-mail, telefone, e endereço para entrega. | ALTA | 
 |RF-02| O sistema deve permitir o cadastro de vendedores, incluindo informações do negócio como nome, localização (cidade/bairro), horário de funcionamento, e WhatsApp Business para contato.    | ALTA |
 |RF-03| O sistema deve permitir que os vendedores adicionem, editem e removam produtos, incluindo detalhes como nome, descrição, preço, imagens e estoque disponível.  | ALTA |
 |RF-04| O sistema deve ter um filtro de pesquisa de produtos para o comprador.  | ALTA |
@@ -52,7 +52,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-01| A página principal do site deve carregar em até 5 segundos em uma conexão de internet padrão  | ALTA | 
+|RNF_01| A página principal do site deve carregar em até 5 segundos em uma conexão de internet padrão  | ALTA | 
 |RNF-02| As principais ações do usuário (como adicionar um produto ao carrinho) devem ser processadas em até 3 segundos.  | ALTA | 
 |RNF-03| O site deve ser acessível e funcional em dispositivos móveis e desktops. | ALTA | 
 |RNF-04| O site deve ser compatível com os navegadores mais comuns, como Chrome, Firefox e Edge.  | ALTA | 
