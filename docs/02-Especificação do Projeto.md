@@ -34,22 +34,32 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O site deve permitir o cadastro de perfil e usuário| ALTA | 
-|RF-002| O site deve permitir o registro de produtos em seu perfil de usuário   | ALTA |
-|RF-003| O site deve permitir criação de listas de produtos | ALTA |
-|RF-004| O sistema deve permitir filtro de comerciantes por tipo de produto | ALTA |
-|RF-005| O sistema deve permitir filtro de comerciantes por geolocalização | ALTA |
-|RF-006| O sistema deve permitir comparação de preços entre produtos | BAIXA |
+|RF-01| O sistema deve permitir o cadastro de compradores, com informações como nome, e-mail, telefone, e endereço para entrega.| ALTA | 
+|RF-02| O sistema deve permitir o cadastro de vendedores, incluindo informações do negócio como nome, localização (cidade/bairro), horário de funcionamento, e WhatsApp Business para contato.    | ALTA |
+|RF-03| O sistema deve permitir que os vendedores adicionem, editem e removam produtos, incluindo detalhes como nome, descrição, preço, imagens e estoque disponível.  | ALTA |
+|RF-04| O sistema deve ter um filtro de pesquisa de produtos para o comprador.  | ALTA |
+|RF-05| O sistema deve permitir que os compradores adicionem produtos ao carrinho de compras e visualizem o total da compra.  | ALTA |
+|RF-06| O sistema deve permitir que os compradores realizem pagamentos seguros diretamente na plataforma, utilizando métodos de pagamento online como cartão de crédito/débito e Pix após adição ao carrinho. (simulação)  | ALTA |
+|RF-07| Após a conclusão da compra, o sistema deve fornecer um botão/link "Combinar Entrega" que redireciona o comprador ao WhatsApp Business do vendedor para combinar a entrega ou retirada do produto.  | ALTA |
+|RF-08| O sistema deve fornecer aos vendedores relatórios simplificados de vendas, incluindo informações sobre produtos mais vendidos, faturamento, e estoque, para ajudar na gestão de seu negócio.  | ALTA |
+|RF-09| A plataforma deve permitir que os administradores gerenciem vendedores e compradores, incluindo a aprovação de novos cadastros, moderação de avaliações, e gerenciamento de conteúdo. | ALTA |
+|RF-10| A plataforma deve ter um painel administrativo que permita a monitoração das transações realizadas, verificação de pagamentos, e resolução de disputas, caso necessário.   | MÉDIA |
+|RF-11| A plataforma deve oferecer suporte ao cliente, incluindo FAQs e comunicação por e-mail.   | MÉDIA |
+|RF-12| O sistema deve permitir que os compradores avaliem produtos e vendedores após a compra, ajudando a criar uma comunidade confiável e transparente. | BAIXA |
+
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| Uso de design responsivo nas interfaces gráficas | MÉDIA | 
-|RNF-002| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Microsoft Edge, Firefox) |  BAIXA | 
-|RNF-003| O sistema deve funcionar 24 h por dia e 7 dias por semana | ALTA | 
-|RNF-004| O sistema deve garantir a segurança e privacidade dos dados dos usuários | ALTA |
-|RNF-005| O sistema deve suportar mais 200 mil acesso de uma vez | ALTA | 
+|RNF-01| A página principal do site deve carregar em até 5 segundos em uma conexão de internet padrão  | ALTA | 
+|RNF-02| As principais ações do usuário (como adicionar um produto ao carrinho) devem ser processadas em até 3 segundos.  | ALTA | 
+|RNF-03| O site deve ser acessível e funcional em dispositivos móveis e desktops. | ALTA | 
+|RNF-04| O site deve ser compatível com os navegadores mais comuns, como Chrome, Firefox e Edge.  | ALTA | 
+|RNF-05| O site deve conter um sistema de login e senha para proteger áreas restritas.  | ALTA |
+|RNF-06| O site deve ter uma interface intuitiva e simples de se usar, fazendo jus ao seu nome.  | MÉDIA |
+|RNF-07| O código deve ser bem-organizado para facilitar a compreensão e manutenção de outros desenvolvedores.  | MÉDIA |
+|RNF-08| O sistema deve ser projetado de forma a permitir a adição de novas funcionalidades com mudanças mínimas no código existente. | BAIXA |
 
 
 ## Restrições
