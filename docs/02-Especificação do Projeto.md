@@ -34,7 +34,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-01| O sistema deve permitir o cadastro de compradores, com informações como nome, e-mail, telefone, e endereço para entrega.| ALTA | 
+|RF-001| O sistema deve permitir o cadastro de compradores, com informações como nome, e-mail, telefone, e endereço para entrega.| ALTA | 
 |RF-02| O sistema deve permitir o cadastro de vendedores, incluindo informações do negócio como nome, localização (cidade/bairro), horário de funcionamento, e WhatsApp Business para contato.    | ALTA |
 |RF-03| O sistema deve permitir que os vendedores adicionem, editem e removam produtos, incluindo detalhes como nome, descrição, preço, imagens e estoque disponível.  | ALTA |
 |RF-04| O sistema deve ter um filtro de pesquisa de produtos para o comprador.  | ALTA |
