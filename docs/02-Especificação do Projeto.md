@@ -19,7 +19,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |--------------------|------------------------------------|----------------------------------------|
 | Adriano Ramos | Uma loja virtual que seja mais simples e intuitiva           | Comprar online sem muita burocracia                |
 | Adriano Ramos | Comprar online podendo comprar os preços do mercado          | Pagar o menor preço |
-|              |                       |               |
+| Neuza Andrade | Comprar ítens para o dia a dia de forma prática              | Conseguir comprar online |
 |              |                       |               |
 |              |                       |               |
 
