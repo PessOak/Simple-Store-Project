@@ -10,7 +10,8 @@ A proposta deste projeto é desenvolver uma plataforma de e-commerce local volta
 
 ## Integrantes
 
-* Diego Chaves dos
+* Arthur Chain
+* Diego Chaves dos Anjos
 * Erasmo Alves da Silva Júnior
 * Gustavo Vinicius de Souza Oliveira
 * Rafael Pessoa de Carvalho
