@@ -15,6 +15,8 @@ A proposta deste projeto é desenvolver uma plataforma de e-commerce local volta
 * Erasmo Alves da Silva Júnior
 * Gustavo Vinicius de Souza Oliveira
 * Rafael Pessoa de Carvalho
+* Thiago Gonçalves Chagas
+    
 
 ## Orientador
 
