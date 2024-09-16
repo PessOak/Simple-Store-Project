@@ -54,7 +54,10 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+Backlog: recebe as tarefas a serem trabalhadas e representa o "Backlog do Produto". Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista.
+To Do: essa lista representa os Sprint Backlogs que ainda serão trabalhados.
+In progress: lista de tarefas que foram iniciadas.
+Done: nessa lista são colocadas as tarefas que foram concluídas. Não há mais edições ou revisões necessárias e estão prontos para a entrega.
  
 > **Links Úteis**:
 > - [Project management, made simple](https://github.com/features/project-management/)
