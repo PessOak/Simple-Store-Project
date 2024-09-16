@@ -54,10 +54,10 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 
 ### Processo
 
-Backlog: recebe as tarefas a serem trabalhadas e representa o "Backlog do Produto". Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista.
-To Do: essa lista representa os Sprint Backlogs que ainda serão trabalhados.
-In progress: lista de tarefas que foram iniciadas.
-Done: nessa lista são colocadas as tarefas que foram concluídas. Não há mais edições ou revisões necessárias e estão prontos para a entrega.
+- Backlog: recebe as tarefas a serem trabalhadas e representa o "Backlog do Produto". Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista.
+- To Do: essa lista representa os Sprint Backlogs que ainda serão trabalhados.
+- In progress: lista de tarefas que foram iniciadas.
+- Done: nessa lista são colocadas as tarefas que foram concluídas. Não há mais edições ou revisões necessárias e estão prontos para a entrega.
  
 > **Links Úteis**:
 > - [Project management, made simple](https://github.com/features/project-management/)
@@ -65,13 +65,19 @@ Done: nessa lista são colocadas as tarefas que foram concluídas. Não há mais
 > - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
 > - [Tutorial Slack](https://slack.com/intl/en-br/)
 
+## Etiquetas
+
+![image](https://github.com/user-attachments/assets/d7cd2d7a-1c7f-47f8-8824-28cde2ce144c)
+
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+- Editor de código: Visual Studio Code.
+- Ferramentas de comunicação: Microsoft Teams, Discord, Whatsapp.
+- Ferramentas de desenho de tela (_wireframing_): Figma.
+- Ferramenta para gestão de projeto: GitHub Kanban.
+- Ambiente para armazenamento do código fonte: GitHub
 
 O editor de código foi escolhido porque ele possui uma integração com o
 sistema de versão. As ferramentas de comunicação utilizadas possuem
