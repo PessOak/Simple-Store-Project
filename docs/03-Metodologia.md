@@ -36,10 +36,16 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 > - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
 
 ## Gerenciamento de Projeto
+A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, pois segundo Fonseca (2009)
+
+"Scrum são times trabalhando como uma unidade altamente integrada com cada membro desempenhando um papel bem definido e o time inteiro focando num único objetivo – entrega do produto. Elimina práticas de controle desnecessárias, inadequadas e burocráticas, se concentrando na essência do processo de confecção de sistemas de informação."
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
+- Scrum Master: Rafael.
+- Product Owner: Diego.
+- Equipe de Desenvolvimento: Arthur, Thiago, Rafael, Gustavo, Erasmo, Diego.
+- Equipe de Design: Arthur, Erasmo.
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu 
