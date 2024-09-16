@@ -65,9 +65,6 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 > - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
 > - [Tutorial Slack](https://slack.com/intl/en-br/)
 
-## Etiquetas
-
-![image](https://github.com/user-attachments/assets/d7cd2d7a-1c7f-47f8-8824-28cde2ce144c)
 
 ### Ferramentas
 
@@ -85,12 +82,8 @@ integração semelhante e por isso foram selecionadas. Por fim, para criar
 diagramas utilizamos essa ferramenta por melhor captar as
 necessidades da nossa solução.
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
-
-
+- Imagem do quadro Kanban utilizado para gestão do projeto:
 ![image](https://github.com/user-attachments/assets/2361b37a-e678-4ce0-97e6-017db976ba53)
 
+- Etiquetas utilizadas para o projeto:
+![image](https://github.com/user-attachments/assets/d7cd2d7a-1c7f-47f8-8824-28cde2ce144c)
