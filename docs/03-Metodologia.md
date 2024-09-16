@@ -83,7 +83,10 @@ diagramas utilizamos essa ferramenta por melhor captar as
 necessidades da nossa solução.
 
 - Imagem do quadro Kanban utilizado para gestão do projeto:
+
 ![image](https://github.com/user-attachments/assets/2361b37a-e678-4ce0-97e6-017db976ba53)
 
+
 - Etiquetas utilizadas para o projeto:
+
 ![image](https://github.com/user-attachments/assets/d7cd2d7a-1c7f-47f8-8824-28cde2ce144c)
