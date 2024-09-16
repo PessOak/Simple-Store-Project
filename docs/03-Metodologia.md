@@ -75,3 +75,7 @@ Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justific
 > **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
 > - [Slack](https://slack.com/)
 > - [Github](https://github.com/)
+
+
+![image](https://github.com/user-attachments/assets/2361b37a-e678-4ce0-97e6-017db976ba53)
+
