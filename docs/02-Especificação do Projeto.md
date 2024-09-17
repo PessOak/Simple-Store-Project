@@ -11,6 +11,47 @@
 ### Persona 3
 ![image](https://github.com/user-attachments/assets/f333ed74-fd8c-4b7c-a64e-b6671b522087)
 
+### Persona 4
+Ana Costa 
+
+Biografia: Ana Costa, 23 anos, é uma jovem empreendedora que vende artesanato e acessórios personalizados em um carrinho móvel. Recentemente formada em Design Gráfico, Ana decidiu seguir sua paixão por artesanato e montar seu próprio negócio. Ela opera principalmente em eventos locais e feiras de rua. 
+
+Objetivo: Ana quer expandir seu alcance e aumentar as vendas oferecendo seus produtos também online. Ela busca uma forma de gerenciar seu estoque e finanças de maneira mais eficiente, além de oferecer aos clientes a opção de comprar seus produtos através de uma loja virtual. 
+
+Frustração: Ana enfrenta dificuldades em gerenciar seu inventário manualmente e tem pouco tempo para acompanhar as finanças devido à natureza dinâmica do seu trabalho. Ela também sente que perde vendas porque não tem uma presença online consistente e não consegue processar pedidos de forma eficiente. 
+
+Necessidade Específica: 
+
+Uma plataforma de e-commerce fácil de configurar, ideal para alguém com conhecimentos básicos de tecnologia. 
+
+Funcionalidades de gerenciamento de estoque que ajudem a manter o controle entre as vendas físicas e online. 
+
+Integração com sistemas de pagamento digital para facilitar transações e ampliar as opções de pagamento para seus clientes. 
+
+Ferramentas de marketing simples para promover a loja e atrair mais clientes para sua loja virtual e eventos. 
+
+### Persona 5
+Rafael Almeida 
+
+
+Biografia: Rafael Almeida, 28 anos, é o proprietário de uma pequena loja de moda masculina em um bairro moderno. Formado em Administração de Empresas, Rafael sempre teve o sonho de empreender e, com o tempo, abriu sua própria loja. Ele está sempre em busca de maneiras inovadoras de crescer e modernizar seu negócio. 
+
+Objetivo: Rafael quer criar uma loja virtual para complementar sua loja física e alcançar um público mais amplo. Ele deseja integrar suas operações online e offline para otimizar o gerenciamento de estoque e melhorar o atendimento ao cliente. 
+
+Frustração: Embora Rafael tenha boas habilidades administrativas, ele encontra dificuldades em gerenciar simultaneamente as vendas físicas e online. Ele também sente que a falta de dados detalhados sobre as vendas e o comportamento dos clientes limita sua capacidade de planejar estratégias eficazes de marketing. 
+
+Necessidade Específica: 
+
+Uma plataforma de e-commerce intuitiva que permita fácil integração com o sistema de vendas da loja física. 
+
+Ferramentas de análise detalhada para entender melhor o comportamento dos clientes e o desempenho das vendas. 
+
+Recursos de automação para gerenciar o estoque e as promoções, economizando tempo e reduzindo erros. 
+
+Opções de personalização da loja online para criar uma experiência de compra que reflita o estilo e a identidade da loja física. 
+
+
+
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
