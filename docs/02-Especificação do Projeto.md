@@ -109,8 +109,15 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
+|01| O projeto precisa ser apresentado até o término do semestre. |
 |02| Não pode ser desenvolvido um módulo de backend        |
+|03|O site deve aderir estritamente às normas éticas da instituição, proibindo a publicação de conteúdos ofensivos, discriminatórios ou que infrinjam os códigos de conduta.  |
+|04|O conteúdo do projeto será armazenado em um repositório na plataforma GitHub.  |
+|05|A implementação do backend deve ser feita usando C#.  |
+|06|É necessário usar um banco de dados relacional, como PostgreSQL ou MySQL, para implementar pelo menos três CRUD's .  |
+|07|A equipe precisa trabalhar em conjunto em todas as fases do projeto, garantindo que todos os integrantes participem ativamente e ativamente no desenvolvimento das atividades.  |
+|08|O desenvolvimento do front-end deve utilizar tecnologias web convencionais, tais como HTML, CSS, JavaScript e Bootstrap. |
+
 
 
 
