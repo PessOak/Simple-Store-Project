@@ -6,7 +6,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Diagrama de Classes
 
-![TESTE](https://github.com/user-attachments/assets/63728021-184b-4b6c-ad4e-aebc42a3047b)
+![Diag_ClassesATT](https://github.com/user-attachments/assets/00caba47-3ec0-48c6-bb2c-e0974191a313)
 
 As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
 
