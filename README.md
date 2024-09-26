@@ -14,6 +14,7 @@ A proposta deste projeto é desenvolver uma plataforma de e-commerce local volta
 * Diego Chaves dos Anjos
 * Erasmo Alves da Silva Júnior
 * Gustavo Vinicius de Souza Oliveira
+* Jéssica Cristina Araújo Lima de Melo
 * Rafael Pessoa de Carvalho
 * Thiago Gonçalves Chagas
     
