@@ -22,6 +22,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 
 ## Wireframes
 
+https://github.com/user-attachments/assets/e1873caf-97df-4d72-8dd7-2064cff2a158
 
 ### Visão geral 
 
