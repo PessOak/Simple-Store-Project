@@ -49,16 +49,20 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 
 ### Home page - produtos
 
+![Wareframe - HOME PAGE PRODUTOS](https://github.com/user-attachments/assets/120a1d95-d3b9-4605-b669-cbc30cc4c9a2)
 
 
 ### Detalhe produto
 
+![Wareframe - DETALHE PRODUTO](https://github.com/user-attachments/assets/63257c9b-8d82-457e-98b7-327702b6fdda)
 
 
-### Carinho
+### Carrinho
 
+![Wareframe - CARRINHO](https://github.com/user-attachments/assets/c7d74e23-530c-49ff-bacb-93551ded10a0)
 
 
 ### Orientações pós pedido
 
+![Wareframe - ORIENTAÇÕES PÓS PEDIDO](https://github.com/user-attachments/assets/f8314d20-fdab-436a-95cc-cc3d556c5224)
 
