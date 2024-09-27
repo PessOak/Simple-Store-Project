@@ -22,15 +22,43 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+### Visão geral 
+
+![Wireframes](https://github.com/user-attachments/assets/dad252e3-2fe8-467d-94b1-073c6b90d11e)
+
+### Login cliente
+
+![Wareframe - LOGIN CLIENTE](https://github.com/user-attachments/assets/c4483d6c-c312-4e4d-8e90-236826620607)
+
+### Cadastro cliente
+
+![Wareframe - CADASTRO CLIENTE](https://github.com/user-attachments/assets/17ada97e-633d-4e3c-b78e-aa0d1e3f1384)
+
+### Login fornecedor
+
+![Wareframe - LOGIN FORNECEDOR](https://github.com/user-attachments/assets/46459063-93bb-4249-8423-1050455e17ef)
+
+### Cadastro fornecedor
+
+![Wareframe - CADASTRO FORNECEDOR](https://github.com/user-attachments/assets/1692fc3d-7e3d-4bca-9b9d-44f9dd869d8f)
+
+### Cadastro produto
+
+![Wareframe - CADASTRO PRODUTO](https://github.com/user-attachments/assets/b30442d8-53d9-4012-a592-f062bd115857)
+
+### Home page - produtos
+
+
+
+### Detalhe produto
+
+
+
+### Carinho
+
+
+
+### Orientações pós pedido
+
+
