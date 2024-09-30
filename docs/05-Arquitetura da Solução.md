@@ -18,7 +18,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 Metodologia de Trabalho do Grupo
 
-# 1. Ambiente de Trabalho
+### 1. Ambiente de Trabalho
 A equipe estabeleceu um ambiente colaborativo e estruturado para o desenvolvimento do projeto, que abrange diversas ferramentas e tecnologias. A seguir, estão os principais componentes utilizados:
 Back-end: C#
 Front-end: JavaScript
