@@ -1,9 +1,6 @@
 
 # Metodologia
 
-![Metodologia_page-0001](https://github.com/user-attachments/assets/f3b0e6b7-7982-49ba-bcb4-363d401a31c8)
-
-
 ## Controle de Versão
 
 A ferramenta de controle de versão adotada no projeto foi o
