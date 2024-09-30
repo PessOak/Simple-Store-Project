@@ -24,13 +24,6 @@ etiquetas:
 
 Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
 
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
-
 ## Gerenciamento de Projeto
 A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, pois segundo Fonseca (2009)
 
@@ -43,23 +36,12 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 - Equipe de Desenvolvimento: Arthur, Thiago, Rafael, Gustavo, Erasmo, Diego.
 - Equipe de Design: Arthur, Erasmo.
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
 ### Processo
 
 - Backlog: recebe as tarefas a serem trabalhadas e representa o "Backlog do Produto". Todas as atividades identificadas no decorrer do projeto também devem ser incorporadas a esta lista.
 - To Do: essa lista representa os Sprint Backlogs que ainda serão trabalhados.
 - In progress: lista de tarefas que foram iniciadas.
 - Done: nessa lista são colocadas as tarefas que foram concluídas. Não há mais edições ou revisões necessárias e estão prontos para a entrega.
- 
-> **Links Úteis**:
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
 
 
 ### Ferramentas
