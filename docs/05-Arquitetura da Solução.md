@@ -18,9 +18,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 Metodologia de Trabalho do Grupo
 
-
-![Uploading image.png…]()
-
+![Metodologia_page-0001](https://github.com/user-attachments/assets/b2a7386d-3bac-47f5-b433-7cc903eab8cc)
 
 
 ## Hospedagem
