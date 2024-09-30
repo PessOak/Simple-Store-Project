@@ -18,6 +18,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 Metodologia de Trabalho do Grupo
 
+
 ![Uploading image.png…]()
 
 
