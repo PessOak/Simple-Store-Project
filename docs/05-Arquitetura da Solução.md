@@ -16,9 +16,30 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+Metodologia de Trabalho do Grupo
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+1. Ambiente de Trabalho
+A equipe estabeleceu um ambiente colaborativo e estruturado para o desenvolvimento do projeto, que abrange diversas ferramentas e tecnologias. A seguir, estão os principais componentes utilizados:
+Back-end: C#
+Front-end: JavaScript
+Outras Linguagens: HTML, CSS
+Banco de Dados: MySQL
+Editor de Código: Visual Studio Code (VSCode)
+2. Estrutura para Gestão do Código Fonte
+A gestão do código fonte é realizada através do GitHub, onde a equipe utiliza branches para desenvolvimento de funcionalidades, permitindo um trabalho organizado e a integração contínua do código. 
+3. Comunicação e Colaboração
+A comunicação entre os membros da equipe é feita por meio de várias plataformas, garantindo que todos estejam atualizados e possam colaborar efetivamente:
+Microsoft Teams: Para reuniões e discussões em grupo com o professor.
+Discord: Para comunicação em geral do grupo.
+WhatsApp: Para mensagens instantâneas e comunicações urgentes.
+4. Ferramentas de Design e Modelagem
+Para o design e a modelagem do projeto, a equipe utiliza as seguintes ferramentas:
+Figma: Para criar wireframes e protótipos da interface do usuário.
+Lucidchart: Para diagramas de modelagem relacional e ER do banco de dados.
+Draw.io: Para criar diagramas de classes e DER.
+5. Gestão de Times
+A equipe organiza suas tarefas e progresso utilizando o GitHub Kanban, que permite visualizar o status das tarefas, atribuir responsabilidades e acompanhar o progresso do projeto de forma clara e eficiente.
+
 
 ## Hospedagem
 
