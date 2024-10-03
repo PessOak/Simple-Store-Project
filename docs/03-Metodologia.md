@@ -33,8 +33,8 @@ A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, 
 
 - Scrum Master: Rafael.
 - Product Owner: Diego.
-- Equipe de Desenvolvimento: Arthur, Thiago, Rafael, Gustavo, Erasmo, Diego.
-- Equipe de Design: Arthur, Erasmo.
+- Equipe de Desenvolvimento: Arthur, Thiago, Rafael, Gustavo, Erasmo, Diego, Jéssica.
+- Equipe de Design: Arthur, Erasmo, Jéssica.
 
 ### Processo
 
@@ -63,6 +63,7 @@ necessidades da nossa solução.
 - Imagem do quadro Kanban utilizado para gestão do projeto:
 
 ![image](https://github.com/user-attachments/assets/2361b37a-e678-4ce0-97e6-017db976ba53)
+![image](https://github.com/user-attachments/assets/f977cfab-1263-48b8-8df6-67646d00008b)
 
 - Link para o kanban:
 https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1393
