@@ -1,21 +1,26 @@
 body {
-    background-color: #f4f0fe; 
-    }
+background-color: #f4f0fe; 
+}
     
-    .custom-navbar {
-    background-color: #3b1b88;
-    padding: 15px 0;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    }
-    
-    .btn-custom {
-    background-color: #65baa9;
-    color: white; 
-    }
-    
-    input::placeholder {
-    color: rgba(187, 187, 187, 0.6) !important; 
-    opacity: 1 !important;
-    font-weight: 100 !important;
-    }
+.custom-navbar {
+background-color: #3b1b88;
+padding: 15px 0;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+}
+
+.btn-custom {
+background-color: #65baa9;
+color: white; 
+}
+
+.btn-custom:hover {
+background-color: transparent; /* Cor de fundo transparente ao passar o mouse */
+color: #007bff; /* Cor do texto */
+border: 2px solid #007bff; /* Cor da borda ao passar o mouse */
+}
+
+input::placeholder {
+color: rgba(187, 187, 187, 0.6) !important; 
+opacity: 1 !important;
+}
