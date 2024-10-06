@@ -1,5 +1,6 @@
 body {
     background-color: #f4f0fe;
+    padding-bottom: 50px;
 }
 
 .custom-navbar {
@@ -53,5 +54,21 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .input-group {
-    width: 20%;
+    min-width: 100px;
+    width: 40%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 5px;
+    text-align: center;
+    background-color: #cecbcb;
+}
+
+footer p {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
