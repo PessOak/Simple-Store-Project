@@ -1,0 +1,35 @@
+* {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+body {
+    color: #1E1E1E;
+    background-color: #F4F0FE;
+}
+
+header {
+    background-color: #3B1B88;
+}
+
+.fundo {
+    padding: 20px;
+    margin: 5rem 12rem;
+    background-color: #ffff;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px 4px #00000035;
+}
+
+.form-fundo {
+    padding: 4rem 10rem 4rem;
+}
+
+h2,
+h5,
+h6 {
+    font-weight: 800;
+}
+
+form .row {
+    --bs-gutter-x: none;
+}
