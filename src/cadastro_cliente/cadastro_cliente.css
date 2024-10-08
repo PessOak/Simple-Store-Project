@@ -70,15 +70,15 @@ li>a>i {
 
 /* Main - Conteúdo principal da página */
 .fundo {
-    padding: 20px;
-    margin: 5rem 20rem;
+    padding: 1rem 8rem;
+    margin: 10rem 30rem 5rem 30rem;
     background-color: #ffff;
     border-radius: 2rem;
     box-shadow: 0 0 20px 4px #00000035;
 }
 
 .form-fundo {
-    padding: 4rem 5rem 4rem;
+    padding: 4rem 0;
 }
 
 h2,
