@@ -1,33 +1,91 @@
-body {
-    background-color: #f4f0fe;
-    padding-bottom: 50px;
-}
-
-.custom-navbar {
-    background-color: #3b1b88;
-    padding: 15px 0;
+* {
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    font-weight: 450;
+    box-sizing: border-box;
+}
+
+body {
+    color: #1E1E1E;
+    background-color: #F4F0FE;
+}
+
+.form-floating {
+    border: 2px dashed a8a3b5;
+}
+
+/* Cabeçalho da página */
+header {
+    background-color: #3B1B88;
+}
+
+.campo-buscar {
+    color: #1E1E1E;
+    font-weight: 450;
+    border-radius: 3px 0 0 3px;
+    padding: 0.5rem 1rem;
+}
+
+.campo-buscar::placeholder {
+    color: #a8a3b5;
+}
+
+li>a>i {
+    color: #ffffff;
+}
+
+.link-vendedor,
+.link-comprador {
+    color: #1E1E1E;
+}
+
+.btn-secundario {
+    border-radius: 0 3px 3px 0px;
+    background-color: #ffffff;
+    transition: 0.4s;
+}
+
+.btn-secundario:hover {
+    transition: 0.4s;
+    background-color: #65BAA9;
+}
+
+.link-entrar {
+    cursor: pointer;
     font-weight: 700;
+    color: #65BAA9;
 }
 
-.btn-custom {
-    background-color: #65baa9;
-    color: white;
+.cor-branca-hover:hover {
+    color: #fff;
+    transition: 0.4s;
 }
 
-.btn-custom:hover {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
+.cor-verde-hover:hover {
+    color: #65BAA9 !important;
+    transition: 0.4s;
 }
 
-input::placeholder {
-    color: rgba(187, 187, 187, 0.6) !important;
-    opacity: 1 !important;
+.bg-dropdown {
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 0 20px 4px #00000035;
+}
+
+.bg-dropdown>li>a:hover {
+    background-color: #F4F0FE;
 }
 
 .row {
     margin-bottom: 30px;
+}
+
+.fundo-branco {
+    padding: 5rem 6rem;
+    margin: 0rem 25rem 25rem 25rem;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px 4px #00000035;
 }
 
 /* Estilo para o contêiner de miniaturas */

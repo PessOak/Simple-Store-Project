@@ -14,50 +14,60 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg custom-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
-          class="d-inline-block align-text-top">
-        SimpleStore
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+  <header class="fixed-top">
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">
+          <img class="logotipo" src="../imgs/simplestore-grande.png" width="150" alt="Logo"
+            class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse alinhamento-conteudo" id="navbarNav">
+          <form class="d-flex mx-auto" role="search" style="width: 60%;">
+            <input class="form-control campo-buscar border-0" type="search" placeholder="Buscar Produto"
+              aria-label="Search" style="flex-grow: 1;">
+            <button class="btn btn-outline btn-secundario" type="submit">
+              <i class="ri-search-line ri-xl"></i>
+            </button>
+          </form>
 
-        <form class="d-flex mx-auto" role="search" style="width: 50%;">
-          <input class="form-control me-2" type="search" placeholder="Buscar Produto" aria-label="Search"
-            style="flex-grow: 1;">
-          <button class="btn btn-outline-success" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-        </form>
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="btn-group nav-item me-3 ri-lx align-items-center">
+              <a class="link-entrar nav-link ps-0 cor-branca-hover" data-bs-toggle="dropdown" data-bs-auto-close="true"
+                aria-expanded="false">Entrar</a>
+              <ul class="dropdown-menu rounded-1 bg-dropdown">
+                <li><a class="nav-link link-comprador p-3" href="#">Comprador</a>
+                </li>
 
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item me-3">
-            <a class="nav-link text-white" href="#">Pedidos</a>
-          </li>
-          <li class="nav-item me-3">
-            <a class="nav-link text-white" href="#">
-              <i class="fas fa-shopping-cart" style="font-size: 30px;"></i>
-            </a>
-          </li>
-          <li class="nav-item me-3">
-            <button class="btn btn-custom px-4 py-2" type="button">Entrar</button>
-          </li>
-        </ul>
+                <li><a class="nav-link link-vendedor p-3" href="#">Vendedor</a>
+              </ul>
+            </li>
+
+            <li class="nav-item me-3">
+              <a class="nav-link cor-verde-hover" href="#">
+                <i class="ri-shopping-cart-line ri-lg cor-verde-hover"></i>
+              </a>
+            </li>
+
+            <li class="nav-item me-3 link">
+              <a class="nav-link text-white me-4 cor-verde-hover" href="#">Pedidos</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div class="container" id="margem-externa">
+  <div class="fundo-branco" id="margem-externa">
     <div class="container-fluid mt-4">
       <div class="row">
         <!-- Coluna esquerda: parte da imagem e detalhes do produto -->
@@ -71,7 +81,7 @@
               <img src="../../docs/img/florian-klauer-nptLmg6jqDo-unsplash.jpg" alt="Imagem 3" class="img-thumbnail"
                 onclick="changeImage(this)">
             </div>
-        
+
             <div class="col-9" id="main-img">
               <img alt="Imagem do Produto" id="main-image" class="img-fluid">
             </div>
