@@ -48,7 +48,17 @@ li>a>i {
 .btn-secundario:hover {
     transition: 0.4s;
     background-color: #65BAA9;
+}
 
+.link-entrar {
+    cursor: pointer;
+    font-weight: 700;
+    color: #65BAA9;
+}
+
+.cor-branca-hover:hover {
+    color: #fff;
+    transition: 0.4s;
 }
 
 .cor-verde-hover:hover {
@@ -57,8 +67,9 @@ li>a>i {
 }
 
 .bg-dropdown {
-    background-color: #fafafa;
+    background-color: #fff;
     border: 0;
+    box-shadow: 0 0 20px 4px #00000035;
 }
 
 .bg-dropdown>li>a:hover {
@@ -69,16 +80,12 @@ li>a>i {
 
 
 /* Main - Conteúdo principal da página */
-.fundo {
-    padding: 20px;
-    margin: 5rem 20rem;
+.fundo-branco {
+    padding: 5rem 6rem;
+    margin: 10rem 25rem 5rem 25rem;
     background-color: #ffff;
     border-radius: 2rem;
     box-shadow: 0 0 20px 4px #00000035;
-}
-
-.form-fundo {
-    padding: 4rem 5rem 4rem;
 }
 
 h2,
