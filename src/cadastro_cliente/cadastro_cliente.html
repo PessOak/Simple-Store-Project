@@ -45,8 +45,7 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-
+                <div class="collapse navbar-collapse alinhamento-conteudo" id="navbarNav">
                     <form class="d-flex mx-auto" role="search" style="width: 60%;">
                         <input class="form-control campo-buscar border-0" type="search" placeholder="Buscar Produto"
                             aria-label="Search" style="flex-grow: 1;">
@@ -55,28 +54,28 @@
                         </button>
                     </form>
 
-                    <div class="d-flex ">
-                        <ul class="navbar-nav ms-auto align-items-center">
-                            <li class="btn-group nav-item me-3 ri-lx align-items-center ">
-                                <a class="link text-white nav-link ps-0 cor-verde-hover" data-bs-toggle="dropdown"
-                                    data-bs-auto-close="true" aria-expanded="false"> Entrar
-                                </a>
-                                <ul class="dropdown-menu rounded-1 bg-dropdown">
-                                    <li><a class="nav-link link-comprador p-3" href="#"> Comprador</a></li>
-                                    <li><a class="nav-link link-vendedor p-3" href="#">Vendedor</a>
-                                </ul>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a class="nav-link cor-verde-hover" href="#">
-                                    <i class="ri-shopping-cart-line ri-lg cor-verde-hover"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item me-3 link">
-                                <a class="nav-link text-white me-4 cor-verde-hover" href="#">Pedidos</a>
-                            </li>
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="btn-group nav-item me-3 ri-lx align-items-center">
+                            <a class="link-entrar nav-link ps-0 cor-branca-hover" data-bs-toggle="dropdown"
+                                data-bs-auto-close="true" aria-expanded="false">Entrar</a>
+                            <ul class="dropdown-menu rounded-1 bg-dropdown">
+                                <li><a class="nav-link link-comprador p-3" href="#">Comprador</a>
+                                </li>
 
-                        </ul>
-                    </div>
+                                <li><a class="nav-link link-vendedor p-3" href="#">Vendedor</a>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item me-3">
+                            <a class="nav-link cor-verde-hover" href="#">
+                                <i class="ri-shopping-cart-line ri-lg cor-verde-hover"></i>
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 link">
+                            <a class="nav-link text-white me-4 cor-verde-hover" href="#">Pedidos</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -85,8 +84,8 @@
 
     <!-- Conteúdo principal da página -->
     <main>
-        <div class="fundo">
-            <form class="form-fundo" action="/submit" method="post">
+        <div class="fundo-branco">
+            <form action="/submit" method="post">
 
                 <h2>Crie uma conta</h2>
 
@@ -94,9 +93,11 @@
                     <input type="email" class="form-control" id="email" placeholder="examplo@gmail.com">
                     <label for="email">E-mail</label>
                 </div>
+
                 <div class="form-floating mb-3">
                     <input type="password" class="form-control" id="senha" placeholder="@123exemplo">
                     <label for="senha">Senha</label>
+
                 </div>
                 <div class="form-floating mb-5">
                     <input type="password" class="form-control" id="" placeholder="@123exemplo">
@@ -126,6 +127,7 @@
                 </div>
 
                 <h5>Endereço</h5>
+
                 <div class="form-floating mt-3 mb-3">
                     <input type="number" class="form-control" id="" placeholder="11111111">
                     <label for="">CEP</label>
@@ -172,9 +174,7 @@
                             ENTRAR.
                         </a>
                     </p>
-
                 </div>
-
             </form>
     </main>
 
@@ -193,7 +193,6 @@
             </p>
         </div>
     </footer>
-
 </body>
 
 </html>
