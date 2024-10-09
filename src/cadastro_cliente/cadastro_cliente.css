@@ -1,0 +1,134 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    font-weight: 450;
+    box-sizing: border-box;
+}
+
+body {
+    color: #1E1E1E;
+    background-color: #F4F0FE;
+}
+
+.form-floating {
+    border: 2px dashed a8a3b5;
+}
+
+/* Cabeçalho da página */
+header {
+    background-color: #3B1B88;
+}
+
+.campo-buscar {
+    color: #1E1E1E;
+    font-weight: 450;
+    border-radius: 3px 0 0 3px;
+    padding: 0.5rem 1rem;
+}
+
+.campo-buscar::placeholder {
+    color: #a8a3b5;
+}
+
+li>a>i {
+    color: #ffffff;
+}
+
+.link-vendedor,
+.link-comprador {
+    color: #1E1E1E;
+}
+
+.btn-secundario {
+    border-radius: 0 3px 3px 0px;
+    background-color: #ffffff;
+    transition: 0.4s;
+}
+
+.btn-secundario:hover {
+    transition: 0.4s;
+    background-color: #65BAA9;
+
+}
+
+.cor-verde-hover:hover {
+    color: #65BAA9 !important;
+    transition: 0.4s;
+}
+
+.bg-dropdown {
+    background-color: #fafafa;
+    border: 0;
+}
+
+.bg-dropdown>li>a:hover {
+    background-color: #F4F0FE;
+}
+
+/* Configuração final do cabeçalho da página */
+
+
+/* Main - Conteúdo principal da página */
+.fundo {
+    padding: 20px;
+    margin: 5rem 20rem;
+    background-color: #ffff;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px 4px #00000035;
+}
+
+.form-fundo {
+    padding: 4rem 5rem 4rem;
+}
+
+h2,
+h5 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+form .row {
+    --bs-gutter-x: none;
+}
+
+.form-floating>.form-select {
+    font-weight: 00;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+/* configuração botão principal grande*/
+.btn-padrao {
+    padding: 1rem 6rem;
+    border: 0;
+    background-color: #3B1B88;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn-padrao:hover {
+    border: 0;
+    background-color: #65BAA9;
+
+}
+
+/* Configuração final do conteúdo principal da página */
+
+/* footer - Rodapé da página */
+p>.email {
+    text-decoration: none;
+    color: #65BAA9;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+p>.email:hover {
+    transition: 0.4s;
+    color: #3B1B88;
+}
+
+/* Configuração final do rodapé da página */
