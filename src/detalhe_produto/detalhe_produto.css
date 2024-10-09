@@ -26,21 +26,47 @@ input::placeholder {
     opacity: 1 !important;
 }
 
-#thumbnails {
+.row {
+    margin-bottom: 30px;
+}
+
+/* Estilo para o contêiner de miniaturas */
+.col-3.d-flex.flex-column {
     display: flex;
     flex-direction: column;
     height: auto;
 }
 
-#thumbnails img {
-    width: 100%;
-    height: auto;
+.img-thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
     margin-bottom: 5px;
+    border: 2px solid #3b1b88;
+    transition: transform 0.3s;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.10);
+    /* Aumenta a imagem ao passar o mouse */
 }
 
 #main-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 500px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    #main-image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    #main-image {
+        height: 200px;
+    }
 }
 
 input[type="number"] {
