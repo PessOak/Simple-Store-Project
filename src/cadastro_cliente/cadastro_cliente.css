@@ -3,20 +3,22 @@
     letter-spacing: -1px;
     font-weight: 450;
     box-sizing: border-box;
+    color: #616161;
 }
 
 body {
-    color: #1E1E1E;
+    width: 100%;
+    height: 100%;
     background-color: #F4F0FE;
 }
 
-.form-floating {
-    border: 2px dashed a8a3b5;
+.form-floating>label {
+    left: unset;
 }
 
 /* Cabeçalho da página */
 header {
-    background-color: #3B1B88;
+    background-color: #3b1b88;
 }
 
 .campo-buscar {
@@ -81,39 +83,36 @@ li>a>i {
 
 /* Main - Conteúdo principal da página */
 .fundo-branco {
-    padding: 5rem 6rem;
-    margin: 10rem 25rem 5rem 25rem;
+    width: 50%;
+    height: 100%;
+    padding: 8rem 4rem 4rem 4rem;
+    margin: 0 auto 0;
     background-color: #ffff;
     border-radius: 2rem;
     box-shadow: 0 0 20px 4px #00000035;
 }
 
 h2,
-h5 {
+h5,
+strong {
+    color: #232323;
     font-weight: 700;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
-form .row {
-    --bs-gutter-x: none;
+h5 {
+    font-size: 1rem;
 }
-
-.form-floating>.form-select {
-    font-weight: 00;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 
 /* configuração botão principal grande*/
 .btn-padrao {
-    padding: 1rem 6rem;
+    padding: 0.6rem 4rem;
     border: 0;
-    background-color: #3B1B88;
-    font-size: 1.4rem;
+    background-color: #3b1b88;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -137,5 +136,7 @@ p>.email:hover {
     transition: 0.4s;
     color: #3B1B88;
 }
+
+
 
 /* Configuração final do rodapé da página */
