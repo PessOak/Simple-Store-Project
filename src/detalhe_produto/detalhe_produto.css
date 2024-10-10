@@ -82,10 +82,11 @@ li>a>i {
 
 .fundo-branco {
     padding: 5rem 6rem;
-    margin: 0rem 25rem 25rem 25rem;
+    margin: 0rem 25rem 0rem 25rem;
     background-color: #ffffff;
     border-radius: 2rem;
     box-shadow: 0 0 20px 4px #00000035;
+    height: 100vh;
 }
 
 /* Estilo para o contêiner de miniaturas */
@@ -93,6 +94,13 @@ li>a>i {
     display: flex;
     flex-direction: column;
     height: auto;
+}
+
+.finalizar-pedido {
+    border: #65BAA9 1px solid;
+    max-height: 350px;
+    border-radius: 10px;
+    text-align: justify;
 }
 
 .img-thumbnail {
