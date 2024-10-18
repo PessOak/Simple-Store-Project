@@ -85,7 +85,7 @@
     <!-- Conteúdo principal da página -->
     <main>
         <div class="fundo-branco">
-            <form action="/submit" method="post">
+            <form id="form-endereco" action="/submit" method="post">
 
                 <h2>Crie uma conta</h2>
 
@@ -106,75 +106,72 @@
                     </div>
                 </div>
 
-                <h5>Dados pessoais</h5>
-
-                <div class="form-floating mt-3 mb-3">
-                    <input type="text" class="form-control" id="" placeholder="João Sebastião da Silva">
-                    <label for="">Nome</label>
-                </div>
-
-                <div class="form-floating mt-3 mb-3">
-                    <input type="tel" class="form-control" id="" placeholder="31999999999">
-                    <label for="">Celular</label>
-                </div>
-
-                <div class="form-floating mt-3 mb-3">
-                    <input type="date" class="form-control" id="" placeholder="01/01/2001">
-                    <label for="">Data de Nacimento</label>
-                </div>
-
-                <div class="form-floating mt-3 mb-4">
-                    <input type="text" class="form-control" id="" placeholder="11111111111">
-                    <label for="">CPF</label>
-                </div>
-
-                <h5>Endereço</h5>
-
-                <div class="form-floating mt-3 mb-3">
-                    <input type="number" class="form-control" id="" placeholder="11111111">
-                    <label for="">CEP</label>
-                </div>
-
                 <div class="row">
-                    <div class="form-floating col-9">
-                        <input type="text" class="form-control" id="logradouro" placeholder="Rua Nossa do Carmo">
-                        <label for="logradouro">Logradouro</label>
-                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <h5>Dados pessoais</h5>
 
-                    <div class="form-floating col-3">
-                        <input type="text" class="form-control" id="" placeholder="Rua Nossa do Carmo">
-                        <label for="">Número</label>
+                        <div class="form-floating mt-3 mb-3">
+                            <input type="text" class="form-control" id="" placeholder="João Sebastião da Silva">
+                            <label for="">Nome</label>
+                        </div>
+
+                        <div class="form-floating mt-3 mb-3">
+                            <input type="tel" class="form-control" id="" placeholder="31999999999">
+                            <label for="">Celular</label>
+                        </div>
+
+                        <div class="form-floating mt-3 mb-3">
+                            <input type="date" class="form-control" id="" placeholder="01/01/2001">
+                            <label for="">Data de Nacimento</label>
+                        </div>
+
+                        <div class="form-floating mt-3 mb-4">
+                            <input type="text" class="form-control" id="" placeholder="11111111111">
+                            <label for="">CPF</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <h5>Endereço</h5>
+
+                        <div class="form-floating mt-3 mb-3">
+                            <input type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
+                                onblur="buscarEndereco()" onkeyup="verificarEnter(event)" required>
+                            <label for="cep">CEP</label>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-floating col-9">
+                                <input type="text" class="form-control" id="logradouro" disabled
+                                    placeholder="Rua Nossa do Carmo" readonly>
+                                <label for="logradouro">Logradouro</label>
+                            </div>
+
+                            <div class="form-floating col-3">
+                                <input type="text" class="form-control" id="numero" placeholder="Rua Nossa do Carmo">
+                                <label for="numero">Número</label>
+                            </div>
+                            <div class="form-floating mt-3 mb-3">
+                                <input type="text" disabled class="form-control" id="bairro" placeholder="Bom Sucesso"
+                                    readonly>
+                                <label for="bairro">Bairro</label>
+                            </div>
+
+                            <div class="col-9 form-floating">
+                                <input type="text" class="form-control" disabled id="cidade" placeholder="Bom Sucesso"
+                                    readonly>
+                                <label for="cidade">Cidade</label>
+                            </div>
+
+                            <div class="col-3 form-floating">
+                                <input type="text" class="form-control" disabled id="estado" placeholder="Bom Sucesso"
+                                    readonly>
+                                <label for="estado">Estado</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-floating mt-3 mb-3">
-                    <input type="text" class="form-control" id="" placeholder="Bom Sucesso">
-                    <label for="">Bairro</label>
-                </div>
-
-                <div class="row justify-content-between">
-                    <div class="col-9 form-floating">
-                        <select class=" form-select" aria-label="Large select example">
-                            <option selected>Belo Horizonte</option>
-                            <option value="1">Florianópolis</option>
-                            <option value="2">São Paulo</option>
-                            <option value="3">Rio de Janeiro</option>
-                        </select>
-                        <label for="floatingSelect">Cidade</label>
-                    </div>
-
-                    <div class="col-3 form-floating">
-                        <select class=" form-select" aria-label="Large select example">
-                            <option selected>MG</option>
-                            <option value="1">SC</option>
-                            <option value="2">SP</option>
-                            <option value="3">RJ</option>
-                        </select>
-                        <label for="floatingSelect">Estado</label>
-                    </div>
-                </div>
-
-                <div class="text-center mt-5">
+                <div class="text-center mt-2">
                     <button type="button" class="btn btn-primary btn-padrao btn-lg">Criar Conta</button>
                 </div>
 
