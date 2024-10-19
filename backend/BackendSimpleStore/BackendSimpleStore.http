@@ -1,0 +1,6 @@
+@BackendSimpleStore_HostAddress = http://localhost:5272
+
+GET {{BackendSimpleStore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
