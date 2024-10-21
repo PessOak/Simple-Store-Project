@@ -9,12 +9,12 @@ namespace SimpleStore.Web.Models
         public int Id { get; set; }
 
         [ForeignKey("Carrinho")]
-        public int Id_Carrinho { get; set; }
+        public int IdCarrinho { get; set; }
 
         public DateTime Data { get; set; }
 
         [Range(0.01, double.MaxValue, ErrorMessage = "O valor total deve ser positivo.")]
-        public decimal Valor_Total { get; set; }
+        public decimal ValorTotal { get; set; }
 
     }
 }

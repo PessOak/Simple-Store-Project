@@ -8,7 +8,7 @@ namespace SimpleStore.Web.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o documento.")]
-        [StringLength(14, MinimumLength = 11, ErrorMessage = "O documento deve ter entre 11 e 14 caracteres.")]
+        [StringLength(14, MinimumLength = 11, ErrorMessage = "O documento deve ter entre 11 (cpf) e 14 (cnpj) caracteres.")]
         public string Doc { get; set; }
 
         [Required(ErrorMessage ="Obrigatório informar o nome.")]

@@ -8,25 +8,25 @@ namespace SimpleStore.Web.Models
         [KeyAttribute]
         public int Id { get; set; }
 
-        [ForeignKey("Id_Forn")]
+        [ForeignKey("Fornecedor")]
         public int IdForn { get; set; }
 
         [Required(ErrorMessage ="Obrigatório informar o nome do produto.")]
-        public string Nome_prod { get; set; }
+        public string Nome { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a descrição do produto.")]
-        public string Desc_Prod { get; set; }
+        public string Descricao { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a quantidade disponível do produto.")]
-        public int Quant_Prod { get; set; }
+        public int Quantidade { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o preço do produto.")]
         public decimal Preco { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar a categoria do produto.")]
-        public string Categ_Prod { get; set; }
+        public string Categoria { get; set; }
 
         [Required(ErrorMessage = "Obrigatório enviar uma imagem do produto.")]
-        public string Img_Prod { get; set; }  // Caminho ou URL da imagem
+        public string ImgUrl { get; set; }  // Caminho ou URL da imagem
     }
 }
