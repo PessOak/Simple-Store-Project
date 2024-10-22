@@ -8,7 +8,7 @@ namespace SimpleStore.Web.Models
         public int IdCarrinho { get; set; }
 
         [ForeignKey("Produto")]
-        public int IdProduto { get; set; }
+        public int IdProd { get; set; }
 
         public int QuantProdCarrinho { get; set; }
 

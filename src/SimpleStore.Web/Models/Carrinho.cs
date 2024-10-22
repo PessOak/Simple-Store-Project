@@ -6,12 +6,12 @@ namespace SimpleStore.Web.Models
     public class Carrinho
     {
         [KeyAttribute]
-        public int Id { get; set; }
+        public int IdCarrinho { get; set; }
 
         [ForeignKey("Comprador")]
-        public string CpfComprador { get; set; }
+        public string CpfComp { get; set; }
 
-        public decimal ValorTotal { get; set; }
+        public float ValorTotalCarrinho { get; set; }
 
         // Propriedade para armazenar os produtos no carrinho
         public ICollection<Produto> Produtos { get; set; } = new List<Produto>(); // Lista inicializada

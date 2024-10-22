@@ -7,17 +7,17 @@ namespace SimpleStore.Web.Models
     {
         [KeyAttribute]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve ter 11 caracteres.")]
-        public string Cpf { get; set; }
+        public string CpfComp { get; set; }
 
         [Required(ErrorMessage ="Obrigatório inserir o nome.")]
-        public string Nome { get; set; }
+        public string NomeComp { get; set; }
 
         [Required(ErrorMessage = "Obrigatório inserir o e-mail.")]
         [EmailAddress(ErrorMessage = "Formato de e-mail inválido.")]
-        public string Email { get; set; }
+        public string EmailComp { get; set; }
 
         [Required(ErrorMessage = "Obrigatório inserir a senha.")]
-        public string Senha { get; set; }
+        public string SenhaComp { get; set; }
 
     }
 }
