@@ -1,0 +1,86 @@
+﻿* {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    font-weight: 450;
+    box-sizing: border-box;
+    color: #616161;
+}
+
+body {
+    color: #1E1E1E;
+    background-color: #F4F0FE;
+}
+
+header {
+    background-color: #3b1b88;
+}
+
+.campo-buscar {
+    color: #1E1E1E;
+    font-weight: 450;
+    border-radius: 3px 0 0 3px;
+    padding: 0.5rem 1rem;
+}
+
+.campo-buscar::placeholder {
+    color: #a8a3b5;
+}
+
+li > a > i {
+    color: #ffffff;
+}
+
+.link-vendedor,
+.link-comprador {
+    color: #1E1E1E;
+}
+
+.btn-secundario {
+    border-radius: 0 3px 3px 0px;
+    background-color: #ffffff;
+    transition: 0.4s;
+}
+
+.btn-secundario:hover {
+    transition: 0.4s;
+    background-color: #65BAA9;
+}
+
+.link-entrar {
+    cursor: pointer;
+    font-weight: 700;
+    color: #65BAA9;
+}
+
+.cor-branca-hover:hover {
+    color: #fff;
+    transition: 0.4s;
+}
+
+.cor-verde-hover:hover {
+    color: #65BAA9 !important;
+    transition: 0.4s;
+}
+
+.bg-dropdown {
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 0 20px 4px #00000035;
+}
+
+.bg-dropdown > li > a:hover {
+    background-color: #F4F0FE;
+}
+
+/* footer - rodapé*/
+p > .email {
+    text-decoration: none;
+    color: #65BAA9;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+    p > .email:hover {
+        transition: 0.4s;
+        color: #3B1B88;
+    }
