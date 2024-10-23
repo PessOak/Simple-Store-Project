@@ -6,23 +6,23 @@ namespace SimpleStore.Web.Models
     public class EnderecoFornecedor
     {
         [KeyAttribute]
-        public int Id { get; set; }
+        public int IdEndereco { get; set; }
 
         [ForeignKey("Fornecedor")]
-        public int IdFornecedor { get; set; }
+        public int IdForn { get; set; }
 
-        public string Logradouro { get; set; }
+        public string LogradouroEndereco { get; set; }
 
-        public int Numero { get; set; }
+        public int NumeroEndereco { get; set; }
 
-        public string Bairro { get; set; }
+        public string BairroEndereco { get; set; }
 
-        public string Cidade { get; set; }
+        public string CidadeEndereco { get; set; }
 
-        public string Estado { get; set; }
+        public string EstadoEndereco { get; set; }
 
-        public string Cep { get; set; }
+        public string CepEndereco { get; set; }
 
-        public string Complemento { get; set; }
+        public string ComplementoEndereco { get; set; }
     }
 }
