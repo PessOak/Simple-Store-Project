@@ -1,1 +1,142 @@
 ﻿
+h2,
+h3 {
+    color: #1E1E1E;
+    font-weight: 650;
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h3 {
+    margin: 0.5rem 0;
+    font-size: 22px;
+}
+
+.form-floating {
+    border: 2px dashed a8a3b5;
+}
+
+.fundo-branco {
+    width: 65%;
+    height: 100%;
+    padding: 5rem 2.5rem;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 4px #00000035;
+    border-radius: 2rem;
+}
+
+.conteudo-principal {
+    margin-top: 3rem;
+}
+
+.coluna-imagens {
+    display: flex;
+    align-items: center;
+}
+
+.imagem-carrossel {
+    width: 130px;
+    height: 100px;
+    object-fit: fill;
+    transition: transform 0.4s;
+}
+
+    .imagem-carrossel:hover {
+        transform: scale(1.10);
+        /* Aumenta a imagem ao passar o mouse */
+    }
+
+#main-image {
+    height: 450px;
+    width: 450px;
+    object-fit: fill;
+}
+
+.btn-padrao {
+    font-size: 0.8rem;
+    border: 0;
+    padding: 0.6rem 1rem;
+    background-color: #3b1b88;
+    font-weight: 600;
+}
+
+    .btn-padrao:hover {
+        background-color: #65BAA9;
+    }
+
+span,
+strong {
+    color: #1E1E1E;
+}
+
+span {
+    font-size: 25px;
+}
+
+.coluna-finalizar-pedido {
+    border: #b1b1b1 1px solid;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-quantidade {
+    text-align: center;
+    border: #b1b1b1 solid 1px;
+    border-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-mais,
+.btn-menos,
+.quantidade-produto {
+    border: 0;
+}
+
+.btn-mais,
+.quantidade-produto {
+    font-weight: 600;
+    color: #1E1E1E;
+}
+
+    .btn-mais:hover,
+    .btn-menos:hover {
+        background-color: #3B1B88;
+    }
+
+.frete {
+    margin-top: 1.5rem;
+}
+
+/* Estilo para o contêiner de miniaturas */
+.col-3.d-flex.flex-column {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #main-image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    #main-image {
+        height: 200px;
+    }
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }

@@ -1,48 +1,89 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+* {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    font-weight: 450;
+    box-sizing: border-box;
+    color: #616161;
 }
 
-a {
-  color: #0077cc;
+body {
+    color: #1E1E1E;
+    background-color: #F4F0FE;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+header {
+    background-color: #3b1b88;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.campo-buscar {
+    color: #1E1E1E;
+    font-weight: 450;
+    border-radius: 3px 0 0 3px;
+    padding: 0.5rem 1rem;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    .campo-buscar::placeholder {
+        color: #a8a3b5;
+    }
+
+li > a > i {
+    color: #ffffff;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.link-vendedor,
+.link-comprador {
+    color: #1E1E1E;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.btn-secundario {
+    border-radius: 0 3px 3px 0px;
+    background-color: #ffffff;
+    transition: 0.4s;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    .btn-secundario:hover {
+        transition: 0.4s;
+        background-color: #65BAA9;
+    }
+
+.link-entrar {
+    cursor: pointer;
+    font-weight: 700;
+    color: #65BAA9;
 }
+
+.cor-branca-hover:hover {
+    color: #fff;
+    transition: 0.4s;
+}
+
+.cor-verde-hover:hover {
+    color: #65BAA9 !important;
+    transition: 0.4s;
+}
+
+.bg-dropdown {
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 0 20px 4px #00000035;
+}
+
+    .bg-dropdown > li > a:hover {
+        background-color: #F4F0FE;
+    }
+
+/* footer - rodapé*/
+p > .email {
+    text-decoration: none;
+    color: #65BAA9;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+    p > .email:hover {
+        transition: 0.4s;
+        color: #3B1B88;
+    }

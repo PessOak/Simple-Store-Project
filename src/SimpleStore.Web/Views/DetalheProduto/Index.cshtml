@@ -4,6 +4,10 @@
 @{
 }
 
+@section Scripts{
+    <script src="~/js/DetalheProduto.js" asp-append-version="true"></script>
+}
+
 <head>
     <link rel="stylesheet" href="Index.css">
 </head>
@@ -16,7 +20,7 @@
             <div class="row coluna-imagens d-flex">
                 <div class="d-flex flex-column col-3 p-0" id="thumbnails">
 
-                    <img src="2.jpg" alt="Imagem 1" class="imagem-carrossel mb-2" onclick="changeImage(this)"
+                    <img src="~/img/2.jpg" alt="Imagem 1" class="imagem-carrossel mb-2" onclick="changeImage(this)"
                          id="img1">
 
                     <img src="1.jpg" alt="Imagem 2" class="imagem-carrossel mb-2" onclick="changeImage(this)">
