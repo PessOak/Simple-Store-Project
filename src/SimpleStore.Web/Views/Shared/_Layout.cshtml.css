@@ -1,19 +1,7 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-* {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: -1px;
-    font-weight: 450;
-    box-sizing: border-box;
-    color: #616161;
-}
-
-body {
-    color: #1E1E1E;
-    background-color: #F4F0FE;
-}
-
+/* Cabeçalho da página */
 header {
     background-color: #3b1b88;
 }
@@ -25,11 +13,11 @@ header {
     padding: 0.5rem 1rem;
 }
 
-    .campo-buscar::placeholder {
-        color: #a8a3b5;
-    }
+.campo-buscar::placeholder {
+    color: #a8a3b5;
+}
 
-li > a > i {
+li>a>i {
     color: #ffffff;
 }
 
@@ -44,10 +32,10 @@ li > a > i {
     transition: 0.4s;
 }
 
-    .btn-secundario:hover {
-        transition: 0.4s;
-        background-color: #65BAA9;
-    }
+.btn-secundario:hover {
+    transition: 0.4s;
+    background-color: #65BAA9;
+}
 
 .link-entrar {
     cursor: pointer;
@@ -71,19 +59,8 @@ li > a > i {
     box-shadow: 0 0 20px 4px #00000035;
 }
 
-    .bg-dropdown > li > a:hover {
-        background-color: #F4F0FE;
-    }
-
-/* footer - rodapé*/
-p > .email {
-    text-decoration: none;
-    color: #65BAA9;
-    font-weight: 700;
-    transition: 0.5s;
+.bg-dropdown>li>a:hover {
+    background-color: #F4F0FE;
 }
 
-    p > .email:hover {
-        transition: 0.4s;
-        color: #3B1B88;
-    }
+/* Configuração final do cabeçalho da página */

@@ -1,0 +1,36 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -1px;
+    font-weight: 450;
+    box-sizing: border-box;
+    color: #616161;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #F4F0FE;
+}
+
+/* Configurações padrões cor e peso das tags título e tag strong */
+h2,
+h5,
+strong {
+    color: #232323;
+    font-weight: 700;
+}
+
+/* footer - Rodapé da página */
+p>.email {
+    text-decoration: none;
+    color: #65BAA9;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+p>.email:hover {
+    transition: 0.4s;
+    color: #3B1B88;
+}
+
+/* Configuração final do rodapé da página */

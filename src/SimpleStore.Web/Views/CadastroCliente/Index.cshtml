@@ -1,10 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-@section Scripts{
+﻿@section Scripts {
     <script src="~/js/CadastroCliente.js" asp-append-version="true"></script>
 }
 
@@ -12,111 +6,102 @@
     <link rel="stylesheet" href="Index.css">
 </head>
 
-
+<!-- Conteúdo principal da página -->
 <div class="fundo-branco">
-            <form id="form-endereco" action="/submit" method="post">
+    <form id="form-endereco" action="/submit" method="post">
 
-                <h2>Crie uma conta</h2>
+        <h2>Crie uma conta</h2>
 
-                <div class="form-floating mt-4 mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="examplo@gmail.com">
-                    <label for="email">E-mail</label>
+        <div class="form-floating mt-4 mb-3">
+            <input type="email" class="form-control" id="email" placeholder="examplo@gmail.com">
+            <label for="email">E-mail</label>
+        </div>
+
+        <div class="row">
+            <div class="form-floating mb-3 col-6">
+                <input type="password" class="form-control" id="senha" placeholder="@@123exemplo">
+                <label for="senha">Senha</label>
+
+            </div>
+            <div class="form-floating mb-4 col-6">
+                <input type="password" class="form-control" id="" placeholder="@@123exemplo">
+                <label for="confirmarSenha">Confirmar Senha</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <h5>Dados pessoais</h5>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input type="text" class="form-control" id="" placeholder="João Sebastião da Silva">
+                    <label for="">Nome</label>
+                </div>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input type="tel" class="form-control" id="" placeholder="31999999999">
+                    <label for="">Celular</label>
+                </div>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input type="date" class="form-control" id="" placeholder="01/01/2001">
+                    <label for="">Data de Nacimento</label>
+                </div>
+
+                <div class="form-floating mt-3 mb-4">
+                    <input type="text" class="form-control" id="" placeholder="11111111111">
+                    <label for="">CPF</label>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <h5>Endereço</h5>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
+                        onblur="buscarEndereco()" onkeyup="verificarEnter(event)" required>
+                    <label for="cep">CEP</label>
                 </div>
 
                 <div class="row">
-                    <div class="form-floating mb-3 col-6">
-                        <input type="password" class="form-control" id="senha" placeholder="@@123exemplo">
-                        <label for="senha">Senha</label>
-
+                    <div class="form-floating col-9">
+                        <input type="text" class="form-control" id="logradouro" disabled
+                            placeholder="Rua Nossa do Carmo" readonly>
+                        <label for="logradouro">Logradouro</label>
                     </div>
-                    <div class="form-floating mb-4 col-6">
-                        <input type="password" class="form-control" id="" placeholder="@@123exemplo">
-                        <label for="confirmarSenha">Confirmar Senha</label>
+
+                    <div class="form-floating col-3">
+                        <input type="text" class="form-control" id="numero" placeholder="Rua Nossa do Carmo">
+                        <label for="numero">Número</label>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12 col-lg-6">
-                        <h5>Dados pessoais</h5>
-
-                        <div class="form-floating mt-3 mb-3">
-                            <input type="text" class="form-control" id="" placeholder="João Sebastião da Silva">
-                            <label for="">Nome</label>
-                        </div>
-
-                        <div class="form-floating mt-3 mb-3">
-                            <input type="tel" class="form-control" id="" placeholder="31999999999">
-                            <label for="">Celular</label>
-                        </div>
-
-                        <div class="form-floating mt-3 mb-3">
-                            <input type="date" class="form-control" id="" placeholder="01/01/2001">
-                            <label for="">Data de Nacimento</label>
-                        </div>
-
-                        <div class="form-floating mt-3 mb-4">
-                            <input type="text" class="form-control" id="" placeholder="11111111111">
-                            <label for="">CPF</label>
-                        </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <input type="text" disabled class="form-control" id="bairro" placeholder="Bom Sucesso" readonly>
+                        <label for="bairro">Bairro</label>
                     </div>
-                    <div class="col-md-12 col-lg-6">
-                        <h5>Endereço</h5>
 
-                        <div class="form-floating mt-3 mb-3">
-                            <input type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
-                                onblur="buscarEndereco()" onkeyup="verificarEnter(event)" required>
-                            <label for="cep">CEP</label>
-                        </div>
+                    <div class="col-9 form-floating">
+                        <input type="text" class="form-control" disabled id="cidade" placeholder="Bom Sucesso" readonly>
+                        <label for="cidade">Cidade</label>
+                    </div>
 
-                        <div class="row">
-                            <div class="form-floating col-9">
-                                <input type="text" class="form-control" id="logradouro" disabled
-                                    placeholder="Rua Nossa do Carmo" readonly>
-                                <label for="logradouro">Logradouro</label>
-                            </div>
-
-                            <div class="form-floating col-3">
-                                <input type="text" class="form-control" id="numero" placeholder="Rua Nossa do Carmo">
-                                <label for="numero">Número</label>
-                            </div>
-                            <div class="form-floating mt-3 mb-3">
-                                <input type="text" disabled class="form-control" id="bairro" placeholder="Bom Sucesso"
-                                    readonly>
-                                <label for="bairro">Bairro</label>
-                            </div>
-
-                            <div class="col-9 form-floating">
-                                <input type="text" class="form-control" disabled id="cidade" placeholder="Bom Sucesso"
-                                    readonly>
-                                <label for="cidade">Cidade</label>
-                            </div>
-
-                            <div class="col-3 form-floating">
-                                <input type="text" class="form-control" disabled id="estado" placeholder="Bom Sucesso"
-                                    readonly>
-                                <label for="estado">Estado</label>
-                            </div>
-                        </div>
+                    <div class="col-3 form-floating">
+                        <input type="text" class="form-control" disabled id="estado" placeholder="Bom Sucesso" readonly>
+                        <label for="estado">Estado</label>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="text-center mt-2">
-                    <button type="button" class="btn btn-primary btn-padrao btn-lg">Criar Conta</button>
-                </div>
+        <div class="text-center mt-2">
+            <button type="button" class="btn btn-primary btn-padrao btn-lg">Criar Conta</button>
+        </div>
 
-                <div class="text-center mt-4">
-                    <p class="mb-0">
-                        <i class=" ri-question-line" width="200px"></i> Já possui uma conta?
-                        <a class="email" href="../login_cliente/login_cliente.html">
-                            ENTRAR.
-                        </a>
-                    </p>
-                </div>
-            </form>
+        <div class="text-center mt-4">
+            <p class="mb-0">
+                <i class=" ri-question-line" width="200px"></i> Já possui uma conta?
+                <a class="email" href="../login_cliente/login_cliente.html">
+                    ENTRAR.
+                </a>
+            </p>
+        </div>
+    </form>
 </div>
-
-
-<script src="Index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
