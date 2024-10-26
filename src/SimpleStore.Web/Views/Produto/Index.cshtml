@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Produto>
+
+<h2>Produtos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Detalhes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.IdProd</td>
+                <td>@produto.NomeProd</td>
+                <td>@produto.PrecoProd</td>
+                <td><a href="@Url.Action("Details", new { id = produto.IdProd })">Visualizar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
