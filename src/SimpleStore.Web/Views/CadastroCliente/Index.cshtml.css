@@ -4,9 +4,9 @@
 
 /* Main - Conteúdo principal da página */
 .fundo-branco {
-    width: 60%;
+    width: 80%;
     height: 100%;
-    padding: 8rem 4rem 4rem 4rem;
+    padding: 2rem 4rem 4rem 4rem;
     margin: 0 auto 0;
     background-color: #ffff;
     border-radius: 2rem;

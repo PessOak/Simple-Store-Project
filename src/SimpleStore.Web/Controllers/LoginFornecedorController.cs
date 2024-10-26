@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class Login_FornecedorController : Controller
+    public class LoginFornecedorController : Controller
     {
-        private readonly ILogger<Login_FornecedorController> _logger;
+        private readonly ILogger<LoginFornecedorController> _logger;
 
-        public Login_FornecedorController(ILogger<Login_FornecedorController> logger)
+        public LoginFornecedorController(ILogger<LoginFornecedorController> logger)
         {
             _logger = logger;
         }

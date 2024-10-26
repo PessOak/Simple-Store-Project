@@ -8,10 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\DetalheProduto\**" />
     <Compile Remove="Views\NovaPasta\**" />
+    <Content Remove="Views\DetalheProduto\**" />
     <Content Remove="Views\NovaPasta\**" />
+    <EmbeddedResource Remove="Views\DetalheProduto\**" />
     <EmbeddedResource Remove="Views\NovaPasta\**" />
+    <None Remove="Views\DetalheProduto\**" />
     <None Remove="Views\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\DetalheProdutoController.cs" />
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.cs" />
+    <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
+    <Compile Remove="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +30,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
@@ -30,6 +42,10 @@
     <None Include="wwwroot\img\3.jpg" />
     <None Include="wwwroot\img\4.jpg" />
     <None Include="wwwroot\js\DetalheProduto.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

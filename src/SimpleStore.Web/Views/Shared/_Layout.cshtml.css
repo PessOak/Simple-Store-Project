@@ -63,4 +63,11 @@ li>a>i {
     background-color: #F4F0FE;
 }
 
+main {
+    position: relative;
+    top: 90px;
+    min-height: 83vh;
+    padding: 5rem;
+}
+
 /* Configuração final do cabeçalho da página */

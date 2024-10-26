@@ -1,7 +1,7 @@
 ﻿@section Scripts {
-    <script src="~/js/DetalheProduto.js" asp-append-version="true"></script>
+        <script src="~/js/DetalheProduto.js" asp-append-version="true"></script>
 }
-
+@model Produto
 <head>
     <link rel="stylesheet" href="Index.css">
 </head>
@@ -14,6 +14,10 @@
             <div class="row coluna-imagens d-flex">
                 <div class="d-flex flex-column col-3 p-0" id="thumbnails">
 
+                    @if (!string.IsNullOrEmpty(Model.ImgUrl))
+                    {
+                        <img src="@Model.ImgUrl" alt="@Model.NomeProd" class="product-image" />
+                    }
                     <img src="~/img/2.jpg" alt="Imagem 1" class="imagem-carrossel mb-2" onclick="changeImage(this)"
                         id="img1">
 
@@ -32,11 +36,10 @@
 
         <!-- Coluna direita: detalhes do produto -->
         <div class="col-4 coluna-info-produtos ps-0" id="info-produto">
-            <h2 class="">Nome do Produto</h2>
-            <p><span>R$ 299,99</span></p>
+            <h2 class="">@Model.NomeProd</h2>
+            <p><span>R$ @Model.PrecoProd.ToString("C")</span></p>
             <p>
-                Descrição detalhada do produto, incluindo informações técnicas, funcionalidades e outros detalhes
-                importantes.
+                @Model.DescProd
             </p>
             <ul>
                 <li>
@@ -103,6 +106,7 @@
         <div class="">
         </div>
     </div>
+    <a href="@Url.Action("Index", "Produto")" class="btn btn-primary">Voltar para a lista</a>
 </div>
 
 <script src="Index.js"></script>
