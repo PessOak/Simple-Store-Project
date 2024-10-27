@@ -1,9 +1,6 @@
 ﻿using Dapper;
-using SimpleStore.Web.Controllers;
 using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace SimpleStore.Web.Repositories
 {

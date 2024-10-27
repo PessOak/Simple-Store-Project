@@ -19,11 +19,16 @@ namespace SimpleStore.Web.Services
             return cadastroCliente;
         }
 
-        public async Task<Comprador> ListarClientesPorId(int CpfComp)
+        public async Task<Comprador> ListarClientesPorCpf(int CpfComp)
         {
-            var cpfCliente = await _cadastroClienteRepository.ListarClientesPorId(CpfComp);
+            var cpfCliente = await _cadastroClienteRepository.ListarClientesPorCpf(CpfComp);
 
             return cpfCliente;
+        }
+
+        public async Task<Comprador> CriarComprador(Comprador Comprador)
+        {
+            return await _cadastroClienteRepository.CriarComprador(Comprador);
         }
     }
 }
