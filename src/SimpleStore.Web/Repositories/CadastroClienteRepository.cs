@@ -1,9 +1,6 @@
 ﻿using Dapper;
-using SimpleStore.Web.Controllers;
 using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace SimpleStore.Web.Repositories
 {
@@ -26,7 +23,7 @@ namespace SimpleStore.Web.Repositories
             }
         }
 
-        public async Task<Comprador> ListarClientesPorId(int CpfComp)
+        public async Task<Comprador> ListarClientesPorCpf(int CpfComp)
         {
             var consulta = "SELECT * FROM comprador WHERE CpfComp = @CpfComp";
 
@@ -36,6 +33,17 @@ namespace SimpleStore.Web.Repositories
             }
         }
 
-        // Métodos adicionais de CRUD podem ser adicionados aqui
+        public async Task<Comprador> CriarComprador(Comprador Comprador)
+        {
+            var consulta = @"
+                INSERT INTO comprador (CpfComp, NomeComp, EmailComp, SenhaComp)
+                VALUES (@CpfComp, @NomeComp, @EmailComp, @SenhaComp);
+                SELECT * FROM comprador WHERE CpfComp = @CpfComp;";
+
+            using (var connection = _context.CreateConnection())
+            {
+              return await connection.QuerySingleOrDefaultAsync<Comprador>(consulta, Comprador);
+            }
+        }
     }
 }

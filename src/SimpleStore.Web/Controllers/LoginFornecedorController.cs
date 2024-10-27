@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleStore.Web.Models;
-using System.Diagnostics;
 
 namespace SimpleStore.Web.Controllers
 {
