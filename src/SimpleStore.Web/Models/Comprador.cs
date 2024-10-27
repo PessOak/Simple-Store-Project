@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleStore.Web.Models
 {
@@ -16,8 +15,13 @@ namespace SimpleStore.Web.Models
         [EmailAddress(ErrorMessage = "Formato de e-mail inválido.")]
         public string EmailComp { get; set; }
 
+        [DataType(DataType.Password)]
         [Required(ErrorMessage = "Obrigatório inserir a senha.")]
         public string SenhaComp { get; set; }
+
+        [Required]
+        [Compare("SenhaComp", ErrorMessage = "A senha e a confirmação não coincidem.")]
+        public string ConfirmarSenhaComp { get; set; }
 
     }
 }

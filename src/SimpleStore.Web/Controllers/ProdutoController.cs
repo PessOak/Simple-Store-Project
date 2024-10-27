@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleStore.Web.Repositories;
 using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers

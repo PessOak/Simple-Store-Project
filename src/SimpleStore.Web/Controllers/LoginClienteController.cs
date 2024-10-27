@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
 using System.Threading.Tasks;
