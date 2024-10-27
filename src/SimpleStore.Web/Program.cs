@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SimpleStore.Web.Data;
 using SimpleStore.Web.Repositories;
+using SimpleStore.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.AddSingleton<MySqlContext>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ProdutoRepository>();
+builder.Services.AddScoped<CadastroClienteRepository>();
+builder.Services.AddScoped<ProdutoService>();
 
 var app = builder.Build();
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
