@@ -1,22 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Models;
-using System.Diagnostics;
+using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class CadastroClienteController : Controller
+  public class CadastroClienteController : Controller
     {
-        private readonly ILogger<CadastroClienteController> _logger;
 
-        public CadastroClienteController(ILogger<CadastroClienteController> logger)
+        private readonly CadastroClienteService _cadastroService;
+
+        public CadastroClienteController (CadastroClienteService cadastroClienteService)
         {
-            _logger = logger;
+            _cadastroService = cadastroClienteService;
         }
-
+        
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create(Comprador comprador)
+        {
+
+            if (ModelState.IsValid)
+            {
+                await _cadastroService.CriarComprador(comprador);
+                return RedirectToAction("Index", "LoginCliente");
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
