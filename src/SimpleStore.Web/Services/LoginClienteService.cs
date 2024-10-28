@@ -12,10 +12,15 @@ namespace SimpleStore.Web.Services
             _loginclienteRepository = loginclienteRepository;
         }
 
-        public async Task<bool> ValidarLogin(string email, string senha)
+        public async Task<Comprador> ObterComprador(string email, string senha)
         {
-            var comprador = await _loginclienteRepository.ObterCompradorPorEmailESenha(email, senha);
-            return comprador != null; // Retorna true se o comprador foi encontrado
+            return await _loginclienteRepository.ObterCompradorPorEmailESenha(email, senha);
+        }
+
+        public bool ValidarLogin(Comprador Comprador)
+        {
+            return Comprador != null; // Retorna true se o comprador foi encontrado
+            // Se necessário adicionar mais validações aqui
         }
     }
 }

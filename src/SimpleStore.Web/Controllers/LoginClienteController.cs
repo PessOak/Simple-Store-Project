@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
-using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
@@ -29,10 +30,30 @@ namespace SimpleStore.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool loginValido = await _loginclienteService.ValidarLogin(login.Email, login.Senha);
+                var Comprador = await _loginclienteService.ObterComprador(login.Email, login.Senha);
+                bool loginValido = _loginclienteService.ValidarLogin(Comprador);
 
                 if (loginValido)
                 {
+                    // Pode adicionar propriedades para a sessão do usuário aqui
+                    var claims = new List<Claim>
+                    {
+                        new(ClaimTypes.Name, Comprador.NomeComp),
+                        new(ClaimTypes.NameIdentifier, Comprador.CpfComp),
+                        new(ClaimTypes.Email, Comprador.EmailComp)
+                    };
+
+                    var identity = new ClaimsIdentity(claims, "login");
+                    ClaimsPrincipal principal = new(identity);
+
+                    var props = new AuthenticationProperties
+                    {
+                        AllowRefresh = true,
+                        ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(12),
+                        IsPersistent = true,
+                    };
+
+                    await HttpContext.SignInAsync(principal, props);
                     return RedirectToAction("Index","Produto"); // Redireciona para a página desejada após o login
                 }
                 else
@@ -41,6 +62,12 @@ namespace SimpleStore.Web.Controllers
                 }
             }
 
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
             return RedirectToAction("Index");
         }
 
