@@ -8,10 +8,17 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 
 |ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
 |------|-----------------------------------------|----|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência|  |  |
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio     |  |  |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas |  |  |
-
+|RF-001|O sistema deve permitir o cadastro de compradores, com informações como nome, e-mail, telefone, e endereço para entrega.|||
+|RF-002|O sistema deve permitir o cadastro de fornecedores, incluindo informações do negócio como nome, localização (cidade/bairro), horário de funcionamento, e WhatsApp Business para contato.|  |  |
+|RF-003|O sistema deve permitir que os fornecedores adicionem, editem e removam produtos, incluindo detalhes como nome, descrição, preço, imagens e estoque disponível.|  |  |
+|RF-004|O sistema deve ter um filtro de pesquisa de produtos para o comprador.|  |  |
+|RF-005|O sistema deve permitir que os compradores adicionem produtos ao carrinho de compras e visualizem o total da compra.|  |  |
+|RF-006|Após a conclusão da compra, o sistema deve fornecer um botão/link "Combinar Entrega" que redireciona o comprador ao WhatsApp Business do vendedor para combinar o pagamento e a entrega ou retirada do produto.|  |  |
+|RF-007|O sistema deve fornecer aos fornecedores relatórios simplificados de vendas.|  |  |
+|RF-008|O cliente deve ser capaz de visualizar seu perfil.|||
+|RF-009|O cliente deve ser capaz de fazer login.||
+|RF-0010|A plataforma deve oferecer suporte ao cliente pelo e-mail.|  |  |
+|RF-0011|O sistema deve permitir que os compradores avaliem produtos após a compra, ajudando a criar uma comunidade confiável e transparente.|  |  |
 
 # Instruções de acesso
 
