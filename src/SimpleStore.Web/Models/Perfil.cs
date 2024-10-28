@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleStore.Web.Models
 {
@@ -24,7 +23,6 @@ namespace SimpleStore.Web.Models
         [Compare("SenhaComp", ErrorMessage = "A senha e a confirmação não coincidem.")]
         public string ConfirmarSenhaComp { get; set; }
 
-        [KeyAttribute]
         public EnderecoComprador EnderecoComprador { get; set; }
 
         public FoneComprador FoneComprador { get; set; }

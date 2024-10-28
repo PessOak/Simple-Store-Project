@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SimpleStore.Web.Repositories;
-using SimpleStore.Web.Services;
 using SimpleStore.Web.Models;
+using SimpleStore.Web.Services;
+using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
@@ -17,7 +17,7 @@ namespace SimpleStore.Web.Controllers
         // Carrega a página de perfil com detalhes completos
         public IActionResult Index()
         {
-            var cpf = User.Identity.Name;  // Assume-se que o CPF é mantido como identificador na autenticação
+            var cpf = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var Perfil = _perfilService.BuscarDadosComprador(cpf);
             if (Perfil == null)
             {
@@ -26,27 +26,13 @@ namespace SimpleStore.Web.Controllers
             return View(Perfil);
         }
 
-        // Exibe a página de edição de perfil
-        //[HttpGet]
-        //public IActionResult Editar()
-        //{
-        //    var cpf = User.Identity.Name;
-        //    var Comprador = _perfilService.BuscarDadosComprador(cpf);
-        //    if (Comprador == null)
-        //    {
-        //        return View("Error"); // Adicione uma view de erro adequada
-        //    }
-        //    return View(Comprador);
-        //}
-
-        // Processa as alterações no perfil
         [HttpPost]
-        public IActionResult Editar(Comprador dados)
+        public async Task<IActionResult> Editar(Perfil perfil)
         {
             if (ModelState.IsValid)
             {
-                var AtualizarDados = _perfilService.AtualizarDadosComprador(dados);
-                if (AtualizarDados)
+                var sucesso = await _perfilService.AtualizarDadosComprador(perfil);
+                if (sucesso)
                 {
                     return RedirectToAction("Index", new { mensagem = "Perfil atualizado com sucesso!" });
                 }
@@ -55,7 +41,7 @@ namespace SimpleStore.Web.Controllers
                     ModelState.AddModelError("", "Falha ao atualizar o perfil.");
                 }
             }
-            return View(dados);
+            return View(perfil);
         }
     }
 }
