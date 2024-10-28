@@ -15,6 +15,7 @@ namespace SimpleStore.Web.Repositories
 
         public async Task<IEnumerable<Comprador>> ListarClientes()
         {
+           
             var consulta = "SELECT * FROM comprador";
 
             using (var connection = _context.CreateConnection())

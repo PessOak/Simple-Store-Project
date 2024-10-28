@@ -1,85 +1,53 @@
-﻿using Dapper;
-using SimpleStore.Web.Controllers;
-using SimpleStore.Web.Data;
-using SimpleStore.Web.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using Dapper;
+using SimpleStore.Web.Data;
+using SimpleStore.Web.Models; // Substitua pelo namespace correto dos seus modelos
 
-public class PerfilRepository : IPerfilRepository
+public class PerfilRepository
 {
-    private readonly IDbConnection _dbConnection;
+    private readonly MySqlContext _context;
 
-    public PerfilRepository(IDbConnection dbConnection)
+    public PerfilRepository(MySqlContext context)
     {
-        _dbConnection = dbConnection;
+        _context = context;
     }
 
-    // Busca detalhes completos do comprador
-    public PerfilViewModel GetCompradorDetails(string cpf)
+    public Perfil BuscarDadosComprador(string cpf)
     {
-        var sql = @"
-            SELECT * FROM Comprador WHERE CpfComp = @Cpf;
-            SELECT * FROM EnderecoComprador WHERE CpfComp = @Cpf;
-            SELECT * FROM FoneComprador WHERE CpfComp = @Cpf;
-        ";
+        using (var connection = _context.CreateConnection()) {
+            // Busca os dados principais do comprador
+            var perfil = connection.Query<Perfil>("SELECT * FROM Comprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
 
-        using (var multipleResults = _dbConnection.QueryMultiple(sql, new { Cpf = cpf }))
+        if (perfil != null)
         {
-            var comprador = multipleResults.Read<Comprador>().FirstOrDefault();
-            if (comprador != null)
-            {
-                comprador.EnderecoCompradores = multipleResults.Read<EnderecoComprador>().ToList();
-                comprador.FoneCompradores = multipleResults.Read<FoneComprador>().ToList();
-            }
+            // Busca os endereços associados ao comprador
+            perfil.EnderecoComprador = connection.Query<EnderecoComprador>("SELECT * FROM EnderecoComprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
 
-            return comprador != null ? new PerfilViewModel
-            {
-                CpfComp = comprador.CpfComp,
-                NomeComp = comprador.NomeComp,
-                EmailComp = comprador.EmailComp,
-                LogradouroEndereco = comprador.EnderecoCompradores.FirstOrDefault()?.LogradouroEndereco,
-                NumeroEndereco = comprador.EnderecoCompradores.FirstOrDefault()?.NumeroEndereco,
-                BairroEndereco = comprador.EnderecoCompradores.FirstOrDefault()?.BairroEndereco,
-                CidadeEndereco = comprador.EnderecoCompradores.FirstOrDefault()?.CidadeEndereco,
-                EstadoEndereco = comprador.EnderecoCompradores.FirstOrDefault()?.EstadoEndereco,
-                CepEndereco = comprador.EnderecoCompradores.FirstOrDefault()?.CepEndereco,
-                FoneComp = comprador.FoneCompradores.FirstOrDefault()?.FoneComp
-            } : null;
+            // Busca os telefones associados ao comprador
+            perfil.FoneComprador = connection.Query<FoneComprador>("SELECT * FROM FoneComprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
         }
+
+        return perfil;
+    }
     }
 
-    // Atualiza detalhes do comprador
-    public bool UpdateCompradorDetails(PerfilViewModel model)
+    public bool AtualizarDadosComprador(Comprador dados)
     {
-        var sqlComprador = "UPDATE Comprador SET NomeComp = @Nome, EmailComp = @Email WHERE CpfComp = @Cpf;";
-        var sqlEndereco = "UPDATE EnderecoComprador SET LogradouroEndereco = @Logradouro, NumeroEndereco = @Numero, BairroEndereco = @Bairro, CidadeEndereco = @Cidade, EstadoEndereco = @Estado, CepEndereco = @Cep WHERE CpfComp = @Cpf;";
-        var sqlFone = "UPDATE FoneComprador SET FoneComp = @Fone WHERE CpfComp = @Cpf;";
+        //var sqlcomprador = "update comprador set nomecomp = @nomecomp, emailcomp = @emailcomp where cpfcomp = @cpfcomp;";
+        //var sqlendereco = "update enderecocomprador set logradouroendereco = @logradouroendereco, numeroendereco = @numeroendereco, bairroendereco = @bairroendereco, cidadeendereco = @cidadeendereco, estadoendereco = @estadoendereco, cependereco = @cependereco where cpfcomp = @cpfcomp;";
+        //var sqlfone = "update fonecomprador set fonecomp = @fonecomp where cpfcomp = @cpfcomp;";
 
-        using (var transaction = _dbConnection.BeginTransaction())
-        {
-            _dbConnection.Execute(sqlComprador, new { Nome = model.NomeComp, Email = model.EmailComp, Cpf = model.CpfComp }, transaction);
-            _dbConnection.Execute(sqlEndereco, new
-            {
-                Logradouro = model.LogradouroEndereco,
-                Numero = model.NumeroEndereco,
-                Bairro = model.BairroEndereco,
-                Cidade = model.CidadeEndereco,
-                Estado = model.EstadoEndereco,
-                Cep = model.CepEndereco,
-                Cpf = model.CpfComp
-            }, transaction);
-            _dbConnection.Execute(sqlFone, new { Fone = model.FoneComp, Cpf = model.CpfComp }, transaction);
+        //using (var transaction = _context.begintransaction())
+        //{
+        //    _context.execute(sqlcomprador, dados, transaction);
+        //    _context.execute(sqlendereco, dados, transaction);
+        //    _context.execute(sqlfone, dados, transaction);
 
-            transaction.Commit();
-            return true;
-        }
+        //    transaction.commit();
+        //    return true;
+        //}
+        return true;
     }
-}
-
-public interface IPerfilRepository
-{
-    PerfilViewModel GetCompradorDetails(string cpf);
-    bool UpdateCompradorDetails(PerfilViewModel model);
 }

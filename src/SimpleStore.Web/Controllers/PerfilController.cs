@@ -3,57 +3,59 @@ using SimpleStore.Web.Repositories;
 using SimpleStore.Web.Services;
 using SimpleStore.Web.Models;
 
-public class PerfilController : Controller
+namespace SimpleStore.Web.Controllers
 {
-    private readonly IDatabaseService _databaseService;
-
-    public PerfilController(IDatabaseService databaseService)
+    public class PerfilController : Controller
     {
-        _databaseService = databaseService;
-    }
+        private readonly PerfilService _perfilService;
 
-    // Carrega a página de perfil com detalhes completos
-    [HttpGet]
-    public IActionResult Index()
-    {
-        var cpf = User.Identity.Name;  // Assume-se que o CPF é mantido como identificador na autenticação
-        var perfilViewModel = _databaseService.GetCompradorDetails(cpf);
-        if (perfilViewModel == null)
+        public PerfilController(PerfilService perfilService)
         {
-            return View("Error"); // Adicione uma view de erro adequada
+            _perfilService = perfilService;
         }
-        return View(perfilViewModel);
-    }
 
-    // Exibe a página de edição de perfil
-    [HttpGet]
-    public IActionResult Editar()
-    {
-        var cpf = User.Identity.Name;
-        var perfilViewModel = _databaseService.GetCompradorDetails(cpf);
-        if (perfilViewModel == null)
+        // Carrega a página de perfil com detalhes completos
+        public IActionResult Index()
         {
-            return View("Error"); // Adicione uma view de erro adequada
-        }
-        return View(perfilViewModel);
-    }
-
-    // Processa as alterações no perfil
-    [HttpPost]
-    public IActionResult Editar(PerfilViewModel model)
-    {
-        if (ModelState.IsValid)
-        {
-            var updateResult = _databaseService.UpdateCompradorDetails(model);
-            if (updateResult)
+            var cpf = User.Identity.Name;  // Assume-se que o CPF é mantido como identificador na autenticação
+            var Perfil = _perfilService.BuscarDadosComprador(cpf);
+            if (Perfil == null)
             {
-                return RedirectToAction("Index", new { mensagem = "Perfil atualizado com sucesso!" });
+                return View("Error"); // Adicione uma view de erro adequada
             }
-            else
-            {
-                ModelState.AddModelError("", "Falha ao atualizar o perfil.");
-            }
+            return View(Perfil);
         }
-        return View(model);
+
+        // Exibe a página de edição de perfil
+        //[HttpGet]
+        //public IActionResult Editar()
+        //{
+        //    var cpf = User.Identity.Name;
+        //    var Comprador = _perfilService.BuscarDadosComprador(cpf);
+        //    if (Comprador == null)
+        //    {
+        //        return View("Error"); // Adicione uma view de erro adequada
+        //    }
+        //    return View(Comprador);
+        //}
+
+        // Processa as alterações no perfil
+        [HttpPost]
+        public IActionResult Editar(Comprador dados)
+        {
+            if (ModelState.IsValid)
+            {
+                var AtualizarDados = _perfilService.AtualizarDadosComprador(dados);
+                if (AtualizarDados)
+                {
+                    return RedirectToAction("Index", new { mensagem = "Perfil atualizado com sucesso!" });
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Falha ao atualizar o perfil.");
+                }
+            }
+            return View(dados);
+        }
     }
 }

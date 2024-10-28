@@ -16,6 +16,8 @@ builder.Services.AddScoped<CadastroClienteService>();
 builder.Services.AddScoped<ProdutoService>();
 builder.Services.AddScoped<LoginClienteRepository>();
 builder.Services.AddScoped<LoginClienteService>();
+builder.Services.AddScoped<PerfilService>();
+builder.Services.AddScoped<PerfilRepository>();
 
 var app = builder.Build();
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

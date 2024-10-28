@@ -1,19 +1,22 @@
 ﻿using SimpleStore.Web.Models;
 using SimpleStore.Web.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using SimpleStore.Web.Services;
 
-public class PerfilService : IPerfilService
+namespace SimpleStore.Web.Services {
+public class PerfilService
 {
-    private readonly IPerfilRepository _perfilRepository;
+    private readonly PerfilRepository _perfilRepository;
 
-    public PerfilService(IPerfilRepository perfilRepository)
+    public PerfilService(PerfilRepository perfilRepository)
     {
         _perfilRepository = perfilRepository;
     }
 
     // Método para obter os detalhes do comprador
-    public PerfilViewModel GetCompradorDetails(string cpf)
+    public Perfil BuscarDadosComprador(string cpf)
     {
-        var perfil = _perfilRepository.GetCompradorDetails(cpf);
+        var perfil = _perfilRepository.BuscarDadosComprador(cpf);
         if (perfil == null)
         {
             throw new Exception("Perfil não encontrado.");
@@ -22,24 +25,26 @@ public class PerfilService : IPerfilService
     }
 
     // Método para atualizar os detalhes do comprador
-    public bool UpdateCompradorDetails(PerfilViewModel model)
+    public bool AtualizarDadosComprador(Comprador dados)
     {
-        if (string.IsNullOrWhiteSpace(model.NomeComp))
+        if (string.IsNullOrWhiteSpace(dados.NomeComp))
         {
             throw new ArgumentException("O nome não pode ser vazio.");
         }
 
-        var updateResult = _perfilRepository.UpdateCompradorDetails(model);
-        if (!updateResult)
+        var AtualizarDados = _perfilRepository.AtualizarDadosComprador(dados);
+        if (!AtualizarDados)
         {
             throw new Exception("Falha ao atualizar o perfil.");
         }
-        return updateResult;
+        return AtualizarDados;
     }
 }
 
-public interface IPerfilService
-{
-    PerfilViewModel GetCompradorDetails(string cpf);
-    bool UpdateCompradorDetails(PerfilViewModel model);
+//public interface PerfilService
+//{
+//    Comprador BuscarComprador(string cpf);
+//    bool AtualizarDadosComprador(Comprador dados);
+//}
+
 }
