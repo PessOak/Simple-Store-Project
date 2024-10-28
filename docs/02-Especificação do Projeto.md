@@ -81,11 +81,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-04| O sistema deve ter um filtro de pesquisa de produtos para o comprador.  | ALTA |
 |RF-05| O sistema deve permitir que os compradores adicionem produtos ao carrinho de compras e visualizem o total da compra.  | ALTA |
 |RF-06| Após a conclusão da compra, o sistema deve fornecer um botão/link "Combinar Entrega" que redireciona o comprador ao WhatsApp Business do vendedor para combinar o pagamento e a entrega ou retirada do produto.  | ALTA |
-|RF-07| O sistema deve enviar aos fornecedores relatórios simplificados de vendas, incluindo informações sobre produtos mais vendidos, faturamento, e estoque, para ajudar na gestão de seu negócio.  | ALTA |
-|RF-08| A plataforma deve permitir que os administradores gerenciem compradores e compradores, incluindo a aprovação de novos cadastros, moderação de avaliações, e gerenciamento de conteúdo. | ALTA |
-|RF-09| A plataforma deve ter um painel administrativo que permita a monitoração das transações realizadas e resolução de disputas, quando necessário.   | MÉDIA |
-|RF-10| A plataforma deve oferecer suporte ao cliente, incluindo FAQs e comunicação por e-mail.   | MÉDIA |
-|RF-11| O sistema deve permitir que os compradores avaliem produtos e fornecedores após a compra, ajudando a criar uma comunidade confiável e transparente. | BAIXA |
+|RF-07| O sistema deve enviar aos fornecedores relatórios simplificados de vendas.  | ALTA |
+|RF-08| O cliente deve ser capaz de visualizar seu perfil. | ALTA |
+|RF-09| O cliente deve ser capaz de alterar seus dados.   | ALTA|
+|RF-10| A plataforma deve oferecer suporte ao cliente pelo e-mail.   | MÉDIA |
+|RF-11| O sistema deve permitir que os compradores avaliem produtos após a compra, ajudando a criar uma comunidade confiável e transparente. | BAIXA |
 
 
 ### Requisitos não Funcionais
