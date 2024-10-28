@@ -83,7 +83,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-06| Após a conclusão da compra, o sistema deve fornecer um botão/link "Combinar Entrega" que redireciona o comprador ao WhatsApp Business do vendedor para combinar o pagamento e a entrega ou retirada do produto.  | ALTA |
 |RF-07| O sistema deve enviar aos fornecedores relatórios simplificados de vendas.  | ALTA |
 |RF-08| O cliente deve ser capaz de visualizar seu perfil. | ALTA |
-|RF-09| O cliente deve ser capaz de alterar seus dados.   | ALTA|
+|RF-09| O cliente deve ser capaz de fazer login.   | ALTA|
 |RF-10| A plataforma deve oferecer suporte ao cliente pelo e-mail.   | MÉDIA |
 |RF-11| O sistema deve permitir que os compradores avaliem produtos após a compra, ajudando a criar uma comunidade confiável e transparente. | BAIXA |
 
