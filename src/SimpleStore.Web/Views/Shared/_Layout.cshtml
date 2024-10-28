@@ -30,11 +30,16 @@
 
 <body>
 
+    @{
+        var currentAction = ViewContext.RouteData.Values["action"].ToString();
+        var currentController = ViewContext.RouteData.Values["controller"].ToString();
+    }
+
     <!-- Cabeçalho da página -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg custom-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../Home/Index.cshtml">
+                <a class="navbar-brand" href="/">
                     <img class="logotipo d-inline-block align-text-top" src="~/img/logotipo/simplestore-grande.png"
                          width="150" alt="Logo">
                 </a>
@@ -55,14 +60,30 @@
                     }
 
                     <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="btn-group nav-item me-3 ri-lx align-items-center">
-                            <a class="link-entrar nav-link ps-0 cor-branca-hover" data-bs-toggle="dropdown"
-                               data-bs-auto-close="true" aria-expanded="false">Entrar</a>
-                            <ul class="dropdown-menu rounded-1 bg-dropdown">
-                                <li><a class="nav-link link-comprador p-3" href="#">Comprador</a></li>
-                                <li><a class="nav-link link-vendedor p-3" href="#">Vendedor</a></li>
-                            </ul>
-                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+                            <li class="nav-item me-4 link">
+                                <span class="text-white">Bem-vindo, @User.Identity.Name</span>
+                            </li>
+                            <li class="nav-item me-4 link">
+                                <a class="link-entrar nav-link ps-0 cor-branca-hover" href="/Perfil">Perfil</a>
+                            </li>
+                            <li>
+                                <a class="text-white nav-link ps-0" href="/LoginCliente/Logout">Sair</a>
+                            </li>
+                        }
+                        else
+                        {
+                            @if (currentAction != "Login" && currentController != "LoginCliente")
+                            {
+                                <li class="btn-group nav-item me-3 ri-lx align-items-center">
+                                    <a class="link-entrar nav-link ps-0 cor-branca-hover"
+                                    href="/LoginCliente">Entrar</a>
+                                </li>
+                            }
+                        }
 
                         <li class="nav-item me-3">
                             <a class="nav-link cor-verde-hover" href="#">
