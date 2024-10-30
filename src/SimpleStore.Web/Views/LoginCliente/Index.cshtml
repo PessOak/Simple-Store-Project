@@ -13,18 +13,18 @@
 </head>
 
 
- <div class="fundo">
+ <div class="fundo-branco">
     <form class="form-fundo" asp-action="Login" method="post">
 
         <h2>Acesse a sua conta</h2>
 
         <div class="form-floating mt-4 mb-3">
-            <input asp-for="Email" class="form-control" placeholder="Digite seu e-mail" />
+            <input asp-for="Email" class="tamanho-input form-control" placeholder="Digite seu e-mail" />
             <label asp-for="Email">E-mail</label>
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-floating mb-3">
-            <input asp-for="Senha" type="password" class="form-control" placeholder="Digite sua senha" />
+            <input asp-for="Senha" type="password" class="form-control tamanho-input" placeholder="Digite sua senha" />
             <label asp-for="Senha">Senha</label>
             <span asp-validation-for="Senha" class="text-danger"></span>
         </div>
@@ -37,7 +37,7 @@
         <div class="text-center mt-5">
             <p>
                 <i class=" ri-question-line" width="200px"></i> Não tem uma conta?
-                <a class="email" href="../cadastro_cliente/cadastro_cliente.html">
+                <a class="email" href="/CadastroCliente">
                     CADASTRAR.
                 </a>
             </p>

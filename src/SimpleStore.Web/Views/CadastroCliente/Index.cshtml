@@ -17,7 +17,7 @@
 <div class="fundo-branco">
     <form asp-action="Create" method="post" id="form-endereco">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <h2>Crie uma conta</h2>
+        <h2 class="mt-2">Crie uma conta</h2>
 
         <div class="form-floating mt-4 mb-3">
             <input asp-for="EmailComp" type="email" class="form-control" id="email" placeholder="exemplo@gmail.com" />
@@ -99,13 +99,13 @@
         </div>
 
         <div class="text-center mt-2">
-            <button type="submit" class="btn btn-primary btn-padrao btn-lg">Criar Conta</button>
+            <button type="submit" class="btn btn-primary btn-padrao btn-lg mt-5">Criar Conta</button>
         </div>
 
         <div class="text-center mt-4">
             <p class="mb-0">
                 <i class="ri-question-line" width="200px"></i> Já possui uma conta?
-                <a asp-action="LoginCliente" class="email">ENTRAR.</a>
+                <a class="email" href="/LoginCliente">ENTRAR.</a>
             </p>
         </div>
     </form>
