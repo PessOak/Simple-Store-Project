@@ -3,14 +3,9 @@ using SimpleStore.Web.Repositories;
 
 namespace SimpleStore.Web.Services
 {
-    public class CadastroClienteService
+    public class CadastroClienteService(CadastroClienteRepository cadastroClienteRepository)
     {
-        private readonly CadastroClienteRepository _cadastroClienteRepository;
-
-        public CadastroClienteService (CadastroClienteRepository cadastroClienteRepository)
-        {
-            _cadastroClienteRepository = cadastroClienteRepository;
-        }
+        private readonly CadastroClienteRepository _cadastroClienteRepository = cadastroClienteRepository;
 
         public async Task<IEnumerable<Comprador>> ListarClientes()
         {
@@ -19,16 +14,16 @@ namespace SimpleStore.Web.Services
             return cadastroCliente;
         }
 
-        public async Task<Comprador> ListarClientesPorCpf(int CpfComp)
+        public async Task<Comprador> ListarClientesPorCpf(int cpf)
         {
-            var cpfCliente = await _cadastroClienteRepository.ListarClientesPorCpf(CpfComp);
+            var cpfCliente = await _cadastroClienteRepository.ListarClientesPorCpf(cpf);
 
             return cpfCliente;
         }
 
-        public async Task<Comprador> CriarComprador(Comprador Comprador)
+        public async Task<Comprador> CriarComprador(Comprador comprador)
         {
-            return await _cadastroClienteRepository.CriarComprador(Comprador);
+            return await _cadastroClienteRepository.CriarComprador(comprador);
         }
     }
 }

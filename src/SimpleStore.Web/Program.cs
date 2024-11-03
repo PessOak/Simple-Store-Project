@@ -9,8 +9,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddControllersWithViews();
 
+// Configuração do Entity Framework Core com MySQL
+builder.Services.AddMySqlDbContext(builder.Configuration);
+
+// Configuração do Dapper
+builder.Services.AddDapper(builder.Configuration);
+
 // Adicionar o MySqlContext como um serviço
-builder.Services.AddSingleton<MySqlContext>();
 
 builder.Services.AddScoped<ProdutoRepository>();
 builder.Services.AddScoped<CadastroClienteRepository>();

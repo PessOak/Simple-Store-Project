@@ -4,16 +4,11 @@ using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers
 {
-  public class CadastroClienteController : Controller
+    public class CadastroClienteController(CadastroClienteService cadastroClienteService) : Controller
     {
 
-        private readonly CadastroClienteService _cadastroService;
+        private readonly CadastroClienteService _cadastroService = cadastroClienteService;
 
-        public CadastroClienteController (CadastroClienteService cadastroClienteService)
-        {
-            _cadastroService = cadastroClienteService;
-        }
-        
         public IActionResult Index()
         {
             return View();

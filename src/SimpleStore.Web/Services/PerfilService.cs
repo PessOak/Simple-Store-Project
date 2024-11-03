@@ -1,28 +1,17 @@
 ﻿using SimpleStore.Web.Models;
 using SimpleStore.Web.Repositories;
-using Microsoft.AspNetCore.Mvc;
-using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Services
 {
-    public class PerfilService
+    public class PerfilService(PerfilRepository perfilRepository)
     {
-        private readonly PerfilRepository _perfilRepository;
-
-        public PerfilService(PerfilRepository perfilRepository)
-        {
-            _perfilRepository = perfilRepository;
-        }
+        private readonly PerfilRepository _perfilRepository = perfilRepository;
 
         // Método para obter os detalhes do comprador
         public Perfil BuscarDadosComprador(string cpf)
         {
             var perfil = _perfilRepository.BuscarDadosComprador(cpf);
-            if (perfil == null)
-            {
-                throw new Exception("Perfil não encontrado.");
-            }
-            return perfil;
+            return perfil ?? throw new Exception("Perfil não encontrado.");
         }
 
         public async Task<bool> AtualizarDadosComprador(Perfil perfil)

@@ -5,25 +5,20 @@ using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class PerfilController : Controller
+    public class PerfilController(PerfilService perfilService) : Controller
     {
-        private readonly PerfilService _perfilService;
-
-        public PerfilController(PerfilService perfilService)
-        {
-            _perfilService = perfilService;
-        }
+        private readonly PerfilService _perfilService = perfilService;
 
         // Carrega a página de perfil com detalhes completos
         public IActionResult Index()
         {
             var cpf = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var Perfil = _perfilService.BuscarDadosComprador(cpf);
-            if (Perfil == null)
+            var perfil = _perfilService.BuscarDadosComprador(cpf);
+            if (perfil == null)
             {
                 return View("Error"); // Adicione uma view de erro adequada
             }
-            return View(Perfil);
+            return View(perfil);
         }
 
         [HttpPost]

@@ -1,29 +1,18 @@
 ﻿using Dapper;
-using SimpleStore.Web.Controllers;
-using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace SimpleStore.Web.Repositories
 {
-    public class LoginClienteRepository
+    public class LoginClienteRepository(IDbConnection dbConnection)
     {
-        private readonly MySqlContext _context;
-
-        public LoginClienteRepository(MySqlContext context)
-        {
-            _context = context;
-        }
+        private readonly IDbConnection _dbConnection = dbConnection;
 
         public async Task<Comprador> ObterCompradorPorEmailESenha(string email, string senha)
         {
             var query = "SELECT * FROM comprador WHERE EmailComp = @Email AND SenhaComp = @Senha";
 
-            using (var connection = _context.CreateConnection())
-            {
-                return await connection.QuerySingleOrDefaultAsync<Comprador>(query, new { Email = email, Senha = senha });
-            }
+            return await _dbConnection.QuerySingleOrDefaultAsync<Comprador>(query, new { Email = email, Senha = senha });
         }
     }
 }

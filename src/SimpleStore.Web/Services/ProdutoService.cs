@@ -3,14 +3,9 @@ using SimpleStore.Web.Repositories;
 
 namespace SimpleStore.Web.Services
 {
-    public class ProdutoService
+    public class ProdutoService(ProdutoRepository produtoRepository)
     {
-        private readonly ProdutoRepository _produtoRepository;
-
-        public ProdutoService (ProdutoRepository produtoRepository)
-        {
-            _produtoRepository = produtoRepository;
-        }
+        private readonly ProdutoRepository _produtoRepository = produtoRepository;
 
         public async Task<IEnumerable<Produto>> ListarProdutos()
         {
@@ -19,9 +14,9 @@ namespace SimpleStore.Web.Services
             return produtos;
         }
 
-        public async Task<Produto> ListarProdutoPorId(int Id)
+        public async Task<Produto> ListarProdutoPorId(int id)
         {
-            var produto = await _produtoRepository.ListarProdutoPorId(Id);
+            var produto = await _produtoRepository.ListarProdutoPorId(id);
 
             return produto;
         }

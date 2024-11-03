@@ -6,14 +6,9 @@ using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class LoginClienteController : Controller
+    public class LoginClienteController(LoginClienteService loginClienteService) : Controller
     {
-        private readonly LoginClienteService _loginclienteService;
-
-        public LoginClienteController(LoginClienteService loginclienteService)
-        {
-            _loginclienteService = loginclienteService;
-        }
+        private readonly LoginClienteService _loginClienteService = loginClienteService;
 
         public IActionResult Index()
         {
@@ -30,17 +25,17 @@ namespace SimpleStore.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var Comprador = await _loginclienteService.ObterComprador(login.Email, login.Senha);
-                bool loginValido = _loginclienteService.ValidarLogin(Comprador);
+                var comprador = await _loginClienteService.ObterComprador(login.Email, login.Senha);
+                bool loginValido = _loginClienteService.ValidarLogin(comprador);
 
                 if (loginValido)
                 {
                     // Pode adicionar propriedades para a sessão do usuário aqui
                     var claims = new List<Claim>
                     {
-                        new(ClaimTypes.Name, Comprador.NomeComp),
-                        new(ClaimTypes.NameIdentifier, Comprador.CpfComp),
-                        new(ClaimTypes.Email, Comprador.EmailComp)
+                        new(ClaimTypes.Name, comprador.NomeComp),
+                        new(ClaimTypes.NameIdentifier, comprador.CpfComp),
+                        new(ClaimTypes.Email, comprador.EmailComp)
                     };
 
                     var identity = new ClaimsIdentity(claims, "login");
@@ -54,7 +49,7 @@ namespace SimpleStore.Web.Controllers
                     };
 
                     await HttpContext.SignInAsync(principal, props);
-                    return RedirectToAction("Index","Produto"); // Redireciona para a página desejada após o login
+                    return RedirectToAction("Index", "Produto"); // Redireciona para a página desejada após o login
                 }
                 else
                 {

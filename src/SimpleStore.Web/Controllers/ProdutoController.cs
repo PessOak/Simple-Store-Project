@@ -3,15 +3,11 @@ using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class ProdutoController : Controller
+    public class ProdutoController(ProdutoService produtoService) : Controller
     {
 
-        private readonly ProdutoService _produtoService;
+        private readonly ProdutoService _produtoService = produtoService;
 
-        public ProdutoController(ProdutoService produtoService)
-        {
-            _produtoService = produtoService;
-        }
         // Action que exibe todos os produtos
         public async Task<IActionResult> Index()
         {
@@ -24,7 +20,7 @@ namespace SimpleStore.Web.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var produto = await _produtoService.ListarProdutoPorId(id);
-            
+
             if (produto == null)
             {
                 return NotFound();

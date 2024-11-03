@@ -2,14 +2,9 @@
 
 namespace SimpleStore.Web.Controllers
 {
-    public class LoginFornecedorController : Controller
+    public class LoginFornecedorController(ILogger<LoginFornecedorController> logger) : Controller
     {
-        private readonly ILogger<LoginFornecedorController> _logger;
-
-        public LoginFornecedorController(ILogger<LoginFornecedorController> logger)
-        {
-            _logger = logger;
-        }
+        private readonly ILogger<LoginFornecedorController> _logger = logger;
 
         public IActionResult Index()
         {
