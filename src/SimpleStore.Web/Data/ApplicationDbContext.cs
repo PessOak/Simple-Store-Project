@@ -9,29 +9,17 @@ namespace SimpleStore.Web.Data
     public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
         // O nome da propriedade deve ser exatamente igual está mapeado na tabela no banco de dados
-        public DbSet<Produto> Administrador { get; set; }
-        
-        public DbSet<Produto> Carrinho { get; set; }
-        
-        public DbSet<Produto> EnderecoComprador { get; set; }
-        
-        public DbSet<Produto> EnderecoFornecedor { get; set; }
-        
-        public DbSet<Produto> FoneComprador { get; set; }
-        
-        public DbSet<Produto> FoneFornecedor { get; set; }
-        
-        public DbSet<Produto> Fornecedor { get; set; }
-        
-        public DbSet<Produto> Login { get; set; }
-        
-        public DbSet<Produto> Pedido { get; set; }
-        
-        public DbSet<Produto> Perfil { get; set; }
-        
+        public DbSet<Administrador> Administrador { get; set; }
+        public DbSet<Carrinho> Carrinho { get; set; }
+        public DbSet<Comprador> Comprador { get; set; }
+        public DbSet<EnderecoComprador> EnderecoComprador { get; set; }
+        public DbSet<EnderecoFornecedor> EnderecoFornecedor { get; set; }
+        public DbSet<FoneComprador> FoneComprador { get; set; }
+        public DbSet<FoneFornecedor> FoneFornecedor { get; set; }
+        public DbSet<Fornecedor> Fornecedor { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
         public DbSet<Produto> Produto { get; set; }
-        
-        public DbSet<Produto> ProdutoCarrinho { get; set; }
+        public DbSet<ProdutoCarrinho> ProdutoCarrinho { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
