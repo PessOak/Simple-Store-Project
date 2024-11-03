@@ -11,6 +11,9 @@ namespace SimpleStore.Web.Models
         [ForeignKey("Fornecedor")]
         public int IdForn { get; set; }
 
+        [ForeignKey("Carrinho")]
+        public int? IdCarrinho { get; set; }
+
         [Required(ErrorMessage ="Obrigatório informar o nome do produto.")]
         public string NomeProd { get; set; }
 
@@ -28,5 +31,8 @@ namespace SimpleStore.Web.Models
 
         [Required(ErrorMessage = "Obrigatório enviar uma imagem do produto.")]
         public string ImgUrl { get; set; }  // Caminho ou URL da imagem
+
+        // Propriedade de navegação
+        public Carrinho Carrinho { get; set; } // Navegação para o carrinho
     }
 }
