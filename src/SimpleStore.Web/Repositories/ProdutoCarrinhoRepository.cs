@@ -7,33 +7,45 @@ using System.Data;
 
 namespace SimpleStore.Web.Repositories
 {
-    public class ProdutoCarrinhoRepository(IDbConnection dbConnection)
+    public class ProdutoCarrinhoRepository
     {
-        private readonly IDbConnection _dbConnection = dbConnection;
+        private readonly IDbConnection _dbConnection;
+
+        public ProdutoCarrinhoRepository(IDbConnection dbConnection)
+        {
+            _dbConnection = dbConnection;
+        }
 
         public async Task AdicionarProdutoAoCarrinho(int idCarrinho, int produtoId, int quantidade)
         {
             var query = @"
-                INSERT INTO ProdutoCarrinho (IdCarrinho, IdProd, QuantProdCarrinho)
-                VALUES (@IdCarrinho, @IdProd, @QuantProdCarrinho)
-                ON DUPLICATE KEY UPDATE 
-                    QuantProdCarrinho = QuantProdCarrinho + @QuantProdCarrinho;";
+            INSERT INTO ProdutoCarrinho (IdCarrinho, IdProd, QuantProdCarrinho)
+            VALUES (@IdCarrinho, @IdProd, @QuantProdCarrinho)
+            ON DUPLICATE KEY UPDATE 
+                QuantProdCarrinho = QuantProdCarrinho + @QuantProdCarrinho;";
 
             await _dbConnection.ExecuteAsync(query, new
             {
-                IdCarrinho = idCarrinho,  // Placeholder para o ID do carrinho (ex.: carrinho do usuário logado)
+                IdCarrinho = idCarrinho,
                 IdProd = produtoId,
                 QuantProdCarrinho = quantidade
             });
 
-            var valorProduto = await _dbConnection.QuerySingleOrDefaultAsync<float>("SELECT PrecoProd FROM Produto WHERE IdProd = @IdProd", new { IdProd = produtoId });
-            // trocar float por DECIMAL para não dar erros quando calcular a soma de TotalCarrinho
+            // Atualizar o valor total do carrinho
+            var valorProduto = await _dbConnection.QuerySingleOrDefaultAsync<decimal>("SELECT PrecoProd FROM Produto WHERE IdProd = @IdProd", new { IdProd = produtoId });
             var queryUpdateCarrinho = @"
-                UPDATE Carrinho
-                SET ValorTotalCarrinho = ValorTotalCarrinho + @valorProduto
-                WHERE IdCarrinho = @IdCarrinho";
+            UPDATE Carrinho
+            SET ValorTotalCarrinho = ValorTotalCarrinho + @valorProduto
+            WHERE IdCarrinho = @IdCarrinho";
 
             await _dbConnection.ExecuteAsync(queryUpdateCarrinho, new { IdCarrinho = idCarrinho, valorProduto });
         }
+
+        public async Task<int> ObterIdCarrinhoUsuarioAsync(string cpfComp)
+        {
+            var query = "SELECT IdCarrinho FROM Carrinho WHERE CpfComp = @CpfComp";
+            return await _dbConnection.QuerySingleOrDefaultAsync<int>(query, new { CpfComp = cpfComp });
+        }
     }
+
 }

@@ -1,31 +1,50 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Services;
+using System.Security.Claims;
 
-namespace SimpleStore.Web.Controllers
+public class ProdutoController : Controller
 {
-    public class ProdutoController(ProdutoService produtoService) : Controller
+    private readonly ProdutoService _produtoService;
+    private readonly ProdutoCarrinhoService _produtoCarrinhoService;
+
+    public ProdutoController(ProdutoService produtoService, ProdutoCarrinhoService produtoCarrinhoService)
     {
+        _produtoService = produtoService;
+        _produtoCarrinhoService = produtoCarrinhoService;
+    }
 
-        private readonly ProdutoService _produtoService = produtoService;
+    public async Task<IActionResult> Index()
+    {
+        var produtos = await _produtoService.ListarProdutos();
+        return View(produtos);
+    }
 
-        // Action que exibe todos os produtos
-        public async Task<IActionResult> Index()
+    public async Task<IActionResult> Details(string nome)
+    {
+        var produto = await _produtoService.ListarProdutoPeloNome(nome);
+
+        if (produto == null)
         {
-            var produtos = await _produtoService.ListarProdutos();
-
-            return View(produtos);
+            return NotFound();
         }
 
-        // Action para exibir os detalhes de um produto
-        public async Task<IActionResult> Details(string nome)
-        {
-            var produto = await _produtoService.ListarProdutoPeloNome(nome);
+        // Recuperar o CPF do usuário logado usando Claims (caso esteja utilizando login baseado em CPF)
+        var cpfComp = HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (produto == null)
-            {
-                return NotFound();
-            }
-            return View(produto);
+        if (string.IsNullOrEmpty(cpfComp))
+        {
+            // Se o CPF não for encontrado, redirecionar para produtos/home 
+            return RedirectToAction("Index", "CadastroCliente");
         }
+
+        // Agora com o CPF podemos buscar o carrinho do usuário no banco
+        var idCarrinho = await _produtoCarrinhoService.ObterIdCarrinhoUsuarioAsync(cpfComp);
+
+        if (idCarrinho != 0)
+        {
+            produto.IdCarrinho = idCarrinho;
+        }
+
+        return View(produto);
     }
 }
