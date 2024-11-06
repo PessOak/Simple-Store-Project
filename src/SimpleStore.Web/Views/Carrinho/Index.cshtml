@@ -1,0 +1,81 @@
+
+
+
+
+<main class="container mt-5 pt-5">
+    <h2 class="text-center my-4">Seu Carrinho de Compras</h2>
+
+    <div class="row">
+        <!-- Lista de Produtos no Carrinho -->
+        <div class="col-md-8">
+            <!-- Produto 1 -->
+            <div class="cart-item mb-4 p-3 border rounded">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="~/imgs/sapato.jpeg" alt="Produto" class="img-fluid">
+                    </div>
+                    <div class="col-5">
+                        <h5 class="mb-1">Sapato social masculino</h5>
+                        <p class="mb-1 text-muted">Sapato Social bico redondo de amarrar em couro bovino Legítimo.</p>
+                        <button class="btn btn-outline-danger btn-sm">Remover</button>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control quantidade" value="1" min="1">
+                    </div>
+                    <div class="col-2 text-end">
+                        <p class="mb-0"><strong data-preco="299.99">R$ 299,99</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 2 -->
+            <div class="cart-item mb-4 p-3 border rounded">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="~/imgs/gravata.jpeg" alt="Produto" class="img-fluid">
+                    </div>
+                    <div class="col-5">
+                        <h5 class="mb-1">Gravata 100% seda estampada</h5>
+                        <p class="mb-1 text-muted">Tecido Principal: 100% Seda. Forro: 100% Poliéster. Largura 8cm </p>
+                        <button class="btn btn-outline-danger btn-sm">Remover</button>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control quantidade" value="1" min="1">
+                    </div>
+                    <div class="col-2 text-end">
+                        <p class="mb-0"><strong data-preco="129.99">R$ 129,99</strong></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 3 -->
+            <div class="cart-item mb-4 p-3 border rounded">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <img src="~/imgs/cinto.jpeg" alt="Produto" class="img-fluid">
+                    </div>
+                    <div class="col-5">
+                        <h5 class="mb-1">Cinto masculino de couro marrom</h5>
+                        <p class="mb-1 text-muted">Cor castanho. Fivela em metal</p>
+                        <button class="btn btn-outline-danger btn-sm">Remover</button>
+                    </div>
+                    <div class="col-2">
+                        <input type="number" class="form-control quantidade" value="1" min="1">
+                    </div>
+                    <div class="col-2 text-end">
+                        <p class="mb-0"><strong data-preco="159.99">R$ 159,99</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Resumo do Pedido -->
+        <div class="col-md-4">
+            <div class="cart-summary p-3 border rounded">
+                <h4>Resumo do Pedido</h4>
+                <hr>
+                <p>Subtotal: <strong id="subtotal">R$ 299,97</strong></p>
+                <p>Frete: <strong>R$ 19,99</strong></p>
+                <p><strong>Total: R$ <span id="total">319,96</span></strong></p>
+                <button class="btn btn-success btn-lg w-100 mt-3">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+</main>
