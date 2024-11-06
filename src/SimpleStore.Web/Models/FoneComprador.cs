@@ -11,5 +11,7 @@ namespace SimpleStore.Web.Models
         [Required(ErrorMessage = "Obrigatório informar o telefone.")]
         [Phone(ErrorMessage = "Número de telefone inválido.")]
         public string FoneComp { get; set; }
+
+        //  public Blog Blog { get; set; } tem que mapear pra ajuda o entity senao nao faz diferença
     }
 }

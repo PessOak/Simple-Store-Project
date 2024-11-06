@@ -5,7 +5,7 @@ namespace SimpleStore.Web.Models
 {
     public class Produto
     {
-        [KeyAttribute]
+        [Key]
         public int IdProd { get; set; }
 
         [ForeignKey("Fornecedor")]

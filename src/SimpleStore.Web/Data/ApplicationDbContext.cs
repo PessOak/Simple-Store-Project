@@ -27,12 +27,20 @@ namespace SimpleStore.Web.Data
 
             modelBuilder.Entity<FoneComprador>().HasNoKey();
             modelBuilder.Entity<FoneFornecedor>().HasNoKey();
-            modelBuilder.Entity<ProdutoCarrinho>().HasNoKey();
+            // modelBuilder.Entity<ProdutoCarrinho>().HasNoKey();
 
             modelBuilder.Entity<Carrinho>()
                 .HasMany(c => c.Produtos)
                 .WithOne(p => p.Carrinho)
                 .HasForeignKey(p => p.IdCarrinho); // Especifica que a chave estrangeira em Produto é IdCarrinho
+
+
+            // Pedido.Where(p => p.IdPedido == 5).Single(); // é uma query equivalente ao SELECT * FROM pedido WHERE pedido = 5
+
+            // var carrinho = Carrinho.Where(p => p.IdCarrinho == 10).Single();
+
+            // carrinho.Produtos
+
         }
     }
 }

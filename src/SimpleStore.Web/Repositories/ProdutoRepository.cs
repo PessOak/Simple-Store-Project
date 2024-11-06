@@ -17,14 +17,14 @@ namespace SimpleStore.Web.Repositories
 
             //return await _dbConnection.QueryAsync<Produto>(query);
 
-            return await _context.Produto.ToListAsync();
+            return await _context.Produto.OrderBy(p => p.NomeProd).ToListAsync();
         }
 
-        public async Task<Produto> ListarProdutoPorId(int id)
+        public async Task<Produto> ListarProdutoPeloNome(string nome)
         {
-            var query = "SELECT * FROM produto WHERE IdProd = @Id";
+            var query = "SELECT * FROM produto WHERE NomeProd = @Nome";
 
-            return await _dbConnection.QuerySingleOrDefaultAsync<Produto>(query, new { Id = id });
+            return await _dbConnection.QuerySingleOrDefaultAsync<Produto>(query, new { Nome = nome });
         }
     }
 }

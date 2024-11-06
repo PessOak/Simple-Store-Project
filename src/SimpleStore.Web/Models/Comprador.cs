@@ -4,7 +4,7 @@ namespace SimpleStore.Web.Models
 {
     public class Comprador
     {
-        [KeyAttribute]
+        [Key]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve ter 11 caracteres.")]
         public string CpfComp { get; set; }
 

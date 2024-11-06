@@ -14,9 +14,9 @@ namespace SimpleStore.Web.Services
             return produtos;
         }
 
-        public async Task<Produto> ListarProdutoPorId(int id)
+        public async Task<Produto> ListarProdutoPeloNome(string nome)
         {
-            var produto = await _produtoRepository.ListarProdutoPorId(id);
+            var produto = await _produtoRepository.ListarProdutoPeloNome(nome);
 
             return produto;
         }

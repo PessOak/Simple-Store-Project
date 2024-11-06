@@ -6,7 +6,7 @@ namespace SimpleStore.Web.Models
     public class EnderecoComprador
     {
 
-        [KeyAttribute]
+        [Key]
         public int IdEndereco { get; set; }
 
         [ForeignKey("Comprador")]

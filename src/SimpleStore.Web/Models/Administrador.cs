@@ -4,7 +4,7 @@ namespace SimpleStore.Web.Models
 {
     public class Administrador
     {
-        [KeyAttribute]
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage ="Obrigatório informar o nome")]

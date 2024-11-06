@@ -1,7 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleStore.Web.Models
 {
+    [PrimaryKey(nameof(IdCarrinho), nameof(IdProd))]
     public class ProdutoCarrinho
     {
         [ForeignKey("Carrinho")]   

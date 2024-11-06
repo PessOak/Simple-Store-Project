@@ -17,9 +17,9 @@ namespace SimpleStore.Web.Controllers
         }
 
         // Action para exibir os detalhes de um produto
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(string nome)
         {
-            var produto = await _produtoService.ListarProdutoPorId(id);
+            var produto = await _produtoService.ListarProdutoPeloNome(nome);
 
             if (produto == null)
             {

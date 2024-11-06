@@ -5,7 +5,7 @@ namespace SimpleStore.Web.Models
 {
     public class Carrinho
     {
-        [KeyAttribute]
+        [Key]
         public int IdCarrinho { get; set; }
 
         [ForeignKey("Comprador")]
@@ -14,6 +14,6 @@ namespace SimpleStore.Web.Models
         public float ValorTotalCarrinho { get; set; }
 
         // Propriedade para armazenar os produtos no carrinho
-        public ICollection<Produto> Produtos { get; set; } = new List<Produto>(); // Lista inicializada
+        public ICollection<Produto> Produtos { get; set; } = new List<Produto>(); // Lista inicializada, nesse caso está usando o entity
     }
 }

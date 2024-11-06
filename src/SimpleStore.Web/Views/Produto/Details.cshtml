@@ -18,8 +18,7 @@
                     {
                         <img src="@Model.ImgUrl" alt="@Model.NomeProd" class="product-image" />
                     }
-                    <img src="~/img/2.jpg" alt="Imagem 1" class="imagem-carrossel mb-2" onclick="changeImage(this)"
-                        id="img1">
+                    <img src="~/img/2.jpg" alt="Imagem 1" class="imagem-carrossel mb-2" onclick="changeImage(this)" id="img1">
 
                     <img src="1.jpg" alt="Imagem 2" class="imagem-carrossel mb-2" onclick="changeImage(this)">
 
@@ -38,24 +37,9 @@
         <div class="col-4 coluna-info-produtos ps-0" id="info-produto">
             <h2 class="">@Model.NomeProd</h2>
             <p><span>R$ @Model.PrecoProd.ToString("C")</span></p>
-            <p>
-                @Model.DescProd
-            </p>
             <ul>
                 <li>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequatur harum quidem facilis
-                    rerum,
-                    quia, aut minima aliquid earum voluptatibus beatae maxime tenetur architecto aperiam doloribus
-                    soluta
-                    culpa deleniti voluptate!
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur voluptatem autem quisquam quod
-                    at
-                    labore dignissimos? Reprehenderit assumenda excepturi dolorem.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, ab.
+                    @Model.DescProd
                 </li>
             </ul>
         </div>
@@ -65,33 +49,39 @@
 
             <div>
                 <h3>Finalizar Pedido</h3>
-                <div class="text-center mt-3">
-                    <label for="product-quantity" class="form-label">Quantidade</label>
 
-                    <div class="input-group flex-nowrap btn-quantidade">
-                        <button class="btn btn-outline-secondary btn-menos" type="button" onclick="decreaseQuantity()">
-                            -
-                        </button>
+                <form asp-action="AdicionarAoCarrinho" asp-controller="ProdutoCarrinho" method="post">
+                    <input type="hidden" name="produtoId" value="@Model.IdProd" />
 
-                        <input type="number" id="product-quantity" class="form-control text-center quantidade-produto"
-                            value="1" min="1" aria-label="Quantidade de produtos"
-                            style="appearance: none; -moz-appearance: textfield;">
+                    <div class="text-center mt-3">
+                        <label for="product-quantity" class="form-label">Quantidade</label>
 
-                        <button class="btn btn-outline-secondary btn-mais" type="button"
-                            onclick="increaseQuantity()">+</button>
+                        <div class="input-group flex-nowrap btn-quantidade">
+                            <button class="btn btn-outline-secondary btn-menos" type="button" onclick="decreaseQuantity()">
+                                -
+                            </button>
+
+                            <input type="number" id="product-quantity" class="form-control text-center quantidade-produto" name="quantidade"
+                                value="1" min="1" aria-label="Quantidade de produtos"
+                                style="appearance: none; -moz-appearance: textfield;">
+
+                            <button class="btn btn-outline-secondary btn-mais" type="button"
+                                onclick="increaseQuantity()">+</button>
+                        </div>
                     </div>
-                </div>
 
-                <p class="frete"><strong>Frete:</strong> Combinar com o vendedor</p>
+                    <p class="frete"><strong>Frete:</strong> Combinar com o vendedor</p>
 
-                <p><strong>Prazo de entrega:</strong> Combinar com o vendedor</p>
+                    <p><strong>Prazo de entrega:</strong> Combinar com o vendedor</p>
 
-                <div class="d-flex justify-content-center">
-                    <button class="btn text-white mt-2 btn-padrao">
-                        Adicionar ao
-                        carrinho
-                    </button>
-                </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn text-white mt-2 btn-padrao">
+                            Adicionar ao 
+                            carrinho
+                        </button>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>

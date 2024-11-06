@@ -25,6 +25,8 @@ builder.Services.AddScoped<LoginClienteRepository>();
 builder.Services.AddScoped<LoginClienteService>();
 builder.Services.AddScoped<PerfilService>();
 builder.Services.AddScoped<PerfilRepository>();
+builder.Services.AddScoped<ProdutoCarrinhoService>();
+builder.Services.AddScoped<ProdutoCarrinhoRepository>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {

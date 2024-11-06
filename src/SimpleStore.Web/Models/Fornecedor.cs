@@ -4,7 +4,7 @@ namespace SimpleStore.Web.Models
 {
     public class Fornecedor
     {
-        [KeyAttribute]
+        [Key]
         public int IdForn { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o documento.")]

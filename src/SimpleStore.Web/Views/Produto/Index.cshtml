@@ -5,7 +5,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Nome</th>
             <th>Preço</th>
             <th>Detalhes</th>
@@ -15,10 +14,9 @@
         @foreach (var produto in Model)
         {
             <tr>
-                <td>@produto.IdProd</td>
                 <td>@produto.NomeProd</td>
                 <td>@produto.PrecoProd</td>
-                <td><a href="@Url.Action("Details", new { id = produto.IdProd })">Visualizar</a></td>
+                <td><a href="@Url.Action("Details", new { nome = produto.NomeProd })">Visualizar</a></td>
             </tr>
         }
     </tbody>
