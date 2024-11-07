@@ -16,15 +16,14 @@
 
                     @if (!string.IsNullOrEmpty(Model.ImgUrl))
                     {
-                        <img src="@Model.ImgUrl" alt="@Model.NomeProd" class="product-image" />
+                        <img src="@Model.ImgUrl" alt="@Model.NomeProd" class="product-image" onclick="changeImage(this)" id="img1">
                     }
                     <img src="~/img/2.jpg" alt="Imagem 1" class="imagem-carrossel mb-2" onclick="changeImage(this)" id="img1">
 
-                    <img src="1.jpg" alt="Imagem 2" class="imagem-carrossel mb-2" onclick="changeImage(this)">
+                    <img src="~/img/2.jpg" alt="Imagem 2" class="imagem-carrossel mb-2" onclick="changeImage(this)">
 
-                    <img src="3.jpg" alt="Imagem 3" class="imagem-carrossel mb-2" onclick="changeImage(this)">
+                    <img src="~/img/2.jpg" alt="Imagem 3" class="imagem-carrossel mb-2" onclick="changeImage(this)">
 
-                    <img src="4.jpg" alt="Imagem 3" class="imagem-carrossel" onclick="changeImage(this)">
                 </div>
 
                 <div class="col-9" id="main-img">
