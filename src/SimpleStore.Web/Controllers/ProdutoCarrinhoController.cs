@@ -31,7 +31,7 @@ namespace SimpleStore.Web.Controllers
             if (idCarrinho == 0)
             {
                 // Se o carrinho não existir, criar um novo carrinho ou exibir erro MUDAR REDIRECIONAMENTO
-                return RedirectToAction("Details", "Produto");
+                return RedirectToAction("Index", "Produto");
             }
 
             // Adicionar o produto ao carrinho
