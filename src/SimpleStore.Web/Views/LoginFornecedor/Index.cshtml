@@ -1,45 +1,50 @@
-﻿@section Scripts {
+﻿@{
+    ViewData["HideSearchBar"] = true;
+}
+
+@section Scripts {
     <script src="~/js/LoginFornecedor.js" asp-append-version="true"></script>
 }
 
-@{
-    ViewData["HideSearchBar"] = true;
-}
+@model LoginFornecedor
 
 <head>
     <link rel="stylesheet" href="Index.css">
 </head>
 
 <div class="fundo-branco">
-            <form class="form-fundo" action="/submit" method="post">
+    <form class="form-fundo" asp-action="Login" method="post">
 
-                <h2>Acesse a sua conta como Fornecedor</h2>
+        <h2>Acesse a sua conta como Fornecedor</h2>
 
-                <div class="form-floating mt-4 mb-3">
-                    <input type="email" class="form-control" id="" placeholder="examplo@@gmail.com">
-                    <label for="">E-mail</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="" placeholder="@@123exemplo">
-                    <label for="">Senha</label>
-                </div>
-
-                <div class="text-center mt-5">
-                    <button type="button" class="btn btn-primary btn-padrao btn-lg">Entrar</button>
-                </div>
-
-                <div class="text-center mt-5">
-                    <p>
-                        <i class=" ri-question-line" width="200px"></i> Não tem uma conta?
-                        <a class="email" href="mailto:jessica.calm.dev@hotmail.com">
-                            CADASTRAR.
-                        </a>
-                    </p>
-
-                </div>
-
-            </form>
+        <div class="form-floating mt-4 mb-3">
+            <input asp-for="Email" class="tamanho-input form-control" placeholder="Digite seu e-mail" />
+            <label asp-for="Email">E-mail</label>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
+        <div class="form-floating mb-3">
+            <input asp-for="Senha" type="password" class="form-control tamanho-input" placeholder="Digite sua senha" />
+            <label asp-for="Senha">Senha</label>
+            <span asp-validation-for="Senha" class="text-danger"></span>
+        </div>
+
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-primary btn-padrao btn-lg">Entrar</button>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <p>
+                <i class=" ri-question-line" width="200px"></i> Não tem uma conta?
+                <a class="email" href="/CadastroFornecedor">
+                    CADASTRAR.
+                </a>
+            </p>
+
+        </div>
+    </form>
+
+</div>
 
 <script src="Index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
