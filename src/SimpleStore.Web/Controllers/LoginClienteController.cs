@@ -6,19 +6,19 @@ using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class LoginClienteController(LoginClienteService loginClienteService) : Controller
+    public class LoginClienteController : Controller
     {
-        private readonly LoginClienteService _loginClienteService = loginClienteService;
+        private readonly LoginClienteService _loginClienteService;
+
+        public LoginClienteController(LoginClienteService loginClienteService)
+        {
+            _loginClienteService = loginClienteService;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
-
-        //public IActionResult Login()
-        //{
-        //    return View();
-        //}
 
         [HttpPost]
         public async Task<IActionResult> Login(Login login)
@@ -30,7 +30,6 @@ namespace SimpleStore.Web.Controllers
 
                 if (loginValido)
                 {
-                    // Pode adicionar propriedades para a sessão do usuário aqui
                     var claims = new List<Claim>
                     {
                         new(ClaimTypes.Name, comprador.NomeComp),
@@ -44,7 +43,7 @@ namespace SimpleStore.Web.Controllers
                     var props = new AuthenticationProperties
                     {
                         AllowRefresh = true,
-                        ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(12),
+                        ExpiresUtc = DateTime.UtcNow.AddHours(12),
                         IsPersistent = true,
                     };
 
@@ -53,11 +52,11 @@ namespace SimpleStore.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "CPF ou senha inválidos."); // Mensagem de erro
+                    ViewBag.ErrorMessage = "Email ou senha inválidos."; // Define a mensagem de erro para a View
                 }
             }
 
-            return RedirectToAction("Index");
+            return View("Index", login); // Mantém o usuário na página de login com erros
         }
 
         public async Task<IActionResult> Logout()
@@ -65,6 +64,5 @@ namespace SimpleStore.Web.Controllers
             await HttpContext.SignOutAsync();
             return RedirectToAction("Index");
         }
-
     }
 }

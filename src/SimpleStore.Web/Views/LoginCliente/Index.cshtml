@@ -3,7 +3,7 @@
 }
 
 @section Scripts {
-        <script src="~/js/LoginCliente.js" asp-append-version="true"></script>
+    <script src="~/js/LoginCliente.js" asp-append-version="true"></script>
 }
 
 @model Login
@@ -12,10 +12,18 @@
     <link rel="stylesheet" href="Index.css">
 </head>
 
- <div class="fundo-branco">
+<div class="fundo-branco">
     <form class="form-fundo" asp-action="Login" method="post">
 
         <h2>Acesse a sua conta</h2>
+
+        <!-- Exibe uma mensagem de erro geral -->
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
 
         <div class="form-floating mt-4 mb-3">
             <input asp-for="Email" class="tamanho-input form-control" placeholder="Digite seu e-mail" />
@@ -30,22 +38,20 @@
 
         <div class="text-center mt-5">
             <button type="submit" class="btn btn-primary btn-padrao btn-lg">Entrar</button>
-
         </div>
 
         <div class="text-center mt-5">
             <p>
-                <i class=" ri-question-line" width="200px"></i> Não tem uma conta?
+                <i class="ri-question-line" width="200px"></i> Não tem uma conta?
                 <a class="email" href="/CadastroCliente">
                     CADASTRAR.
                 </a>
             </p>
-
         </div>
     </form>
- </div>
+</div>
 
 <script src="Index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>

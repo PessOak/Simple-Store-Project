@@ -6,22 +6,22 @@ using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class LoginFornecedorController(LoginFornecedorService loginFornecedorService) : Controller
+    public class LoginFornecedorController : Controller
     {
-        private readonly LoginFornecedorService _loginFornecedorService = loginFornecedorService;
+        private readonly LoginFornecedorService _loginFornecedorService;
+
+        public LoginFornecedorController(LoginFornecedorService loginFornecedorService)
+        {
+            _loginFornecedorService = loginFornecedorService;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
 
-        //public IActionResult Login()
-        //{
-        //    return View();
-        //}
-
         [HttpPost]
-        public async Task<IActionResult> Login(Login login)
+        public async Task<IActionResult> Login(LoginFornecedor login)
         {
             if (ModelState.IsValid)
             {
@@ -30,7 +30,6 @@ namespace SimpleStore.Web.Controllers
 
                 if (loginValido)
                 {
-                    // Pode adicionar propriedades para a sessão do usuário aqui
                     var claims = new List<Claim>
                     {
                         new(ClaimTypes.Name, fornecedor.NomeForn),
@@ -44,20 +43,20 @@ namespace SimpleStore.Web.Controllers
                     var props = new AuthenticationProperties
                     {
                         AllowRefresh = true,
-                        ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(12),
+                        ExpiresUtc = DateTime.UtcNow.AddHours(12),
                         IsPersistent = true,
                     };
 
                     await HttpContext.SignInAsync(principal, props);
-                    return RedirectToAction("Index", "Produto"); // Redireciona para a página desejada após o login
+                    return RedirectToAction("Index", "Produto");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Documento ou senha inválidos."); // Mensagem de erro
+                    ViewBag.ErrorMessage = "Email ou senha inválidos.";
                 }
             }
 
-            return RedirectToAction("Index");
+            return View("Index", login); // Mantém o usuário na página de login com erros
         }
 
         public async Task<IActionResult> Logout()
@@ -65,6 +64,5 @@ namespace SimpleStore.Web.Controllers
             await HttpContext.SignOutAsync();
             return RedirectToAction("Index");
         }
-
     }
 }
