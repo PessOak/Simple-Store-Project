@@ -1,0 +1,10 @@
+﻿.btn {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #3B1B88;
+    font-weight: 600;
+    color: #ffff
+}
+
+.btn:hover {
+    background-color: #65BAA9;
+}
