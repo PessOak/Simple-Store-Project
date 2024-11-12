@@ -41,6 +41,11 @@ namespace SimpleStore.Web.Data
 
             // carrinho.Produtos
 
+            modelBuilder.Entity<ProdutoCarrinho>()
+                .HasOne(pc => pc.Produto)
+                .WithMany()
+                .HasForeignKey(pc => pc.IdProd); // Relacionamento entre ProdutoCarrinho e Produto
+
         }
     }
 }
