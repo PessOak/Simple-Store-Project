@@ -82,7 +82,7 @@ namespace SimpleStore.Web.Services
         // Atualizar o valor total do carrinho
         private void AtualizarValorTotal(Carrinho carrinho)
         {
-            carrinho.ValorTotalCarrinho = carrinho.Produtos.Sum(p => p.QuantProdCarrinho * p.Produto.Preco);
+            carrinho.ValorTotalCarrinho = carrinho.Produtos.Sum(p => p.QuantProdCarrinho * p.Produto.PrecoProd);
         }
     }
 }
