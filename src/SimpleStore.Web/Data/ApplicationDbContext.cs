@@ -39,7 +39,9 @@ namespace SimpleStore.Web.Data
 
             // var carrinho = Carrinho.Where(p => p.IdCarrinho == 10).Single();
 
-            // carrinho.Produtos
+            // Configura chave composta e relacionamento para ProdutoCarrinho
+            modelBuilder.Entity<ProdutoCarrinho>()
+                .HasKey(pc => new { pc.IdCarrinho, pc.IdProd });
 
             modelBuilder.Entity<ProdutoCarrinho>()
                 .HasOne(pc => pc.Produto)
