@@ -15,5 +15,9 @@ namespace SimpleStore.Web.Models
 
         public int QuantProdCarrinho { get; set; }
 
+        // Propriedades de navegação
+        public Carrinho Carrinho { get; set; } // Propriedade de navegação para Carrinho
+        public Produto Produto { get; set; }    // Propriedade de navegação para Produto
+
     }
 }
