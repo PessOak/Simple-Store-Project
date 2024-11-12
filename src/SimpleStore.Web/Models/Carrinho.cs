@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleStore.Web.Models
@@ -14,6 +15,6 @@ namespace SimpleStore.Web.Models
         public float ValorTotalCarrinho { get; set; }
 
         // Propriedade para armazenar os produtos no carrinho
-        public ICollection<Produto> Produtos { get; set; } = new List<Produto>(); // Lista inicializada, nesse caso está usando o entity
+        public ICollection<ProdutoCarrinho> Produtos { get; set; } = new List<ProdutoCarrinho>();
     }
 }
