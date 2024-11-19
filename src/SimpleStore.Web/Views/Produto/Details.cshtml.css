@@ -1,5 +1,4 @@
-﻿
-h2,
+﻿h2,
 h3 {
     color: #1E1E1E;
     font-weight: 650;
@@ -98,19 +97,32 @@ span {
 }
 
 .btn-mais,
+.btn-menos,
 .quantidade-produto {
     font-weight: 600;
     color: #1E1E1E;
 }
 
-    .btn-mais:hover,
-    .btn-menos:hover {
-        background-color: #3B1B88;
-    }
+.btn-mais:hover,
+.btn-menos:hover {
+    background-color: #3B1B88;
+    color: #ffff
+}
 
 .frete {
     margin-top: 1.5rem;
 }
+
+#btn-nota {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #3B1B88 !important;
+    font-weight: 600;
+    color: #ffff
+}
+
+    #btn-nota:hover {
+        background-color: #65BAA9 !important;
+    }
 
 /* Estilo para o contêiner de miniaturas */
 .col-3.d-flex.flex-column {
