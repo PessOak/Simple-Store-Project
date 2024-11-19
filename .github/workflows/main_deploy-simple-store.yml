@@ -15,14 +15,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Get directory
-        run: ls
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
+
+      - name: Get directory
+        run: ls
+
+      - name: Navigate
+        run: cd "src/SimpleStore.Web
+
+      - name: Get directory
+        run: ls
+
+      - name: Build with dotnet
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
