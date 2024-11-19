@@ -21,17 +21,11 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Get directory
-        run: ls
-
-      - name: Navigate
-        run: cd "src/SimpleStore.Web"
-
-      - name: Get directory
-        run: ls
-
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: |
+         cd "src/SimpleStore.Web"
+         ls
+         dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
