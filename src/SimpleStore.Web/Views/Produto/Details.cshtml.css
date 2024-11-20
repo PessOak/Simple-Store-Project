@@ -103,11 +103,11 @@ span {
     color: #1E1E1E;
 }
 
-.btn-mais:hover,
-.btn-menos:hover {
-    background-color: #3B1B88;
-    color: #ffff
-}
+    .btn-mais:hover,
+    .btn-menos:hover {
+        background-color: #3B1B88;
+        color: #ffff
+    }
 
 .frete {
     margin-top: 1.5rem;
@@ -122,6 +122,18 @@ span {
 
     #btn-nota:hover {
         background-color: #65BAA9 !important;
+    }
+
+a {
+    color: #ffff;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    background-color: #65BAA9;
+    text-decoration: none;
+}
+
+    a:hover {
+        background-color: #3B1B88;
     }
 
 /* Estilo para o contêiner de miniaturas */

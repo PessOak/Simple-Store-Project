@@ -8,7 +8,7 @@ namespace SimpleStore.Web.Models
         public int IdForn { get; set; }
 
         [Required(ErrorMessage = "Obrigatório informar o documento.")]
-        [StringLength(14, MinimumLength = 11, ErrorMessage = "O documento deve ter entre 11 (cpf) e 14 (cnpj) caracteres.")]
+        [StringLength(14, MinimumLength = 14, ErrorMessage = "O documento deve ter 14 caracteres.")]
         public string DocForn { get; set; }
 
         [Required(ErrorMessage ="Obrigatório informar o nome.")]
@@ -23,6 +23,9 @@ namespace SimpleStore.Web.Models
 
         [Required(ErrorMessage = "Obrigatório informar o link do Whatsapp para contato.")]
         public string LinkZapForn { get; set; }
+
+        [Required(ErrorMessage = "Obrigatório informar a razão social.")]
+        public string RazaoSocialForn { get; set; }
     }
 
 }
