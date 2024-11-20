@@ -1,0 +1,39 @@
+﻿.form-floating>label {
+    left: unset;
+}
+
+/* Main - Conteúdo principal da página */
+.fundo-branco {
+    width: 40%;
+    height: 100%;
+    padding: 2rem 4rem 4rem 4rem;
+    margin: 0 auto 0;
+    background-color: #ffff;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px 4px #00000035;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+/* configuração botão principal grande*/
+.btn-padrao {
+    padding: 0.6rem 4rem;
+    border: 0;
+    background-color: #3b1b88;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.btn-padrao:hover {
+    border: 0;
+    background-color: #65BAA9;
+
+}
+
+/* Configuração final do conteúdo principal da página */

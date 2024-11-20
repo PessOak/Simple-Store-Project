@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
 
 namespace SimpleStore.Web.Repositories
