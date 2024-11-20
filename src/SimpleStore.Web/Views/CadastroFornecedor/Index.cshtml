@@ -1,11 +1,12 @@
 ﻿@model Fornecedor
 
 @section Scripts {
-    <script src="~/js/CadastroFornecedor.js" asp-append-version="true"></script>
+    <script defer src="~/js/CadastroFornecedor.js" asp-append-version="true"></script>
 }
 
 @{
     ViewData["HideSearchBar"] = true;
+    var successMessage = TempData["SuccessMessage"] as string;
 }
 
 <head>
@@ -15,12 +16,31 @@
 
 <!-- Conteúdo principal da página -->
 <div class="fundo-branco">
-    <form asp-action="Create" method="post" id="form-endereco">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="NovoFornecedor" method="post" id="form-endereco">
+
         <h2 class="mt-3 mb-4">Crie uma conta como Fornecedor</h2>
 
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(successMessage))
+        {
+            <div class="alert alert-success" id="successMessage">
+                @successMessage
+            </div>
+
+            <script>
+                setTimeout(() => {
+                    window.location.href = '@Url.Action("Index", "LoginCliente")';
+                }, 2000);
+            </script>
+        }
+
         <div class="form-floating mb-3">
-            <input asp-for="EmailForn" type="email" class="form-control" id="email" placeholder="exemplo@gmail.com" />
+            <input asp-for="EmailForn" type="email" class=" form-control" id="email" placeholder="exemplo@gmail.com" />
             <label for="email">E-mail</label>
             <span asp-validation-for="EmailForn" class="text-danger"></span>
         </div>
@@ -53,54 +73,54 @@
         </div>
 
         <div class="form-floating mt-3 mb-3">
-            <input asp-for="DocForn" type="text" class="form-control" id="cnpj" placeholder="99999999999999" />
+            <input asp-for="DocForn" type="number" class="form-control" id="cnpj" placeholder="99999999999999" />
             <label for="cnpj">CNPJ</label>
             <span asp-validation-for="DocForn" class="text-danger"></span>
         </div>
 
         <div class="form-floating mt-3 mb-3">
-            <input asp-for ="LinkZapForn" type="text" class="form-control" id="link-wpp" placeholder="@@link aqui" />
+            <input asp-for="LinkZapForn" type="text" class="form-control" id="link-wpp" placeholder="@@link aqui" />
             <label for="link-wpp">Link do WhatsApp</label>
-            <p class="link-informativo"> Link que direcionará o cliente para o WhatsApp Business</p>
-            <span asp-validation-for="LinkZapForn" class"text-danger"></span>
+            <p class="link-informativo mb-0"> Link que direcionará o cliente para o WhatsApp Business</p>
+            <span asp-validation-for="LinkZapForn" class="text-danger"></span>
         </div>
-       
-        <h5 class="mt-5">Endereço Comercial</h5>
+
+        @* <h5 class="mt-5">Endereço</h5>
         <div class="col-md-12 col-lg-12">
-            <div class="form-floating mt-3 mb-3">
-                <input type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
-                       onblur="buscarEndereco()" onkeyup="verificarEnter(event)" required />
-                <label for="cep">CEP</label>
-            </div>
-
-            <div class="row">
-                <div class="form-floating col-9">
-                    <input type="text" class="form-control" id="logradouro" disabled
-                           placeholder="Rua Nossa do Carmo" readonly />
-                    <label for="logradouro">Logradouro</label>
-                </div>
-
-                <div class="form-floating col-3">
-                    <input type="text" class="form-control" id="numero" placeholder="Número" />
-                    <label for="numero">Número</label>
-                </div>
-
-                <div class="form-floating mt-3 mb-3 col-12">
-                    <input type="text" class="form-control" id="bairro" placeholder="Bairro" disabled readonly />
-                    <label for="bairro">Bairro</label>
-                </div>
-
-                <div class="form-floating col-9">
-                    <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled readonly />
-                    <label for="cidade">Cidade</label>
-                </div>
-
-                <div class="form-floating col-3">
-                    <input type="text" class="form-control" id="estado" placeholder="Estado" disabled readonly />
-                    <label for="estado">Estado</label>
-                </div>
-            </div>
+        <div class="form-floating mt-3 mb-3">
+        <input type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
+        onblur="buscarEndereco()" onkeyup="verificarEnter(event)" required />
+        <label for="cep">CEP</label>
         </div>
+
+        <div class="row">
+        <div class="form-floating col-9">
+        <input type="text" class="form-control" id="logradouro" disabled
+        placeholder="Rua Nossa do Carmo" readonly />
+        <label for="logradouro">Logradouro</label>
+        </div>
+
+        <div class="form-floating col-3">
+        <input type="text" class="form-control" id="numero" placeholder="Número" />
+        <label for="numero">Número</label>
+        </div>
+
+        <div class="form-floating mt-3 mb-3 col-12">
+        <input type="text" class="form-control" id="bairro" placeholder="Bairro" disabled readonly />
+        <label for="bairro">Bairro</label>
+        </div>
+
+        <div class="form-floating col-9">
+        <input type="text" class="form-control" id="cidade" placeholder="Cidade" disabled readonly />
+        <label for="cidade">Cidade</label>
+        </div>
+
+        <div class="form-floating col-3">
+        <input type="text" class="form-control" id="estado" placeholder="Estado" disabled readonly />
+        <label for="estado">Estado</label>
+        </div>
+        </div>
+        </div> *@
 
         <div class="text-center mt-2">
             <button type="submit" class="btn btn-primary btn-padrao btn-lg mt-5">Criar Conta</button>
@@ -110,7 +130,6 @@
             <p class="mb-0">
                 <i class="ri-question-line" width="200px"></i> Já possui uma conta?
                 <a class="email" href="/LoginFornecedor">ENTRAR.</a>
-
             </p>
         </div>
     </form>
