@@ -19,16 +19,18 @@ namespace SimpleStore.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Fornecedor fornecedor)
+        public async Task<IActionResult> NovoFornecedor(Fornecedor fornecedor)
         {
-
             if (ModelState.IsValid)
             {
                 await _cadastroFornecedorService.CriarFornecedor(fornecedor);
-                return RedirectToAction("Index", "LoginCliente");
+                TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
             }
-
-            return RedirectToAction("Index");
+            else
+            {
+                ViewBag.ErrorMessage = ("Por favor, preencha todos os campos.");
+            }
+            return View("Index", fornecedor);
         }
     }
 }
