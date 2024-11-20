@@ -18,23 +18,21 @@ builder.Services.AddDapper(builder.Configuration);
 // Adicionar o MySqlContext como um servi�o
 
 builder.Services.AddScoped<ProdutoRepository>();
+builder.Services.AddScoped<ProdutoService>();
 builder.Services.AddScoped<CadastroClienteRepository>();
 builder.Services.AddScoped<CadastroClienteService>();
-builder.Services.AddScoped<ProdutoService>();
+builder.Services.AddScoped<CadastroFornecedorService>();
+builder.Services.AddScoped<CadastroFornecedorRepository>();
 builder.Services.AddScoped<LoginClienteRepository>();
 builder.Services.AddScoped<LoginClienteService>();
-builder.Services.AddScoped<PerfilService>();
-builder.Services.AddScoped<PerfilRepository>();
-builder.Services.AddScoped<ProdutoCarrinhoService>();
-builder.Services.AddScoped<ProdutoCarrinhoRepository>();
 builder.Services.AddScoped<LoginFornecedorService>();
 builder.Services.AddScoped<LoginFornecedorRepository>();
+builder.Services.AddScoped<PerfilService>();
+builder.Services.AddScoped<PerfilRepository>();
 builder.Services.AddScoped<CarrinhoService>();
 builder.Services.AddScoped<CarrinhoRepository>();
-
-
-
-
+builder.Services.AddScoped<ProdutoCarrinhoService>();
+builder.Services.AddScoped<ProdutoCarrinhoRepository>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
