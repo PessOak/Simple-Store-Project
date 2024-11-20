@@ -16,6 +16,12 @@ namespace SimpleStore.Web.Controllers
         // Exibir o conteúdo do carrinho
         public IActionResult Index(string cpfComprador)
         {
+            if (string.IsNullOrEmpty(cpfComprador))
+            {
+                // Retorna um erro ou redireciona, caso o CPF não seja fornecido
+                return BadRequest("CPF do comprador é obrigatório.");
+            }
+            
             var carrinho = _carrinhoService.ObterCarrinho(cpfComprador); // Obter o carrinho específico do comprador
             return View(carrinho);
         }

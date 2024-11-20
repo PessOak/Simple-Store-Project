@@ -15,6 +15,11 @@ namespace SimpleStore.Web.Services
         // Obter o carrinho específico de um comprador
         public Carrinho ObterCarrinho(string cpfComprador)
         {
+            
+            if (string.IsNullOrEmpty(cpfComprador))
+            {
+                throw new ArgumentException("CPF do comprador é obrigatório", nameof(cpfComprador));
+            }
             var carrinho = _carrinhoRepository.ObterCarrinho(cpfComprador);
 
             if (carrinho == null)

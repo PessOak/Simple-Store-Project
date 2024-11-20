@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
+using SimpleStore.Web.Data;
+
 
 namespace SimpleStore.Web.Repositories
 {

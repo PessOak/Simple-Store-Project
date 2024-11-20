@@ -9,13 +9,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddControllersWithViews();
 
-// Configuração do Entity Framework Core com MySQL
+// Configuraï¿½ï¿½o do Entity Framework Core com MySQL
 builder.Services.AddMySqlDbContext(builder.Configuration);
 
-// Configuração do Dapper
+// Configuraï¿½ï¿½o do Dapper
 builder.Services.AddDapper(builder.Configuration);
 
-// Adicionar o MySqlContext como um serviço
+// Adicionar o MySqlContext como um serviï¿½o
 
 builder.Services.AddScoped<ProdutoRepository>();
 builder.Services.AddScoped<ProdutoService>();
@@ -49,7 +49,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 var app = builder.Build();
 
-// Configuração do pipeline do aplicativo
+// Configuraï¿½ï¿½o do pipeline do aplicativo
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
