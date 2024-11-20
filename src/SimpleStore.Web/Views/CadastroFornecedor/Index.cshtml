@@ -47,18 +47,21 @@
         <h5 class="mt-5">Dados Comerciais</h5>
 
         <div class="form-floating mt-3 mb-3">
-            <input type="text" class="form-control" id="razao-social" placeholder="Shonen" />
+            <input asp-for="RazaoSocialForn" type="text" class="form-control" id="razao-social" placeholder="Shonen" />
             <label for="razao-social">Razão Social</label>
+            <span asp-validation-for="RazaoSocialForn" class="text-danger"></span>
         </div>
 
         <div class="form-floating mt-3 mb-3">
-            <input type="text" class="form-control" id="cnpj" placeholder="99999999999999" />
+            <input asp-for="DocForn" type="text" class="form-control" id="cnpj" placeholder="99999999999999" />
             <label for="cnpj">CNPJ</label>
+            <span asp-validation-for="DocForn" class="text-danger"></span>
         </div>
 
         <div class="form-floating mt-3 mb-3">
-            <input type="text" class="form-control" id="link-wpp" placeholder="@@link aqui" />
+            <input asp-for="LinkZapForn" type="text" class="form-control" id="link-wpp" placeholder="@@link aqui" />
             <label for="link-wpp">Link do WhatsApp</label>
+            <span asp-validation-for="LinkZapForn" class="text-danger"></span>
         </div>
 
         <h5 class="mt-5">Endereço Comercial</h5>
