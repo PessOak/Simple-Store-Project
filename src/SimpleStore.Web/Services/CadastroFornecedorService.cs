@@ -11,5 +11,5 @@ namespace SimpleStore.Web.Services
         {
             return await _cadastroFornecedorRepository.CriarFornecedor(fornecedor);
         }
-    }  
+    }
 }
