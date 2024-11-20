@@ -23,6 +23,8 @@ namespace SimpleStore.Web.Models
 
         [Required(ErrorMessage = "Obrigatório informar o link do Whatsapp para contato.")]
         public string LinkZapForn { get; set; }
+
+        public string RazaoSocialForn { get; set; }
     }
 
 }

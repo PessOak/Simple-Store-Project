@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers
@@ -15,6 +16,19 @@ namespace SimpleStore.Web.Controllers
         public async Task<IActionResult> Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(Fornecedor fornecedor)
+        {
+
+            if (ModelState.IsValid)
+            {
+                await _cadastroFornecedorService.CriarFornecedor(fornecedor);
+                return RedirectToAction("Index", "LoginCliente");
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
