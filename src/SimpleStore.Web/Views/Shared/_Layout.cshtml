@@ -50,8 +50,8 @@
                 <div class="collapse navbar-collapse alinhamento-conteudo" id="navbarNav">
                     @if (ViewData["HideSearchBar"] == null || !(bool)ViewData["HideSearchBar"])
                     {
-                        <form class="d-flex mx-auto" role="search" style="width: 60%;">
-                            <input class="form-control campo-buscar border-0" type="search" placeholder="Buscar Produto"
+                        <form id="formPesquisa" class="d-flex mx-auto" role="search" style="width: 60%;">
+                            <input id="inputPesquisa" class="form-control campo-buscar border-0" type="search" placeholder="Buscar Produto"
                                    aria-label="Search" style="flex-grow: 1;">
                             <button class="btn btn-outline btn-secundario" type="submit">
                                 <i class="ri-search-line ri-xl"></i>
@@ -125,6 +125,7 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

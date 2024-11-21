@@ -6,7 +6,7 @@
     <div class="row">
         @foreach (var produto in Model)
         {
-            <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 produto" data-nome="@produto.NomeProd">
                 <div class="card text-center">
 
                     @if (!string.IsNullOrEmpty(produto.ImgUrl))
@@ -29,3 +29,5 @@
         }
     </div>
 </div>
+
+<script src="~/js/Produto.js" asp-append-version="true"></script>
