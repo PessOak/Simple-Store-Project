@@ -15,16 +15,21 @@ namespace SimpleStore.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Comprador comprador)
+        public async Task<IActionResult> Criar(Comprador comprador)
         {
 
             if (ModelState.IsValid)
             {
                 await _cadastroService.CriarComprador(comprador);
+                TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
                 return RedirectToAction("Index", "LoginCliente");
             }
+            else
+            {
+                ViewBag.ErrorMessage = ("Por favor, preencha todos os campos corretamente.");
+            }
 
-            return RedirectToAction("Index");
+            return View("Index", comprador);
         }
     }
 }

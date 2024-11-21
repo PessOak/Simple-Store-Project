@@ -19,7 +19,7 @@ namespace SimpleStore.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> NovoFornecedor(Fornecedor fornecedor)
+        public async Task<IActionResult> Criar(Fornecedor fornecedor)
         {
             if (ModelState.IsValid)
             {
@@ -28,7 +28,7 @@ namespace SimpleStore.Web.Controllers
             }
             else
             {
-                ViewBag.ErrorMessage = ("Por favor, preencha todos os campos.");
+                ViewBag.ErrorMessage = ("Por favor, preencha todos os campos corretamente.");
             }
             return View("Index", fornecedor);
         }

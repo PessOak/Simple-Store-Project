@@ -14,7 +14,7 @@ namespace SimpleStore.Web.Repositories
             var perfil = _dbConnection.Query<Perfil>("SELECT * FROM Comprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
 
             if (perfil != null)
-            {
+            {        
                 // Busca os endereços associados ao comprador
                 perfil.EnderecoComprador = _dbConnection.Query<EnderecoComprador>("SELECT * FROM EnderecoComprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
 

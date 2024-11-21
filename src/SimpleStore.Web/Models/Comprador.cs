@@ -20,8 +20,10 @@ namespace SimpleStore.Web.Models
         public string SenhaComp { get; set; }
 
         [Required]
-        [Compare("SenhaComp", ErrorMessage = "A senha e a confirmação não coincidem.")]
+        [Compare("SenhaComp", ErrorMessage = "As senhas não se coincidem.")]
         public string ConfirmarSenhaComp { get; set; }
+
+
 
     }
 }
