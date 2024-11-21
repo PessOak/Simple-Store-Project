@@ -4,7 +4,7 @@
 
 /* Main - Conteúdo principal da página */
 .fundo-branco {
-    width: 50%;
+    width: 40%;
     height: 100%;
     padding: 2rem 4rem 4rem 4rem;
     margin: 0 auto 0;
@@ -21,6 +21,12 @@ h5 {
     font-size: 1rem;
 }
 
+.link-informativo {
+    font-weight: 550;
+    padding: 3px 3px 0 5px;
+    opacity: 70%;
+    font-size: 11px;
+}
 /* configuração botão principal grande*/
 .btn-padrao {
     padding: 0.6rem 4rem;

@@ -8,3 +8,7 @@
 .btn:hover {
     background-color: #65BAA9;
 }
+
+.card-img-top {
+    height: 300px;
+}
