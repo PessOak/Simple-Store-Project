@@ -7,25 +7,41 @@ namespace SimpleStore.Web.Models
         [Key]
         public int IdForn { get; set; }
 
-        [Required(ErrorMessage = "O CNPJ é obrigatório")]
+        [Required(ErrorMessage = "CNPJ obrigatório")]
         [StringLength(14, MinimumLength = 14, ErrorMessage = "O documento deve ter 14 caracteres.")]
         public string DocForn { get; set; }
 
-        [Required(ErrorMessage = "O nome é obrigatório.")]
+        [Required(ErrorMessage = "Nome obrigatório.")]
         public string NomeForn { get; set; }
 
-        [Required(ErrorMessage = "O e-mail é obrigatório.")]
+        [Required(ErrorMessage = "E-mail obrigatório.")]
         [EmailAddress(ErrorMessage = "Digite um e-mail válido")]
         public string EmailForn { get; set; }
 
-        [Required(ErrorMessage = "A senha é obrigatória.")]
+        [Required(ErrorMessage = "Senha obrigatória.")]
         public string SenhaForn { get; set; }
 
-        [Required(ErrorMessage = "O link do Whatsapp é obrigatório para contato.")]
+        [Required(ErrorMessage = "Link do Whatsapp obrigatório para contato.")]
         public string LinkZapForn { get; set; }
 
-        [Required(ErrorMessage = "A razão social é obrigatória.")]
+        [Required(ErrorMessage = "Razão social obrigatória.")]
         public string RazaoSocialForn { get; set; }
+
+        [Required(ErrorMessage = "Obrigatório informar o telefone.")]
+        [Phone(ErrorMessage = "Número de telefone inválido.")]
+        public string FoneForn { get; set; }
+
+        public string LogradouroForn { get; set; }
+
+        public int NumeroForn { get; set; }
+
+        public string BairroForn { get; set; }
+
+        public string CidadeForn { get; set; }
+
+        public string EstadoForn { get; set; }
+
+        public string CepForn { get; set; }
     }
 
 }
