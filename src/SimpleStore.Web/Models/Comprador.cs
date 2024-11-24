@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleStore.Web.Models
 {
-    public class Comprador
+    public class Comprador 
     {
         [Key]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve ter 11 caracteres.")]
@@ -19,6 +20,7 @@ namespace SimpleStore.Web.Models
         [Required(ErrorMessage = "Senha obrigatória.")]
         public string SenhaComp { get; set; }
 
+        [NotMapped]
         [Required(ErrorMessage = "Confirme a senha.")]
         [Compare("SenhaComp", ErrorMessage = "Senhas não coincidem.")]
         public string ConfirmarSenhaComp { get; set; }
@@ -26,7 +28,7 @@ namespace SimpleStore.Web.Models
         [Required(ErrorMessage = "Telefone obrigatório.")]
         [Display(Name = "Telefone")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Telefone inválido.")]
+        [RegularExpression(@"^\(\d{2}\) (\d \d{4}|\d{4})-\d{4}$", ErrorMessage = "Telefone inválido.")]
         public string FoneComp { get; set; }
 
         public string LogradouroComp { get; set; }
@@ -39,6 +41,8 @@ namespace SimpleStore.Web.Models
 
         public string EstadoComp { get; set; }
 
+        [Required(ErrorMessage = "CEP é obrigatório.")]
+        [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "O CEP deve estar no formato 99999-999.")]
         public string CepComp { get; set; }
 
     }

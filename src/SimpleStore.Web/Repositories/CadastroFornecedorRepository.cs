@@ -5,7 +5,6 @@ namespace SimpleStore.Web.Repositories
 {
     public class CadastroFornecedorRepository(ApplicationDbContext context)
     {
-
         private readonly ApplicationDbContext _context = context;
 
         public async Task<Fornecedor> CriarFornecedor(Fornecedor fornecedor)

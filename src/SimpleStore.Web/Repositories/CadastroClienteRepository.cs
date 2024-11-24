@@ -1,21 +1,25 @@
-﻿using Dapper;
+﻿using Microsoft.EntityFrameworkCore;
+using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
-using System.Data;
 
 namespace SimpleStore.Web.Repositories
 {
-    public class CadastroClienteRepository(IDbConnection dbConnection)
+    public class CadastroClienteRepository(ApplicationDbContext context)
     {
-        private readonly IDbConnection _dbConnection = dbConnection;
+        private readonly ApplicationDbContext _context = context;
+
+        public async Task<Comprador> ObterPorEmail(string email)
+        {
+            var comprador = await _context.Comprador.Where(c => c.EmailComp == email).FirstOrDefaultAsync();
+            return comprador;
+        }
 
         public async Task<Comprador> CriarComprador(Comprador comprador)
         {
-            var consulta = @"
-                INSERT INTO comprador (CpfComp, NomeComp, EmailComp, SenhaComp)
-                VALUES (@CpfComp, @NomeComp, @EmailComp, @SenhaComp);
-                SELECT * FROM comprador WHERE CpfComp = @CpfComp;";
-
-            return await _dbConnection.QuerySingleOrDefaultAsync<Comprador>(consulta, comprador);
+            _context.Comprador.Add(comprador);
+            await _context.SaveChangesAsync();
+            return comprador;
         }
+
     }
 }

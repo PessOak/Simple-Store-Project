@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Models;
+using SimpleStore.Web.Repositories;
 using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers
@@ -7,20 +8,20 @@ namespace SimpleStore.Web.Controllers
     public class CadastroClienteController(CadastroClienteService cadastroClienteService) : Controller
     {
 
-        private readonly CadastroClienteService _cadastroService = cadastroClienteService;
+        private readonly CadastroClienteService _cadastroClienteService = cadastroClienteService;
 
         public IActionResult Index()
         {
-            return View();
+            TempData["SuccessMessage"] = null;
+            return View(new Comprador());
         }
 
         [HttpPost]
         public async Task<IActionResult> Criar(Comprador comprador)
         {
-
             if (ModelState.IsValid)
             {
-                await _cadastroService.CriarComprador(comprador);
+                await _cadastroClienteService.CriarComprador(comprador);
                 TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
                 return RedirectToAction("Index", "LoginCliente");
             }
@@ -30,6 +31,21 @@ namespace SimpleStore.Web.Controllers
             }
 
             return View("Index", comprador);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CriarComprador(Comprador comprador)
+        {
+            try
+            {
+                var novoComprador = await _cadastroClienteService.CriarComprador(comprador);
+                return RedirectToAction("ndex"); // Direciona para uma página de sucesso
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(comprador); // Retorna para a mesma página com os erros
+            }
         }
     }
 }

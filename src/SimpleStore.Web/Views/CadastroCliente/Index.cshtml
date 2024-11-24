@@ -1,4 +1,4 @@
-﻿@model SimpleStore.Web.Models.Comprador
+﻿@model Comprador
 
 @section Scripts {
     <script src="~/js/CadastroCliente.js" asp-append-version="true"></script>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-floating mt-3 mb-3">
-                    <input asp-for="FoneComp" type="number" class="form-control" id="telefone" placeholder="(99) 9 9999-9999" maxlength="11" />
+                    <input asp-for="FoneComp" class="form-control" id="telefone" placeholder="(99) 9 9999-9999" maxlength="15" />
                     <label for="telefone">Celular</label>
                     <span asp-validation-for="FoneComp" class="text-danger"></span>
                 </div>
@@ -84,35 +84,35 @@
                 <h5>Endereço</h5>
 
                 <div class="form-floating mt-3 mb-3">
-                    <input asp-for="CepComp" type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
-                           onblur="buscarEndereco()" onkeyup="verificarEnter(event)" required />
+                    <input asp-for="CepComp" class="form-control" maxlength="9" id="cep" placeholder="Digite o CEP" onkeyup="verificarCep(event)" required />
                     <label for="cep">CEP</label>
+                    <span asp-validation-for="CepComp" class="text-danger"></span>
                 </div>
 
                 <div class="row">
                     <div class="form-floating col-9">
-                        <input asp-for="LogradouroComp" type="text" class="form-control" id="logradouro" disabled
+                        <input asp-for="LogradouroComp" type="text" class="form-control" id="logradouro"
                                placeholder="Rua Nossa do Carmo" readonly />
                         <label for="logradouro">Logradouro</label>
                     </div>
 
                     <div class="form-floating col-3">
-                        <input asp-for="NumeroComp" type="text" class="form-control" id="numero" placeholder="Número" />
+                        <input asp-for="NumeroComp" type="number" class="form-control" id="numero" placeholder="Número" />
                         <label for="numero">Número</label>
                     </div>
 
                     <div class="form-floating mt-3 mb-3 col-12">
-                        <input asp-for="BairroComp" type="text" class="form-control" id="bairro" placeholder="Bairro" disabled readonly />
+                        <input asp-for="BairroComp" type="text" class="form-control" id="bairro" placeholder="Bairro" readonly />
                         <label for="bairro">Bairro</label>
                     </div>
 
                     <div class="form-floating col-9">
-                        <input asp-for="CidadeComp" type="text" class="form-control" id="cidade" placeholder="Cidade" disabled readonly />
+                        <input asp-for="CidadeComp" type="text" class="form-control" id="cidade" placeholder="Cidade" readonly />
                         <label for="cidade">Cidade</label>
                     </div>
 
                     <div class="form-floating col-3">
-                        <input asp-for="EstadoComp" type="text" class="form-control" id="estado" placeholder="Estado" disabled readonly />
+                        <input asp-for="EstadoComp" type="text" class="form-control" id="estado" placeholder="Estado" readonly />
                         <label for="estado">Estado</label>
                     </div>
                 </div>

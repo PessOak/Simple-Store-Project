@@ -35,7 +35,7 @@ namespace SimpleStore.Web.Services
         {
             var carrinho = ObterCarrinho(cpfComprador);
 
-            var produtoCarrinho = carrinho.Produtos.FirstOrDefault(p => p.IdProd == idProduto);
+            var produtoCarrinho = carrinho.Produto.FirstOrDefault(p => p.IdProd == idProduto);
 
             if (produtoCarrinho != null)
             {
@@ -49,7 +49,7 @@ namespace SimpleStore.Web.Services
                     IdProd = idProduto,
                     QuantProdCarrinho = quantidade
                 };
-                carrinho.Produtos.Add(produtoCarrinho);
+                carrinho.Produto.Add(produtoCarrinho);
             }
 
             AtualizarValorTotal(carrinho);
@@ -60,11 +60,11 @@ namespace SimpleStore.Web.Services
         public void RemoverProduto(string cpfComprador, int idProduto)
         {
             var carrinho = ObterCarrinho(cpfComprador);
-            var produtoCarrinho = carrinho.Produtos.FirstOrDefault(p => p.IdProd == idProduto);
+            var produtoCarrinho = carrinho.Produto.FirstOrDefault(p => p.IdProd == idProduto);
 
             if (produtoCarrinho != null)
             {
-                carrinho.Produtos.Remove(produtoCarrinho);
+                carrinho.Produto.Remove(produtoCarrinho);
                 AtualizarValorTotal(carrinho);
                 _carrinhoRepository.SalvarCarrinho(carrinho);
             }
@@ -74,7 +74,7 @@ namespace SimpleStore.Web.Services
         public void AtualizarQuantidade(string cpfComprador, int idProduto, int quantidade)
         {
             var carrinho = ObterCarrinho(cpfComprador);
-            var produtoCarrinho = carrinho.Produtos.FirstOrDefault(p => p.IdProd == idProduto);
+            var produtoCarrinho = carrinho.Produto.FirstOrDefault(p => p.IdProd == idProduto);
 
             if (produtoCarrinho != null)
             {
@@ -87,7 +87,7 @@ namespace SimpleStore.Web.Services
         // Atualizar o valor total do carrinho
         private void AtualizarValorTotal(Carrinho carrinho)
         {
-            carrinho.ValorTotalCarrinho = carrinho.Produtos.Sum(p => p.QuantProdCarrinho * p.Produto.PrecoProd);
+            carrinho.ValorTotalCarrinho = carrinho.Produto.Sum(p => p.QuantProdCarrinho * p.Produto.PrecoProd);
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SimpleStore.Web.Models
 {
-    public class Fornecedor
+    public class Fornecedor 
     {
         [Key]
         public int IdForn { get; set; }
@@ -21,14 +22,21 @@ namespace SimpleStore.Web.Models
         [Required(ErrorMessage = "Senha obrigatória.")]
         public string SenhaForn { get; set; }
 
+        [NotMapped]
+        [Required(ErrorMessage = "Confirme a senha.")]
+        [Compare("SenhaForn", ErrorMessage = "Senhas não coincidem.")]
+        public string ConfirmarSenhaForn { get; set; }
+
         [Required(ErrorMessage = "Link do Whatsapp obrigatório para contato.")]
         public string LinkZapForn { get; set; }
 
         [Required(ErrorMessage = "Razão social obrigatória.")]
         public string RazaoSocialForn { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório informar o telefone.")]
-        [Phone(ErrorMessage = "Número de telefone inválido.")]
+        [Required(ErrorMessage = "Telefone obrigatório.")]
+        [Display(Name = "Telefone")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(\d{2}\) (\d \d{4}|\d{4})-\d{4}$", ErrorMessage = "Telefone inválido.")]
         public string FoneForn { get; set; }
 
         public string LogradouroForn { get; set; }

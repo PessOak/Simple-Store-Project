@@ -15,6 +15,6 @@ namespace SimpleStore.Web.Models
         public float ValorTotalCarrinho { get; set; }
 
         // Propriedade para armazenar os produtos no carrinho
-        public ICollection<ProdutoCarrinho> Produtos { get; set; } = new List<ProdutoCarrinho>();
+        public ICollection<ProdutoCarrinho> Produto { get; set; } = new List<ProdutoCarrinho>();
     }
 }
