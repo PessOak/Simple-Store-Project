@@ -19,7 +19,7 @@ namespace SimpleStore.Web.Repositories
         public Carrinho ObterCarrinho(string cpfComprador)
         {
             return _context.Carrinho
-                .Include(c => c.Produtos)          // Carrega a lista de produtos no carrinho
+                .Include(c => c.Produto)          // Carrega a lista de produtos no carrinho
                 .ThenInclude(pc => pc.Produto)     // Carrega os detalhes de cada produto
                 .FirstOrDefault(c => c.CpfComp == cpfComprador);
         }

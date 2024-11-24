@@ -31,9 +31,15 @@
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-floating mb-3">
-            <input asp-for="Senha" type="password" class="form-control tamanho-input" placeholder="Digite sua senha" />
+            <input asp-for="Senha" type="password" class="form-control tamanho-input" placeholder="Digite sua senha" id="senha" />
             <label asp-for="Senha">Senha</label>
             <span asp-validation-for="Senha" class="text-danger"></span>
+        </div>
+        <div class="form-check mb-3 col-6 ps-2-3 mb-4">
+            <input class="form-check-input" type="checkbox" id="mostrarSenha">
+            <label class="form-check-label" for="mostrarSenha">
+                Mostrar senha
+            </label>
         </div>
 
         <div class="text-center mt-5">
@@ -42,16 +48,17 @@
 
         <div class="text-center mt-5">
             <p>
-                <i width="200px"></i> Fazer login como cliente?
-                <a class="email" href="/LoginCliente">
+                <i width="200px"></i> Entrar como Cliente?
+                <a class="acessar" href="/LoginCliente">
                     ACESSAR.<br>
                 </a>
+            </p>
+            <p>
                 <i class="ri-question-line" width="200px"></i> Não tem uma conta?
                 <a class="email" href="/CadastroFornecedor">
-                    CADASTRAR.<br>
+                    CADASTRAR.
                 </a>
             </p>
-        </div>
     </form>
 </div>
 

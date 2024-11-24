@@ -8,23 +8,19 @@ namespace SimpleStore.Web.Models
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve ter 11 caracteres.")]
         public string CpfComp { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório inserir o nome.")]
+        [Required(ErrorMessage = "Nome obrigatório.")]
         public string NomeComp { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório inserir o e-mail.")]
+        [Required(ErrorMessage = "E-mail obrigatório.")]
         [EmailAddress(ErrorMessage = "Formato de e-mail inválido.")]
         public string EmailComp { get; set; }
 
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Obrigatório inserir a senha.")]
+        [Required(ErrorMessage = "Senha obrigatório.")]
         public string SenhaComp { get; set; }
 
         [Required]
-        [Compare("SenhaComp", ErrorMessage = "A senha e a confirmação não coincidem.")]
+        [Compare("SenhaComp", ErrorMessage = "Senhas não coincidem.")]
         public string ConfirmarSenhaComp { get; set; }
-
-        public EnderecoComprador EnderecoComprador { get; set; }
-
-        public FoneComprador FoneComprador { get; set; }
     }
 }

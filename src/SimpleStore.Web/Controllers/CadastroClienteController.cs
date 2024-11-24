@@ -7,24 +7,35 @@ namespace SimpleStore.Web.Controllers
     public class CadastroClienteController(CadastroClienteService cadastroClienteService) : Controller
     {
 
-        private readonly CadastroClienteService _cadastroService = cadastroClienteService;
+        private readonly CadastroClienteService _cadastroClienteService = cadastroClienteService;
 
         public IActionResult Index()
         {
-            return View();
+            TempData["SuccessMessage"] = null;
+            ViewBag.ErrorMessage = null;
+            return View(new Comprador());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Comprador comprador)
+        public async Task<IActionResult> Criar(Comprador comprador)
         {
-
-            if (ModelState.IsValid)
+            try
             {
-                await _cadastroService.CriarComprador(comprador);
-                return RedirectToAction("Index", "LoginCliente");
+                if (ModelState.IsValid)
+                {
+                    await _cadastroClienteService.Criar(comprador);
+                    TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Por favor, preencha todos os campos corretamente.";
+                }
             }
-
-            return RedirectToAction("Index");
+            catch (ArgumentException ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+            }
+            return View("Index", comprador);
         }
     }
 }
