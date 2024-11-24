@@ -55,6 +55,19 @@ form .row {
 /* Configuração final do conteúdo principal da página */
 
 /* footer - Rodapé da página */
+p > .acessar {
+    text-decoration: none;
+    color: #FFBC1F;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+    p > .acessar:hover {
+        transition: 0.4s;
+        color: #F68E5F;
+        /*color: #3B1B88;*/
+    }
+
 p > .email {
     text-decoration: none;
     color: #65BAA9;

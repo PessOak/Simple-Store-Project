@@ -9,7 +9,7 @@ namespace SimpleStore.Web.Models
         public int IdForn { get; set; }
 
         [Required(ErrorMessage = "CNPJ obrigatório")]
-        [StringLength(14, MinimumLength = 14, ErrorMessage = "O documento deve ter 14 caracteres.")]
+        [StringLength(18, MinimumLength = 18, ErrorMessage = "O documento deve ter 18 caracteres.")]
         public string DocForn { get; set; }
 
         [Required(ErrorMessage = "Nome obrigatório.")]
@@ -49,6 +49,8 @@ namespace SimpleStore.Web.Models
 
         public string EstadoForn { get; set; }
 
+        [Required(ErrorMessage = "CEP é obrigatório.")]
+        [RegularExpression(@"^\d{5}-\d{3}$", ErrorMessage = "O CEP deve estar no formato 99999-999.")]
         public string CepForn { get; set; }
     }
 

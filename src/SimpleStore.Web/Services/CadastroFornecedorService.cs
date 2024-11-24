@@ -9,6 +9,12 @@ namespace SimpleStore.Web.Services
 
         public async Task<Fornecedor> CriarFornecedor(Fornecedor fornecedor)
         {
+            var FornecedorExistente = await _cadastroFornecedorRepository.ObterPorEmail(fornecedor.EmailForn);
+            if (FornecedorExistente != null)
+            {
+                throw new ArgumentException("O e-mail já está cadastrado.");
+            }
+
             return await _cadastroFornecedorRepository.CriarFornecedor(fornecedor);
         }
     }

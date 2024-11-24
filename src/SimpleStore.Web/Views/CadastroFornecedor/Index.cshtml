@@ -56,6 +56,20 @@
                 <span asp-validation-for="ConfirmarSenhaForn" class="text-danger"></span>
             </div>
         </div>
+        <div class="row">
+            <div class="form-check col-6 ps-2-3 mt-2">
+                <input class="form-check-input" type="checkbox" id="mostrarSenha">
+                <label class="form-check-label" for="mostrarSenha">
+                    Mostrar senha
+                </label>
+            </div>
+            <div class="form-check col-6 ps-2-3 mt-2">
+                <input class="form-check-input" type="checkbox" id="mostrarConfirmarSenha">
+                <label class="form-check-label" for="mostrarConfirmarSenha">
+                    Mostrar Confirmar senha
+                </label>
+            </div>
+        </div>
 
         <h5 class="mt-5">Dados pessoais</h5>
 
@@ -66,7 +80,7 @@
         </div>
 
         <div class="form-floating mt-3 mb-3">
-            <input asp-for="FoneForn" class="form-control" id="telefone" maxlength="15" placeholder="31999999999" />
+            <input asp-for="FoneForn" class="form-control" id="telefone" placeholder="(99) 9 9999-9999" maxlength="15" />
             <label for="telefone">Celular</label>
             <span asp-validation-for="FoneForn" class="text-danger"></span>
         </div>
@@ -80,7 +94,7 @@
         </div>
 
         <div class="form-floating mt-3 mb-3">
-            <input asp-for="DocForn" type="number" class="form-control" id="cnpj" placeholder="99999999999999" />
+            <input asp-for="DocForn" type="text" class="form-control" id="cnpj" placeholder="99.999.999/9999-99" maxlength="18" />
             <label for="cnpj">CNPJ</label>
             <span asp-validation-for="DocForn" class="text-danger"></span>
         </div>
@@ -95,14 +109,14 @@
         <h5 class="mt-5">Endereço</h5>
         <div class="col-md-12 col-lg-12">
             <div class="form-floating mt-3 mb-3">
-                <input asp-for="CepForn" type="number" class="form-control" maxlength="8" id="cep" placeholder="Digite o CEP"
-                       onkeyup="verificarCep(event)" required />
+                <input asp-for="CepForn" class="form-control" maxlength="9" id="cep" placeholder="Digite o CEP" onkeyup="verificarCep(event)" required />
                 <label for="cep">CEP</label>
+                <span asp-validation-for="CepForn" class="text-danger"></span>
             </div>
 
             <div class="row">
                 <div class="form-floating col-9">
-                    <input asp-for="LogradouroForn" type="text" class="form-control" id="logradouro" disabled
+                    <input asp-for="LogradouroForn" type="text" class="form-control" id="logradouro"
                            placeholder="Rua Nossa do Carmo" readonly />
                     <label for="logradouro">Logradouro</label>
                 </div>
@@ -113,17 +127,17 @@
                 </div>
 
                 <div class="form-floating mt-3 mb-3 col-12">
-                    <input asp-for="DocForn" type="text" class="form-control" id="bairro" placeholder="Bairro" disabled readonly />
+                    <input asp-for="DocForn" type="text" class="form-control" id="bairro" placeholder="Bairro" readonly />
                     <label for="bairro">Bairro</label>
                 </div>
 
                 <div class="form-floating col-9">
-                    <input asp-for="CidadeForn" type="text" class="form-control" id="cidade" placeholder="Cidade" disabled readonly />
+                    <input asp-for="CidadeForn" type="text" class="form-control" id="cidade" placeholder="Cidade" readonly />
                     <label for="cidade">Cidade</label>
                 </div>
 
                 <div class="form-floating col-3">
-                    <input asp-for="EstadoForn" type="text" class="form-control" id="estado" placeholder="Estado" disabled readonly />
+                    <input asp-for="EstadoForn" type="text" class="form-control" id="estado" placeholder="Estado" readonly />
                     <label for="estado">Estado</label>
                 </div>
             </div>

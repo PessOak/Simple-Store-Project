@@ -1,7 +1,6 @@
 ﻿
 document.addEventListener('DOMContentLoaded', () => {
     verificarCep();
-    document.getElementById("logradouro").readOnly = true;
 
     const telefoneInput = document.getElementById('telefone');
 
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cepInput.addEventListener('input', function (e) {
         let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
-        if (value.length > 8) {
-            value = value.slice(0, 8); // Limita a 8 caracteres
+        if (value.length > 9) {
+            value = value.slice(0, 9); // Limita a 9 caracteres
         }
 
         // Formata o CEP
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
         if (value.length > 14) {
-            value = value.slice(0, 14); // Limita a 11 dígitos numéricos
+            value = value.slice(0, 14); // Limita a 14 dígitos numéricos
         }
 
         // Formata como CPF (999.999.999-99)

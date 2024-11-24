@@ -15,12 +15,16 @@ namespace SimpleStore.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View();
+            TempData["SuccessMessage"] = null;
+            ViewBag.ErrorMessage = null;
+            return View(new Fornecedor());
         }
 
         [HttpPost]
         public async Task<IActionResult> Criar(Fornecedor fornecedor)
         {
+            try
+            { 
             if (ModelState.IsValid)
             {
                 await _cadastroFornecedorService.CriarFornecedor(fornecedor);
@@ -29,6 +33,10 @@ namespace SimpleStore.Web.Controllers
             else
             {
                 ViewBag.ErrorMessage = "Por favor, preencha todos os campos corretamente.";
+            }
+            } catch (ArgumentException ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
             }
             return View("Index", fornecedor);
         }
