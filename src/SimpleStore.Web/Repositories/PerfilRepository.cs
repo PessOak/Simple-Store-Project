@@ -8,20 +8,16 @@ namespace SimpleStore.Web.Repositories
     {
         private readonly IDbConnection _dbConnection = dbConnection;
 
-        public Perfil BuscarDadosComprador(string cpf)
+        public Comprador BuscarDadosComprador(string cpf)
         {
             // Busca os dados principais do comprador
-            var perfil = _dbConnection.Query<Perfil>("SELECT * FROM Comprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
+            var perfil = _dbConnection.Query<Comprador>("SELECT * FROM comprador WHERE CpfComp = @CpfComp", new { CpfComp = cpf }).FirstOrDefault();
             return perfil;
         }
 
-        public async Task<bool> AtualizarDadosComprador(Perfil perfil)
+        public async Task<bool> AtualizarDadosComprador(Comprador perfil)
         {
-            var sqlComprador = "UPDATE comprador SET NomeComp = @NomeComp, EmailComp = @EmailComp, SenhaComp = @SenhaComp WHERE CpfComp = @CpfComp;";
-
-            // TODO: Criar lógica para atualizar o endereço e fone
-            // var sqlEndereco = "update enderecocomprador set logradouroendereco = @logradouroendereco, numeroendereco = @numeroendereco, bairroendereco = @bairroendereco, cidadeendereco = @cidadeendereco, estadoendereco = @estadoendereco, cependereco = @cependereco where cpfcomp = @cpfcomp;";
-            // var sqlFone = "update fonecomprador set fonecomp = @fonecomp where cpfcomp = @cpfcomp;";
+            var sqlComprador = "UPDATE comprador SET NomeComp = @NomeComp, FoneComp = @FoneComp, LogradouroComp = @LogradouroComp, NumeroComp = @NumeroComp, BairroComp = @BairroComp, CidadeComp = @CidadeComp, EstadoComp = @EstadoComp, CepComp = @CepComp WHERE CpfComp = @CpfComp;";
 
             var linhasAfetadas = await _dbConnection.ExecuteAsync(sqlComprador, perfil);
             return linhasAfetadas > 0; // Retorna true se uma linha foi atualizada

@@ -5,37 +5,37 @@ using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class PerfilController(PerfilService perfilService) : Controller
+    public class PerfilFornecedorController(PerfilFornecedorService perfilFornecedorService) : Controller
     {
-        private readonly PerfilService _perfilService = perfilService;
+        private readonly PerfilFornecedorService _perfilFornecedorService = perfilFornecedorService;
 
         // Carrega a página de perfil com detalhes completos
         public IActionResult Index()
         {
-            var cpf = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var perfil = _perfilService.BuscarDadosComprador(cpf);
-            if (perfil == null)
+            var cnpj = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var perfilForn = _perfilFornecedorService.BuscarDadosComprador(cnpj);
+            if (perfilForn == null)
             {
                 return View("Error"); // Adicione uma view de erro adequada
             }
-            return View(perfil);
+            return View(perfilForn);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Editar(Comprador perfil)
+        public async Task<IActionResult> Editar(Fornecedor perfilForn)
         {
             TempData["SuccessMessage"] = null;
             ViewBag.ErrorMessage = null;
             if (ModelState.IsValid)
             {
-                var sucesso = await _perfilService.AtualizarDadosComprador(perfil);
+                var sucesso = await _perfilFornecedorService.AtualizarDadosComprador(perfilForn);
                 TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
             }
             else
             {
                 ViewBag.ErrorMessage = "Por favor, preencha todos os campos corretamente.";
             }
-            return View("Index", perfil);
+            return View("Index", perfilForn);
         }
     }
 }
