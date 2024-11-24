@@ -28,7 +28,7 @@ namespace SimpleStore.Web.Controllers
             }
             else
             {
-                ViewBag.ErrorMessage = ("Por favor, preencha todos os campos corretamente.");
+                ViewBag.ErrorMessage = "Por favor, preencha todos os campos corretamente.";
             }
             return View("Index", fornecedor);
         }

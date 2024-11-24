@@ -6,7 +6,7 @@ namespace SimpleStore.Web.Services
     {
         private readonly CadastroClienteRepository _cadastroClienteRepository = cadastroClienteRepository;
 
-        public async Task<Comprador> CriarComprador(Comprador comprador)
+        public async Task<Comprador> Criar(Comprador comprador)
         {
             var compradorExistente = await _cadastroClienteRepository.ObterPorEmail(comprador.EmailComp);
             if (compradorExistente != null)
@@ -14,7 +14,7 @@ namespace SimpleStore.Web.Services
                 throw new ArgumentException("O e-mail já está cadastrado.");
             }
 
-            return await _cadastroClienteRepository.CriarComprador(comprador);
+            return await _cadastroClienteRepository.Criar(comprador);
         }
     }
 }

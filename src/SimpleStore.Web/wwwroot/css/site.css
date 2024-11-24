@@ -20,6 +20,17 @@ strong {
     font-weight: 700;
 }
 
+.form-check-input:checked {
+    background-color: #3b1b88;
+    border-color: #3b1b88;
+}
+
+.ps-2-3 {
+    font-size: 0.9rem;
+    margin-top: 0;
+    padding-left: 2.3rem !important;
+}
+
 /* footer - Rodapé da página */
 p>.email {
     text-decoration: none;

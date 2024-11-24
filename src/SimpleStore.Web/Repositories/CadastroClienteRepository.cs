@@ -14,7 +14,7 @@ namespace SimpleStore.Web.Repositories
             return comprador;
         }
 
-        public async Task<Comprador> CriarComprador(Comprador comprador)
+        public async Task<Comprador> Criar(Comprador comprador)
         {
             _context.Comprador.Add(comprador);
             await _context.SaveChangesAsync();

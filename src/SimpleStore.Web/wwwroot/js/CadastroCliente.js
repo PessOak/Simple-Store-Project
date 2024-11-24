@@ -1,5 +1,6 @@
 ﻿
 document.addEventListener('DOMContentLoaded', () => {
+    verificarCep();
     document.getElementById("logradouro").readOnly = true;
 
     const telefoneInput = document.getElementById('telefone');
@@ -40,10 +41,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const cpf = document.getElementById('cpf');
+    const cpfInput = document.getElementById('cpf');
 
+    cpfInput.addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
+        if (value.length > 14) {
+            value = value.slice(0, 14); // Limita a 11 dígitos numéricos
+        }
 
+        // Formata como CPF (999.999.999-99)
+        if (value.length > 9) {
+            e.target.value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6, 9)}-${value.slice(9)}`;
+        } else if (value.length > 6) {
+            e.target.value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6)}`;
+        } else if (value.length > 3) {
+            e.target.value = `${value.slice(0, 3)}.${value.slice(3)}`;
+        } else {
+            e.target.value = value;
+        }
+    });
+
+    const senhaInput = document.getElementById('senha');
+    const confirmarSenhaInput = document.getElementById('confirmarSenha');
+
+    const mostrarSenhaCheckbox = document.getElementById('mostrarSenha');
+    const mostrarConfirmarSenhaCheckbox = document.getElementById('mostrarConfirmarSenha');
+
+    mostrarSenhaCheckbox.addEventListener('change', () => {
+        if (mostrarSenhaCheckbox.checked) {
+            senhaInput.type = 'text';
+        } else {
+            senhaInput.type = 'password';
+        }
+
+    });
+
+    mostrarConfirmarSenhaCheckbox.addEventListener('change', () => {
+        if (mostrarConfirmarSenhaCheckbox.checked) {
+            confirmarSenhaInput.type = 'text';
+        } else {
+            confirmarSenhaInput.type = 'password';
+        }
+    });
 });
 
 function buscarEndereco() {
@@ -86,7 +126,7 @@ function buscarEndereco() {
 
 function verificarCep(event) {
     const cep = document.getElementById('cep');
-    if (cep.value.length === 9 || event.key === "Enter") {
+    if (cep.value.length === 9 || event?.key === "Enter") {
         buscarEndereco();
     }
 }

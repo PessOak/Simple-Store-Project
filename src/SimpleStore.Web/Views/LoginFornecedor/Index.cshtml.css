@@ -12,6 +12,10 @@
     padding: 4rem 5rem 4rem;
 }
 
+.ps-2-3{
+    padding-left: 1.4rem !important;
+}
+
 h2,
 h5 {
     font-weight: 700;

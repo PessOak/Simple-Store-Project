@@ -46,15 +46,30 @@
         </div>
 
         <div class="row">
-            <div class="form-floating mb-3 col-6">
+            <div class="form-floating col-6">
                 <input asp-for="SenhaComp" type="password" class="form-control" id="senha" placeholder="123@exemplo" />
                 <label for="senha">Senha</label>
                 <span asp-validation-for="SenhaComp" class="text-danger"></span>
             </div>
+
             <div class="form-floating mb-3 col-6">
                 <input asp-for="ConfirmarSenhaComp" type="password" class="form-control" id="confirmarSenha" placeholder="123@exemplo" />
                 <label for="confirmarSenha">Confirmar Senha</label>
                 <span asp-validation-for="ConfirmarSenhaComp" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-check mb-3 col-6 ps-2-3 mb-4">
+                <input class="form-check-input" type="checkbox" id="mostrarSenha">
+                <label class="form-check-label" for="mostrarSenha">
+                    Mostrar senha
+                </label>
+            </div> 
+            <div class="form-check mb-3 col-6 ps-2-3 mb-4">
+                <input class="form-check-input" type="checkbox" id="mostrarConfirmarSenha">
+                <label class="form-check-label" for="mostrarConfirmarSenha">
+                    Mostrar Confirmar senha
+                </label>
             </div>
         </div>
 
@@ -75,7 +90,7 @@
                 </div>
 
                 <div class="form-floating mt-3 mb-4">
-                    <input asp-for="CpfComp" type="text" class="form-control" maxlength="11" id="cpf" placeholder="11111111111" />
+                    <input asp-for="CpfComp" type="text" maxlength="14" class="form-control" id="cpf" placeholder="11111111111" />
                     <label for="cpf">CPF</label>
                     <span asp-validation-for="CpfComp" class="text-danger"></span>
                 </div>
