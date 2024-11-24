@@ -1,5 +1,6 @@
 ﻿@section Scripts {
         <script src="~/js/DetalheProduto.js" asp-append-version="true"></script>
+        <script src="~/js/ProdutoCarrinho.js" asp-append-version="true"></script>
 }
 @model Produto
 <head>
@@ -48,8 +49,8 @@
 
             <div>
 
-                <form asp-action="AdicionarAoCarrinho" asp-controller="ProdutoCarrinho" method="post">
-                    <input type="hidden" name="idCarrinho" value="@Model.IdCarrinho" />  <!-- TESTE produtocarrinho, remover essa linha ou modifica-la! -->               
+                <form id="form-adicionar-carrinho">
+                    <input type="hidden" name="idCarrinho" value="@Model.IdCarrinho" />  <!-- TESTE produtocarrinho, remover essa linha ou modifica-la! -->
                     <input type="hidden" name="produtoId" value="@Model.IdProd" />
 
                     <div class="text-center mt-3">
@@ -61,11 +62,13 @@
                             </button>
 
                             <input type="number" id="product-quantity" class="form-control text-center quantidade-produto" name="quantidade"
-                                value="1" min="1" aria-label="Quantidade de produtos"
-                                style="appearance: none; -moz-appearance: textfield;">
+                                   value="1" min="1" aria-label="Quantidade de produtos"
+                                   style="appearance: none; -moz-appearance: textfield;">
 
                             <button class="btn btn-outline-secondary btn-mais" type="button"
-                                onclick="increaseQuantity()">+</button>
+                                    onclick="increaseQuantity()">
+                                +
+                            </button>
                         </div>
                     </div>
 
@@ -73,16 +76,10 @@
 
                     <p><strong>Prazo de entrega:</strong> Combinar com o vendedor</p>
 
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center" id="adicionar-carrinho">
                         <button class="btn text-white mt-2 btn-padrao">
-                            Adicionar ao 
+                            Adicionar ao
                             carrinho
-                        </button>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <button class="btn text-white mt-2 btn-padrao">
-                            Comprar agora
                         </button>
                     </div>
 
