@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using SimpleStore.Web.Enums;
 using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
 using System.Security.Claims;
@@ -34,7 +35,8 @@ namespace SimpleStore.Web.Controllers
                     {
                         new(ClaimTypes.Name, fornecedor.NomeForn),
                         new(ClaimTypes.NameIdentifier, fornecedor.DocForn),
-                        new(ClaimTypes.Email, fornecedor.EmailForn)
+                        new(ClaimTypes.Email, fornecedor.EmailForn),
+                        new(ClaimTypes.Role, PapelUsuario.Fornecedor.ToString())
                     };
 
                     var identity = new ClaimsIdentity(claims, "login");

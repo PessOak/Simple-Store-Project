@@ -8,13 +8,13 @@ namespace SimpleStore.Web.Services
         private readonly PerfilRepository _perfilRepository = perfilRepository;
 
         // Método para obter os detalhes do comprador
-        public Perfil BuscarDadosComprador(string cpf)
+        public Comprador BuscarDadosComprador(string cpf)
         {
             var perfil = _perfilRepository.BuscarDadosComprador(cpf);
             return perfil ?? throw new Exception("Perfil não encontrado.");
         }
 
-        public async Task<bool> AtualizarDadosComprador(Perfil perfil)
+        public async Task<bool> AtualizarDadosComprador(Comprador perfil)
         {
             if (string.IsNullOrWhiteSpace(perfil.NomeComp))
             {

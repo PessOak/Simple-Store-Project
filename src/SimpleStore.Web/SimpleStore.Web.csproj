@@ -9,13 +9,21 @@
 
   <ItemGroup>
     <Compile Remove="Views\DetalheProduto\**" />
-    <Compile Remove="Views\NovaPasta\**" />
+    <Compile Remove="Views\NovaPasta1\**" />
+    <Compile Remove="Views\NovaPasta2\**" />
+    <Compile Remove="Views\Perfil\NovaPasta\**" />
     <Content Remove="Views\DetalheProduto\**" />
-    <Content Remove="Views\NovaPasta\**" />
+    <Content Remove="Views\NovaPasta1\**" />
+    <Content Remove="Views\NovaPasta2\**" />
+    <Content Remove="Views\Perfil\NovaPasta\**" />
     <EmbeddedResource Remove="Views\DetalheProduto\**" />
-    <EmbeddedResource Remove="Views\NovaPasta\**" />
+    <EmbeddedResource Remove="Views\NovaPasta1\**" />
+    <EmbeddedResource Remove="Views\NovaPasta2\**" />
+    <EmbeddedResource Remove="Views\Perfil\NovaPasta\**" />
     <None Remove="Views\DetalheProduto\**" />
-    <None Remove="Views\NovaPasta\**" />
+    <None Remove="Views\NovaPasta1\**" />
+    <None Remove="Views\NovaPasta2\**" />
+    <None Remove="Views\Perfil\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +32,7 @@
     <Compile Remove="Data\Migrations\00000000000000_CreateIdentitySchema.Designer.cs" />
     <Compile Remove="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Remove="Models\KEYAttribute.cs" />
+    <Compile Remove="Models\Perfil.cs" />
   </ItemGroup>
 
   <ItemGroup>

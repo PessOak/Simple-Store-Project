@@ -64,18 +64,32 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item me-4 link">
-                                <span class="text-white">Bem-vindo,  @User.Identity.Name</span>
+                                <span class="text-white">Bem-vindo(a),</span>
+                                <span class="text-white ms-1">@User.Identity.Name</span>
                             </li>
-                            <li class="nav-item me-4 link">
-                                <a class="link-entrar nav-link ps-0 cor-branca-hover" href="/Perfil">Perfil</a>
-                            </li>
-                            <li>
-                                <a class="link-entrar nav-link ps-0 cor-branca-hover">Pedidos</a>
-                            </li>
-                            <li>
-                                <a class="text-white nav-link ps-0" href="/LoginCliente/Logout">Sair</a>
-                            </li>
-          
+
+
+                            @if (User.IsInRole("Comprador"))
+                            {
+                                <li>
+                                    <a class="link-entrar me-4 nav-link ps-0 cor-branca-hover" href="/Perfil">Perfil</a>
+                                </li>
+                                <li>
+                                    <a class="link-entrar me-4 nav-link ps-0 cor-branca-hover">Pedidos</a>
+                                </li>
+                                <li>
+                                    <a class="text-white me-4 nav-link ps-0" href="/LoginCliente/Logout">Sair</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a class="link-entrar me-4 nav-link ps-0 cor-branca-hover" href="/PerfilFornecedor">Perfil</a>
+                                </li>
+                                <li>
+                                    <a class="text-white me-4 nav-link ps-0" href="/LoginFornecedor/Logout">Sair</a>
+                                </li>
+                            }
                         }
                         else
                         {
@@ -83,7 +97,7 @@
                             {
                                 <li class="btn-group nav-item me-3 ri-lx align-items-center">
                                     <a class="link-entrar nav-link ps-0 cor-branca-hover"
-                                    href="/LoginCliente">Entrar</a>
+                                       href="/LoginCliente">Entrar</a>
                                 </li>
                             }
                         }

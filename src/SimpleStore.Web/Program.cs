@@ -33,6 +33,8 @@ builder.Services.AddScoped<CarrinhoService>();
 builder.Services.AddScoped<CarrinhoRepository>();
 builder.Services.AddScoped<ProdutoCarrinhoService>();
 builder.Services.AddScoped<ProdutoCarrinhoRepository>();
+builder.Services.AddScoped<PerfilFornecedorService>();
+builder.Services.AddScoped<PerfilFornecedorRepository>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {

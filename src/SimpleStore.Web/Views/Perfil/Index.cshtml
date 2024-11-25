@@ -1,11 +1,12 @@
-﻿@model SimpleStore.Web.Models.Perfil
+﻿@model Comprador
 
 @section Scripts {
-    <script src="~/js/CadastroCliente.js" asp-append-version="true"></script>
+    <script src="~/js/Perfil.js" asp-append-version="true"></script>
 }
 
 @{
     ViewData["HideSearchBar"] = true;
+    var successMessage = TempData["SuccessMessage"] as string;
 }
 
 <head>
@@ -16,26 +17,38 @@
 <!-- Conteúdo principal da página -->
 <div class="fundo-branco">
     <form asp-action="Editar" method="post" id="form-endereco">
+
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <h2>Editar Perfil</h2>
+        <h2 class="mt-2">Meus Dados</h2>
+
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        @if (!string.IsNullOrEmpty(successMessage))
+        {
+            <div class="alert alert-success" id="successMessage">
+                @successMessage
+            </div>
+
+            <script>
+                setTimeout(() => {
+                    window.location.href = '@Url.Action("Index", "Produto")';
+                }, 2000);
+            </script>
+        }
+
+        <input type="hidden" name="EmailComp" value="@Model.EmailComp" />
+        <input type="hidden" name="CpfComp" value="@Model.CpfComp" />
+        <input type="hidden" name="SenhaComp" value="@Model.SenhaComp" />
+        <input type="hidden" name="ConfirmarSenhaComp" value="@Model.SenhaComp" />
 
         <div class="form-floating mt-4 mb-3">
-            <input asp-for="EmailComp" type="email" class="form-control" id="email" placeholder="exemplo@gmail.com" />
+            <input asp-for="EmailComp" type="email" class="form-control" id="email" placeholder="exemplo@gmail.com" disabled />
             <label for="email">E-mail</label>
             <span asp-validation-for="EmailComp" class="text-danger"></span>
-        </div>
-
-        <div class="row">
-            <div class="form-floating mb-3 col-6">
-                <input asp-for="SenhaComp" type="password" class="form-control" id="senha" placeholder="123@exemplo" />
-                <label for="senha">Senha</label>
-                <span asp-validation-for="SenhaComp" class="text-danger"></span>
-            </div>
-            <div class="form-floating mb-3 col-6">
-                <input asp-for="ConfirmarSenhaComp" type="password" class="form-control" id="confirmarSenha" placeholder="123@exemplo" />
-                <label for="confirmarSenha">Confirmar Senha</label>
-                <span asp-validation-for="ConfirmarSenhaComp" class="text-danger"></span>
-            </div>
         </div>
 
         <div class="row">
@@ -47,11 +60,60 @@
                     <label for="nome">Nome</label>
                     <span asp-validation-for="NomeComp" class="text-danger"></span>
                 </div>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input asp-for="FoneComp" class="form-control" id="telefone" placeholder="(99) 9 9999-9999" maxlength="15" />
+                    <label for="telefone">Celular</label>
+                    <span asp-validation-for="FoneComp" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating mt-3 mb-4">
+                    <input asp-for="CpfComp" type="text" maxlength="14" class="form-control" id="cpf" placeholder="11111111111" disabled />
+                    <label for="cpf">CPF</label>
+                    <span asp-validation-for="CpfComp" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <h5>Endereço</h5>
+
+                <div class="form-floating mt-3 mb-3">
+                    <input asp-for="CepComp" class="form-control" maxlength="9" id="cep" placeholder="Digite o CEP" onkeyup="verificarCep(event)" required />
+                    <label for="cep">CEP</label>
+                    <span asp-validation-for="CepComp" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="form-floating col-9">
+                        <input asp-for="LogradouroComp" type="text" class="form-control" id="logradouro"
+                               placeholder="Rua Nossa do Carmo" readonly />
+                        <label for="logradouro">Logradouro</label>
+                    </div>
+
+                    <div class="form-floating col-3">
+                        <input asp-for="NumeroComp" type="number" class="form-control" id="numero" placeholder="Número" />
+                        <label for="numero">Número</label>
+                    </div>
+
+                    <div class="form-floating mt-3 mb-3 col-12">
+                        <input asp-for="BairroComp" type="text" class="form-control" id="bairro" placeholder="Bairro" readonly />
+                        <label for="bairro">Bairro</label>
+                    </div>
+
+                    <div class="form-floating col-9">
+                        <input asp-for="CidadeComp" type="text" class="form-control" id="cidade" placeholder="Cidade" readonly />
+                        <label for="cidade">Cidade</label>
+                    </div>
+
+                    <div class="form-floating col-3">
+                        <input asp-for="EstadoComp" type="text" class="form-control" id="estado" placeholder="Estado" readonly />
+                        <label for="estado">Estado</label>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="text-center mt-2">
-            <button type="submit" class="btn btn-primary btn-padrao btn-lg">Salvar</button>
+            <button type="submit" class="btn btn-primary btn-padrao btn-lg mt-5">Salvar</button>
         </div>
     </form>
 </div>
