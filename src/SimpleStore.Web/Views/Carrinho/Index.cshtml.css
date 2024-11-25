@@ -1,12 +1,12 @@
 
 /*Aqui apenas os elementos exclusivos da página carrinho*/
 
-.form-floating > label {
+/*.form-floating > label {
     left: unset;
-}
+}*/
 
 /* Cabeçalho da página */
-header {
+/*header {
     background-color: #3b1b88;
 }
 
@@ -64,10 +64,10 @@ li > a > i {
 
 .bg-dropdown > li > a:hover {
     background-color: #F4F0FE;
-}
+}*/
 
 /* Estilos do carrinho de compras */
-.cart-item {
+/*.cart-item {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -112,4 +112,4 @@ li > a > i {
         position: relative;
         margin-top: 20px;
     }
-}
+}*/
