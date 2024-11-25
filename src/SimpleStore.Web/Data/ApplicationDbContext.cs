@@ -26,7 +26,7 @@ namespace SimpleStore.Web.Data
                     // modelBuilder.Entity<ProdutoCarrinho>().HasNoKey();
 
                     modelBuilder.Entity<Carrinho>()
-                        .HasMany(c => c.Produto)
+                        .HasMany(c => c.Produtos)
                         .WithOne(p => p.Carrinho)
                         .HasForeignKey(p => p.IdCarrinho); // Especifica que a chave estrangeira em Produto é IdCarrinho
 
