@@ -29,7 +29,7 @@ namespace SimpleStore.Web.Controllers
             if (ModelState.IsValid)
             {
                 var sucesso = await _perfilFornecedorService.AtualizarDadosComprador(perfilForn);
-                TempData["SuccessMessage"] = "Cadastro realizado com sucesso!";
+                TempData["SuccessMessage"] = "Alteração realizada com sucesso!";
             }
             else
             {
