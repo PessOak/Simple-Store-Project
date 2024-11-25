@@ -1,3 +1,70 @@
+@model SimpleStore.Web.Models.Carrinho
+
+<main class="container mt-5 pt-5">
+    <h2 class="text-center my-4">Meu Carrinho</h2>
+
+    @if (Model.Produtos != null && Model.Produtos.Any())
+    {
+        <div class="row">
+            <!-- Lista de Produtos no Carrinho -->
+            <div class="col-md-8">
+                @foreach (var produtoCarrinho in Model.Produtos)
+                {
+                    <div class="cart-item mb-4 p-3 border rounded">
+                        <div class="row align-items-center">
+                            <div class="col-3">
+                                <img src="@produtoCarrinho.Produto.ImgUrl"
+                                     alt="@produtoCarrinho.Produto.NomeProd"
+                                     class="img-fluid">
+                            </div>
+                            <div class="col-7">
+                                <h5 class="mb-1">@produtoCarrinho.Produto.NomeProd</h5>
+                                <p class="mb-1 text-muted">@produtoCarrinho.Produto.DescProd</p>
+                                <p class="mb-0">
+                                    <strong>Preço Unitário:</strong>
+                                    @produtoCarrinho.Produto.PrecoProd.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))
+                                </p>
+                                <p class="mb-0">
+                                    <strong>Total:</strong>
+                                    @((produtoCarrinho.QuantProdCarrinho * produtoCarrinho.Produto.PrecoProd).ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR")))
+                                </p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <p class="mb-1"><strong>Quantidade:</strong> @produtoCarrinho.QuantProdCarrinho</p>
+                                <form asp-action="RemoverProduto" method="post">
+                                    <input type="hidden" name="idProduto" value="@produtoCarrinho.IdProd" />
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">Remover</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Resumo do Pedido -->
+            <div class="col-md-4">
+                <div class="cart-summary p-3 border rounded">
+                    <h4>Resumo do Pedido</h4>
+                    <hr>
+                    <p><strong>Valor Total:</strong> @Model.ValorTotalCarrinho.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
+                    <a href="@Url.Action("Checkout", "Carrinho")" class="btn btn-success btn-lg w-100 mt-3">Finalizar Compra</a>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center mt-5">
+            Seu carrinho está vazio! Explore nossos <a href="@Url.Action("Index", "Produto")">produtos</a>.
+        </div>
+    }
+</main>
+
+
+
+
+
+
 @* @model SimpleStore.Web.Models.Carrinho
 
 <main class="container mt-5 pt-5">
