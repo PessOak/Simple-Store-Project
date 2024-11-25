@@ -2,64 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     verificarCep();
 
-    const telefoneInput = document.getElementById('telefone');
-
-    telefoneInput.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-        e.target.value = value;
-
-        if (value.length > 11) {
-            value = value.slice(0, 11); // Limita a 11 caracteres
-        }
-
-        // Formata como celular ou fixo
-        if (value.length > 10) {
-            e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 3)} ${value.slice(3, 7)}-${value.slice(7)}`;
-        } else if (value.length > 6) {
-            e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
-        } else if (value.length > 2) {
-            e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-        } else if (value.length > 0) {
-            e.target.value = `(${value}`;
-        }
-    });
-    const cepInput = document.getElementById('cep');
-
-    cepInput.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-
-        if (value.length > 9) {
-            value = value.slice(0, 9); // Limita a 9 caracteres
-        }
-
-        // Formata o CEP
-        if (value.length > 5) {
-            e.target.value = `${value.slice(0, 5)}-${value.slice(5)}`;
-        } else {
-            e.target.value = value;
-        }
-    });
-
-    const cpfInput = document.getElementById('cpf');
-
-    cpfInput.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-
-        if (value.length > 14) {
-            value = value.slice(0, 14); // Limita a 14 dígitos numéricos
-        }
-
-        // Formata como CPF (999.999.999-99)
-        if (value.length > 9) {
-            e.target.value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6, 9)}-${value.slice(9)}`;
-        } else if (value.length > 6) {
-            e.target.value = `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6)}`;
-        } else if (value.length > 3) {
-            e.target.value = `${value.slice(0, 3)}.${value.slice(3)}`;
-        } else {
-            e.target.value = value;
-        }
-    });
+    aplicarMascaras();
 
     const senhaInput = document.getElementById('senha');
     const confirmarSenhaInput = document.getElementById('confirmarSenha');
