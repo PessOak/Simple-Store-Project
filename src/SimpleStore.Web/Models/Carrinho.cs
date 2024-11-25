@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace SimpleStore.Web.Models
 {
@@ -12,9 +13,19 @@ namespace SimpleStore.Web.Models
         [ForeignKey("Comprador")]
         public string CpfComp { get; set; }
 
-        public float ValorTotalCarrinho { get; set; }
+        // Propriedade que armazenará o valor total calculado
+        public decimal ValorTotalCarrinho
+        {
+            get
+            {
+                // Garantir que o resultado seja um decimal
+                return Produtos.Sum(p => (decimal)(p.QuantProdCarrinho * p.Produto.PrecoProd));
+            }
+        }
 
         // Propriedade para armazenar os produtos no carrinho
-        public ICollection<ProdutoCarrinho> Produto { get; set; } = new List<ProdutoCarrinho>();
+        public ICollection<ProdutoCarrinho> Produtos { get; set; } = new List<ProdutoCarrinho>();
+
+        // A propriedade de navegação não precisa ser duplicada, então a lista adicional foi removida
     }
 }
