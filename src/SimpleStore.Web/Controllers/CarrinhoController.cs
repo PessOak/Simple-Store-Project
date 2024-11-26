@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Services;
 using System.Security.Claims;
-using SimpleStore.Web.Models;
 
 namespace SimpleStore.Web.Controllers
 {

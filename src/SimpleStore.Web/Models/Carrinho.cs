@@ -27,5 +27,7 @@ namespace SimpleStore.Web.Models
         public ICollection<ProdutoCarrinho> Produtos { get; set; } = new List<ProdutoCarrinho>();
 
         // A propriedade de navegação não precisa ser duplicada, então a lista adicional foi removida
+
+        public Comprador comprador { get; set; }
     }
 }

@@ -38,14 +38,6 @@ public class ProdutoController : Controller
             return RedirectToAction("Index", "CadastroCliente");
         }
 
-        // Agora com o CPF podemos buscar o carrinho do usuário no banco
-        var idCarrinho = await _produtoCarrinhoService.ObterIdCarrinhoUsuarioAsync(cpfComp);
-
-        if (idCarrinho != 0)
-        {
-            produto.IdCarrinho = idCarrinho;
-        }
-
         return View(produto);
     }
 }

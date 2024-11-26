@@ -9,9 +9,8 @@ namespace SimpleStore.Web.Repositories
         private readonly ApplicationDbContext _context = context;
 
         public async Task<Comprador> ObterPorEmail(string email)
-        {
-            var comprador = await _context.Comprador.Where(c => c.EmailComp == email).FirstOrDefaultAsync();
-            return comprador;
+        {   
+            return await _context.Comprador.Where(comprador => comprador.EmailComp == email).FirstOrDefaultAsync();
         }
 
         public async Task<Comprador> Criar(Comprador comprador)

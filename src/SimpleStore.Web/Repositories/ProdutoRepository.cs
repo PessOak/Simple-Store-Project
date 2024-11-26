@@ -17,7 +17,7 @@ namespace SimpleStore.Web.Repositories
 
             //return await _dbConnection.QueryAsync<Produto>(query);
 
-            return await _context.Produto.OrderBy(p => p.NomeProd).ToListAsync();
+            return await _context.Produto.OrderBy(produto => produto.NomeProd).ToListAsync();
         }
 
         public async Task<Produto> ListarProdutoPeloNome(string nome)

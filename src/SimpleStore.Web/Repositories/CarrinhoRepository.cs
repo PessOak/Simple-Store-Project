@@ -29,16 +29,17 @@ namespace SimpleStore.Web.Repositories
             // Query para obter o carrinho e seus produtos
             var query = @"
         SELECT 
-            c.IdCarrinho, 
-            c.CpfComp, 
+            c.IdCarrinho,
+            c.CpfComp,
             c.ValorTotalCarrinho,
             pc.IdCarrinho AS ProdutoCarrinhoIdCarrinho,
             pc.IdProd AS ProdutoCarrinhoIdProd,
             pc.QuantProdCarrinho,
-            p.IdProd AS ProdutoIdProd, 
-            p.NomeProd, 
-            p.PrecoProd, 
-            p.DescProd, 
+            p.IdProd AS ProdutoIdProd,
+            p.IdProd,
+            p.NomeProd,
+            p.PrecoProd,
+            p.DescProd,
             p.ImgUrl -- Incluído aqui
         FROM Carrinho c
         LEFT JOIN ProdutoCarrinho pc ON c.IdCarrinho = pc.IdCarrinho
@@ -54,13 +55,18 @@ namespace SimpleStore.Web.Repositories
                     if (!carrinho.TryGetValue(carrinhoRow.IdCarrinho, out var carrinhoAtual))
                     {
                         carrinhoAtual = carrinhoRow;
-                        carrinhoAtual.Produtos = new List<ProdutoCarrinho>();
-                        carrinho.Add(carrinhoRow.IdCarrinho, carrinhoAtual);
+                        carrinho[carrinhoRow.IdCarrinho] = carrinhoAtual;
+                        //carrinhoAtual.Produtos = new List<ProdutoCarrinho>();
+                        //carrinho.Add(carrinhoRow.IdCarrinho, carrinhoAtual);
                     }
 
                     if (produtoCarrinhoRow != null)
                     {
-                        produtoCarrinhoRow.Produto = produtoRow;
+                        if (produtoRow != null)
+                        {
+                            produtoCarrinhoRow.Produto = produtoRow;
+                        }
+                        //produtoCarrinhoRow.Produto = produtoRow;
                         carrinhoAtual.Produtos.Add(produtoCarrinhoRow);
                     }
 
