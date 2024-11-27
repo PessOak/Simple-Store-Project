@@ -17,46 +17,53 @@
     <!-- Formulário para adicionar produtos -->
     <form class="form-fundo" asp-action="SalvarProduto" method="post" enctype="multipart/form-data">
 
-        <h2>Adicionar Produto</h2>
+        <h2 class="mb-5 mt-3">Adicionar Produto</h2>
 
-        <div class="form-floating mt-4 mb-3">
-            <input asp-for="NomeProd" class="form-control tamanho-input" placeholder="Nome do produto" />
-            <label asp-for="NomeProd">Nome do Produto</label>
-            <span asp-validation-for="NomeProd" class="text-danger"></span>
+        <div class="row">
+            <div class="form-floating mb-3 col-6">
+                <input asp-for="NomeProd" class="form-control tamanho-input" placeholder="Nome do produto" />
+                <label>Nome do Produto</label>
+                <span asp-validation-for="NomeProd" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3  col-6">
+                <input asp-for="PrecoProd" type="number" class="form-control tamanho-input" placeholder="Preço de venda" step="0.01" />
+                <label>Preço de Venda</label>
+                <span asp-validation-for="PrecoProd" class="text-danger"></span>
+            </div>
         </div>
 
-        <div class="form-floating mb-3">
-            <input asp-for="PrecoProd" type="number" class="form-control tamanho-input" placeholder="Preço de venda" step="0.01" />
-            <label asp-for="PrecoProd">Preço de Venda</label>
-            <span asp-validation-for="PrecoProd" class="text-danger"></span>
-        </div>
-
-        <div class="form-floating mb-3">
+        <div class="row">
+        <div class="form-floating mb-3 col-6">
             <input asp-for="CategProd" class="form-control tamanho-input" placeholder="Categoria" />
-            <label asp-for="CategProd">Categoria</label>
+            <label>Categoria</label>
             <span asp-validation-for="CategProd" class="text-danger"></span>
         </div>
 
-        <div class="form-floating mb-3">
+        <div class="form-floating mb-3 col-6">
             <input asp-for="QuantProd" type="number" class="form-control tamanho-input" placeholder="Estoque disponível" />
-            <label asp-for="QuantProd">Estoque Disponível</label>
+            <label>Estoque Disponível</label>
             <span asp-validation-for="QuantProd" class="text-danger"></span>
+        </div>
         </div>
 
         <div class="form-floating mb-3">
-            <textarea asp-for="DescProd" class="form-control tamanho-input" placeholder="Descrição do produto" style="height: 100px;"></textarea>
+            <textarea asp-for="DescProd" maxlength="100" class="form-control tamanho-input" placeholder="Descrição do produto" style="height: 100px;"></textarea>
             <label asp-for="DescProd">Descrição</label>
             <span asp-validation-for="DescProd" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
-            <label asp-for="ImagemProduto" class="form-label">Imagem do Produto</label>
-            <input asp-for="ImagemProduto" type="file" class="form-control tamanho-input" accept="image/*" />
+        <div class="mb-5 pt-4">
+            <strong class="form-label mb-5"> Imagem do Produto</strong>
+            <input asp-for="ImagemProduto" type="file" class="form-control tamanho-input mt-3" accept="image/*" />
             <span asp-validation-for="ImagemProduto" class="text-danger"></span>
         </div>
 
         <div class="text-center mt-5">
-            <button type="submit" class="btn btn-primary btn-padrao btn-lg">Adicionar Produto</button>
+            <button type="submit" class="btn btn-padrao btn-lg">Criar Produto</button>
+        </div>
+        <div class="text-center mt-5">
+            <a class="voltar" href="/GerenciarProdutos">Voltar</a>
         </div>
     </form>
 </div>

@@ -8,11 +8,32 @@ h5 {
     font-size: 1rem;
 }
 
+h2,
+h4,
+strong {
+    color: #232323 !important;
+    font-weight: 700 !important;
+}
+
+.form-floating > label {
+    left: unset;
+}
+
+.container {
+    width: 55%;
+}
+
+.fundo-card {
+    border: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 4px #00000035;
+}
+
 .campo-buscar {
     color: #1E1E1E;
     font-weight: 450;
     border-radius: 3px 0 0 3px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
 }
 
     .campo-buscar::placeholder {
@@ -30,19 +51,53 @@ h5 {
         background-color: #65BAA9;
     }
 
-/* configuração botão principal grande*/
-.btn-padrao {
-    color: #fff;
-    padding: 0.6rem 2rem;
+.btn-editar {
     border: 0;
-    background-color: #3b1b88;
+    color: #fff;
+    background-color: #FFBC1F;
     font-size: 0.9rem;
     font-weight: 600;
+    padding: 0.3rem 1.2rem;
 }
+    .btn-editar:hover {
+       background-color: #A37200;
+    }
+
+.preco {
+    font-size: 1.3rem;
+}
+
+
+.btn-remover {
+    border: 0;
+    color: #fff;
+    background-color: #dd0000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 1.5rem;
+}
+
+    .btn-remover:hover {
+        border: 0;
+        background-color: #8F0000;
+    }
+
+    /* configuração botão principal grande*/
+    .btn-padrao {
+        color: #fff;
+        padding: 0.6rem 2rem;
+        border: 0;
+        background-color: #3b1b88;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
 
     .btn-padrao:hover {
         border: 0;
         background-color: #65BAA9;
     }
+
+
+
 
 

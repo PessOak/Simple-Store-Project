@@ -13,10 +13,11 @@ body {
 }
 
 /* Configurações padrões cor e peso das tags título e tag strong */
+
 h2,
 h5,
 strong {
-    color: #232323;
+    color: #232323 !important;
     font-weight: 700;
 }
 

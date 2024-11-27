@@ -41,17 +41,6 @@ li > a > i {
     color: #1E1E1E;
 }
 
-.btn-secundario {
-    border-radius: 0 3px 3px 0px;
-    background-color: #ffffff;
-    transition: 0.4s;
-}
-
-    .btn-secundario:hover {
-        transition: 0.4s;
-        background-color: #65BAA9;
-    }
-
 .link-entrar {
     cursor: pointer;
     font-weight: 700;
@@ -78,14 +67,25 @@ li > a > i {
         background-color: #F4F0FE;
     }
 
+.voltar {
+    color: #65BAA9;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600
+}
+
+    .voltar:hover {
+        color: #3b1b88;
+        transition: 0.4s;
+    }
+
 /* Configuração final do cabeçalho da página */
-
-
 /* Main - Conteúdo principal da página */
 .fundo-branco {
     width: 60%;
     height: 100%;
-    padding: 8rem 4rem 4rem 4rem;
+    padding: 5rem 4rem 4rem 4rem;
     margin: 0 auto 0;
     background-color: #ffff;
     border-radius: 2rem;
@@ -109,6 +109,7 @@ h5 {
 
 /* configuração botão principal grande*/
 .btn-padrao {
+    color: white;
     padding: 0.6rem 4rem;
     border: 0;
     background-color: #3b1b88;

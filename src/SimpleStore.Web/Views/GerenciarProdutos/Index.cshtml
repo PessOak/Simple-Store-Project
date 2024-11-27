@@ -13,18 +13,16 @@
 
 <div class="container my-4">
     <!-- Título da Página -->
-    <h1 class="mb-4 text-start">Gerenciar Produtos</h1>
+    <h2 class="mb-4 text-start">Gerenciar Produtos</h2>
 
     <div class="row">
-        <!-- Botão "Novo Produto" -->
-        <!-- Campo de Pesquisa -->
-        <div class="col-10 d-flex mb-4">
+        <div class="col-9 d-flex mb-4 ">
             <input type="text" class="form-control campo-buscar border-0" placeholder="Pesquisar produto" aria-label="Pesquisar produto">
             <button class="btn campo-buscar btn-outline btn-secundario" type="button">
                 <i class="ri-search-line ri-xl"></i>
             </button>
         </div>
-        <div class="col-2 mb-4">
+        <div class="col-3 mb-4">
             <a class="btn btn-padrao w-100" href="/CadastroProduto">Novo Produto</a>
         </div>
     </div>
@@ -32,30 +30,39 @@
     @foreach (var produto in Model)
     {
         <!-- Lista de Produtos -->
-        <div class="row">
+        <div class="row g-1">
             <!-- Produto 1 -->
             <div class="col-md-12 mb-3">
-                <div class="card">
-                    <div class="row g-0">
+                <div class="card fundo-card mb-4 p-3">
+                    <div class="row">
                         <!-- Imagem do Produto -->
-                        <div class="col-md-2">
-                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(produto.ImgUrl)" alt="@produto.NomeProd" class="card-img-top" height="200" />
+                        <div class="col-md-3">
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(produto.ImgUrl)" alt="@produto.NomeProd" class="card-img-top" height="150" />
                         </div>
                         <!-- Detalhes do Produto -->
-                        <div class="col-md-8">
+                        <div class="col-md-9">
                             <div class="card-body">
-                                <p class="card-title">Código do produto: <strong>@produto.IdProd</strong></p>
-                                <h4 class="card-title"> Nome do produto: @produto.NomeProd</h4>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="card-title"> <span m-4">Código do produto:</span> @produto.IdProd</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="/Produtos/Edit/1" class="btn btn-editar btn-sm">Editar</a>
+                                        <button class="btn btn-remover btn-sm ms-2">Deletar</button>
+                                    </div>
+                                </div>
+
+                                <h4 class="card-title"> @produto.NomeProd</h4>
                                 <p class="card-text">@produto.DescProd</p>
-                                <p class="card-text">
-                                    <small class="text-muted">Estoque: @produto.QuantProd | Categoria: @produto.CategProd | Preço: @produto.PrecoProd</small>
-                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="card-text">
+                                            <small class="text-muted">Estoque: @produto.QuantProd  |  Categoria: @produto.CategProd </small>
+                                        </p>
+                                    </div>
+                                    <div><span class="preco">Preço: R$ <strong>@produto.PrecoProd.ToString("F2")</strong></span></div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Botões de Ação -->
-                        <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
-                            <a href="/Produtos/Edit/1" class="btn btn-primary btn-sm mb-2">Editar</a>
-                            <button class="btn btn-danger btn-sm">Deletar</button>
                         </div>
                     </div>
                 </div>
