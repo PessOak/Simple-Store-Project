@@ -1,4 +1,5 @@
-﻿using SimpleStore.Web.Repositories;
+﻿using SimpleStore.Web.Models;
+using SimpleStore.Web.Repositories;
 
 namespace SimpleStore.Web.Services
 {
@@ -6,6 +7,11 @@ namespace SimpleStore.Web.Services
     {
         private readonly GerenciarProdutosRepository _gerenciarProdutosRepository = gerenciarProdutosRepository;
 
+    public async Task<IEnumerable<Produto>> ExibirProdutosCadastrados()
+        {
+            var produtoExiste = await _gerenciarProdutosRepository.ExibirProdutosCadastrados();
 
+            return produtoExiste;
+        }
     }
 }

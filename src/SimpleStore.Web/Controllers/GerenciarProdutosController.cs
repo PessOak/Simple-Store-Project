@@ -3,13 +3,20 @@ using SimpleStore.Web.Services;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class GerenciarProdutosController(GerenciarProdutosService gerenciarProdutosService)
+    public class GerenciarProdutosController : Controller 
     {
-        private readonly GerenciarProdutosService _gerenciarProdutosService = gerenciarProdutosService;
+       
+        private readonly GerenciarProdutosService _gerenciarProdutosService;
 
-        //public IActionResult Index() {
+        public GerenciarProdutosController(GerenciarProdutosService gerenciarProdutosService) {
+            _gerenciarProdutosService = gerenciarProdutosService;
+        }
+ 
+        public async Task<IActionResult> Index()
+        {
+            var produtos = await _gerenciarProdutosService.ExibirProdutosCadastrados();
 
-        //    Return View();
-        //}
+            return View(produtos);
+        }
     }
 }

@@ -1,11 +1,15 @@
-
-Aqui apenas os elementos exclusivos da página carrinho
-
-.form-floating > label {
-    left: unset;
+.card-fundo {
+    border: 0 !important;
+    box-shadow: 0 0 20px 4px #00000035 !important;
 }
 
- Cabeçalho da página 
+.container {
+    width: 100%;
+    margin: 0 auto !important; 
+}
+
+
+Cabeçalho da página
 header {
     background-color: #3b1b88;
 }
@@ -30,15 +34,30 @@ li > a > i {
     color: #1E1E1E;
 }
 
-.btn-secundario {
-    border-radius: 0 3px 3px 0px;
-    background-color: #ffffff;
-    transition: 0.4s;
+.btn-padrao {
+    color: #fff;
+    padding: 0.6rem 33%;
+    border: 0;
+    background-color: #3b1b88;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.btn-secundario:hover {
+    .btn-padrao:hover {
+        border: 0;
+        background-color: #65BAA9;
+    }
+
+.btn-remover {
+    border: 0;
+    color: #fff;
     background-color: #65BAA9;
 }
+    .btn-remover:hover {
+        border: 0;
+        background-color: #dd0000;
+    }
+
 
 .link-entrar {
     cursor: pointer;

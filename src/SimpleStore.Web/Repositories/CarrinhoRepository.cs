@@ -62,6 +62,7 @@ namespace SimpleStore.Web.Repositories
 
                     if (produtoCarrinhoRow != null)
                     {
+                        produtoCarrinhoRow.IdProd = produtoRow.IdProd;
                         if (produtoRow != null)
                         {
                             produtoCarrinhoRow.Produto = produtoRow;
