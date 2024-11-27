@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Services;
+using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
@@ -11,12 +12,21 @@ namespace SimpleStore.Web.Controllers
         public GerenciarProdutosController(GerenciarProdutosService gerenciarProdutosService) {
             _gerenciarProdutosService = gerenciarProdutosService;
         }
- 
+
         public async Task<IActionResult> Index()
         {
-            var produtos = await _gerenciarProdutosService.ExibirProdutosCadastrados();
+            string cnpjFornecedor = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            int cnpj = int.Parse(cnpjFornecedor);
 
-            return View(produtos);
+            try
+            {
+                var produtos = await _gerenciarProdutosService.ExibirProdutosCadastrados(cnpj);
+                return View(produtos);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }

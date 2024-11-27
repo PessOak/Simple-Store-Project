@@ -34,7 +34,8 @@ namespace SimpleStore.Web.Controllers
                     var claims = new List<Claim>
                     {
                         new(ClaimTypes.Name, fornecedor.NomeForn),
-                        new(ClaimTypes.NameIdentifier, fornecedor.DocForn),
+                        new(ClaimTypes.NameIdentifier, fornecedor.IdForn.ToString()),
+                        new("CNPJ", fornecedor.DocForn),
                         new(ClaimTypes.Email, fornecedor.EmailForn),
                         new(ClaimTypes.Role, PapelUsuario.Fornecedor.ToString())
                     };

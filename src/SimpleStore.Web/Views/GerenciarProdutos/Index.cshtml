@@ -1,0 +1,73 @@
+﻿@model Produto
+
+<div class="container my-4">
+    <!-- Título da Página -->
+    <h1 class="mb-4 text-center">Gerenciar Produtos</h1>
+
+    <!-- Botão "Novo Produto" -->
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/Produtos/Create" class="btn btn-success">Novo Produto</a>
+    </div>
+
+    <!-- Campo de Pesquisa -->
+    <div class="input-group mb-4">
+        <input type="text" class="form-control" placeholder="Pesquisar produto" aria-label="Pesquisar produto">
+        <button class="btn btn-outline-secondary" type="button">
+            <i class="bi bi-search"></i> <!-- Ícone de busca (Bootstrap Icons) -->
+        </button>
+    </div>
+
+    <!-- Lista de Produtos -->
+    <div class="row">
+        <!-- Produto 1 -->
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="row g-0">
+                    <!-- Imagem do Produto -->
+                    <div class="col-md-2">
+                        <img src="placeholder.png" class="img-fluid rounded-start" alt="Imagem do Produto">
+                    </div>
+                    <!-- Detalhes do Produto -->
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Nome do Produto</h5>
+                            <p class="card-text">Descrição breve do produto.</p>
+                            <p class="card-text">
+                                <small class="text-muted">Estoque: 10 | Categoria: Eletrônicos | Preço: R$ 199,99</small>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Botões de Ação -->
+                    <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
+                        <a href="/Produtos/Edit/1" class="btn btn-primary btn-sm mb-2">Editar</a>
+                        <button class="btn btn-danger btn-sm">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Produto 2 (Exemplo) -->
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-2">
+                        <img src="placeholder.png" class="img-fluid rounded-start" alt="Imagem do Produto">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Outro Produto</h5>
+                            <p class="card-text">Descrição breve do produto.</p>
+                            <p class="card-text">
+                                <small class="text-muted">Estoque: 5 | Categoria: Roupas | Preço: R$ 99,99</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-flex flex-column justify-content-center align-items-center">
+                        <a href="/Produtos/Edit/2" class="btn btn-primary btn-sm mb-2">Editar</a>
+                        <button class="btn btn-danger btn-sm">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
