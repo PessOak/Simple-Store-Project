@@ -1,4 +1,4 @@
-﻿@model CadastroProduto
+﻿@model Produto
 
 @{
     ViewData["Title"] = "Cadastro de Produto";
@@ -47,18 +47,6 @@
             <textarea asp-for="DescProd" class="form-control tamanho-input" placeholder="Descrição do produto" style="height: 100px;"></textarea>
             <label asp-for="DescProd">Descrição</label>
             <span asp-validation-for="DescProd" class="text-danger"></span>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input asp-for="EstoqueMinimo" type="number" class="form-control tamanho-input" placeholder="Estoque mínimo" />
-            <label asp-for="EstoqueMinimo">Estoque Mínimo</label>
-            <span asp-validation-for="EstoqueMinimo" class="text-danger"></span>
-        </div>
-
-        <div class="form-floating mb-3">
-            <input asp-for="EstoqueMaximo" type="number" class="form-control tamanho-input" placeholder="Estoque máximo" />
-            <label asp-for="EstoqueMaximo">Estoque Máximo</label>
-            <span asp-validation-for="EstoqueMaximo" class="text-danger"></span>
         </div>
 
         <div class="mb-3">

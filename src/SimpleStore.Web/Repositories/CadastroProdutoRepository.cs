@@ -15,12 +15,15 @@ namespace SimpleStore.Web.Repositories
             _dbConnection = dbConnection;
         }
 
-        public async Task<int> AdicionarProdutoAsync(CadastroProduto produto)
+        public async Task<int> AdicionarProdutoAsync(Produto produto)
         {
             var query = @"
-            INSERT INTO Produto (IdForn, NomeProd, DescProd, QuantProd, PrecoProd, CategProd, ImgUrl)
-            VALUES (@IdForn, @NomeProd, @DescProd, @QuantProd, @PrecoProd, @CategProd, @ImgUrl);
-            SELECT LAST_INSERT_ID();";
+        INSERT INTO Produto (IdForn, NomeProd, DescProd, QuantProd, PrecoProd, CategProd, ImgUrl)
+        VALUES (@IdForn, @NomeProd, @DescProd, @QuantProd, @PrecoProd, @CategProd, @ImgUrl);
+        SELECT LAST_INSERT_ID();";
+
+            Console.WriteLine($"Query: {query}");
+            Console.WriteLine($"Parâmetros: IdForn={produto.IdForn}, NomeProd={produto.NomeProd}, DescProd={produto.DescProd}, QuantProd={produto.QuantProd}, PrecoProd={produto.PrecoProd}, CategProd={produto.CategProd}");
 
             return await _dbConnection.QuerySingleAsync<int>(query, new
             {
@@ -33,6 +36,7 @@ namespace SimpleStore.Web.Repositories
                 produto.ImgUrl
             });
         }
+
 
         public async Task<bool> FornecedorExisteAsync(int idForn)
         {

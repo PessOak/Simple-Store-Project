@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace SimpleStore.Web.Controllers
 {
@@ -28,7 +29,7 @@ namespace SimpleStore.Web.Controllers
                 return RedirectToAction("LoginFornecedor");
             }
 
-            return View(new CadastroProduto());
+            return View(new Produto());
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace SimpleStore.Web.Controllers
         /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SalvarProduto(CadastroProduto produto)
+        public async Task<IActionResult> SalvarProduto(Produto produto)
         {
             if (!User.IsInRole("Fornecedor"))
             {
@@ -46,16 +47,8 @@ namespace SimpleStore.Web.Controllers
 
             if (User.Identity.IsAuthenticated)
             {
-                var idFornecedor = int.Parse(User.FindFirst("IdForn")?.Value ?? "0");
+                var idFornecedor = int.Parse(User.FindFirst("IdForn")?.Value ?? "1");
                 produto.IdForn = idFornecedor;
-
-                // Validar se o fornecedor existe
-                var fornecedorExiste = await _cadastroProdutoService.VerificarFornecedorAsync(idFornecedor);
-                if (!fornecedorExiste)
-                {
-                    TempData["MensagemErro"] = "Fornecedor inválido. Tente novamente.";
-                    return RedirectToAction("LoginFornecedor");
-                }
             }
             else
             {
@@ -63,8 +56,18 @@ namespace SimpleStore.Web.Controllers
                 return RedirectToAction("LoginFornecedor");
             }
 
+            // Validação manual da imagem
+            if (produto.ImagemProduto == null || produto.ImagemProduto.Length == 0)
+            {
+                ModelState.AddModelError("ImagemProduto", "Obrigatório enviar uma imagem do produto.");
+            }
+
             if (!ModelState.IsValid)
             {
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    Console.WriteLine($"Erro de validação: {error.ErrorMessage}");
+                }
                 return View("Index", produto);
             }
 

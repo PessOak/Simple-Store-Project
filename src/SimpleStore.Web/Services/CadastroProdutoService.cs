@@ -17,18 +17,24 @@ namespace SimpleStore.Web.Services
             _cadastroProdutoRepository = cadastroProdutoRepository;
         }
 
-        public async Task<bool> SalvarProdutoAsync(CadastroProduto produto)
+        public async Task<bool> SalvarProdutoAsync(Produto produto)
         {
             try
             {
                 if (produto == null) throw new ArgumentNullException(nameof(produto));
 
+                Console.WriteLine("Preparando para salvar o produto...");
+
+                // Processar a imagem se for enviada via formulário
                 if (produto.ImagemProduto != null)
                 {
                     produto.ImgUrl = await SalvarImagemAsync(produto.ImagemProduto);
                 }
 
+                Console.WriteLine("Chamando o repositório para salvar o produto...");
                 var produtoId = await _cadastroProdutoRepository.AdicionarProdutoAsync(produto);
+
+                Console.WriteLine($"Produto salvo com ID: {produtoId}");
                 return produtoId > 0;
             }
             catch (Exception ex)
@@ -38,10 +44,7 @@ namespace SimpleStore.Web.Services
             }
         }
 
-        public async Task<bool> VerificarFornecedorAsync(int idForn)
-        {
-            return await _cadastroProdutoRepository.FornecedorExisteAsync(idForn);
-        }
+
 
         private async Task<byte[]> SalvarImagemAsync(IFormFile arquivo)
         {
@@ -54,5 +57,6 @@ namespace SimpleStore.Web.Services
                 return memoryStream.ToArray();
             }
         }
+
     }
 }

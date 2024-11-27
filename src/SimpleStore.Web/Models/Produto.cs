@@ -26,7 +26,9 @@ namespace SimpleStore.Web.Models
         [Required(ErrorMessage = "Obrigatório informar a categoria do produto.")]
         public string CategProd { get; set; }
 
-        [Required(ErrorMessage = "Obrigatório enviar uma imagem do produto.")]
         public byte[] ImgUrl { get; set; }
+
+        [NotMapped]
+        public IFormFile ImagemProduto { get; set; } // Recebe o arquivo enviado pelo formulário
     }
 }
