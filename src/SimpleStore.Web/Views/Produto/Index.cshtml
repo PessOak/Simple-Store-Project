@@ -6,18 +6,18 @@
     <div class="row">
         @foreach (var produto in Model)
         {
-                <div class="col-md-4 mb-4 produto" data-nome="@produto.NomeProd">
+            <div class="col-md-4 mb-4 produto" data-nome="@produto.NomeProd">
                 <div class="card text-center">
 
-                    @if (!string.IsNullOrEmpty(produto.ImgUrl))
+                    @if (produto.ImgUrl != null && produto.ImgUrl.Length > 0)
                     {
-                        <img src="@produto.ImgUrl" alt="@produto.NomeProd" class="card-img-top" />
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(produto.ImgUrl)" alt="@produto.NomeProd" class="card-img-top" />
                     }
                     else
                     {
                         <img src="~/img/placeholder.jpg" alt="Imagem Padrão" class="card-img-top" />
                     }
-                    
+
                     <div class="card-body">
                         <h5 class="card-title">@produto.NomeProd</h5>
                         <p class="card-text">Preço: @produto.PrecoProd.ToString("C")</p>
