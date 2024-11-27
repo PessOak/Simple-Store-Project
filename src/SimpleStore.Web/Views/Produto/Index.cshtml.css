@@ -12,3 +12,15 @@
 .card-img-top {
     height: 300px;
 }
+
+.btn-remover {
+    border: 0;
+    color: #fff;
+    background-color: #65BAA9;
+}
+
+    .btn-remover:hover {
+        border: 0;
+        background-color: #dd0000;
+    }
+

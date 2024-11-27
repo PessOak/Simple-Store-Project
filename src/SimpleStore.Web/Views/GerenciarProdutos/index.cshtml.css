@@ -1,0 +1,48 @@
+﻿
+/* Main - Conteúdo principal da página */
+h2 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+.campo-buscar {
+    color: #1E1E1E;
+    font-weight: 450;
+    border-radius: 3px 0 0 3px;
+    padding: 0.5rem 1rem;
+}
+
+    .campo-buscar::placeholder {
+        color: #a8a3b5;
+    }
+
+.btn-secundario {
+    border-radius: 0 3px 3px 0px;
+    background-color: #ffffff;
+    transition: 0.4s;
+}
+
+    .btn-secundario:hover {
+        transition: 0.4s;
+        background-color: #65BAA9;
+    }
+
+/* configuração botão principal grande*/
+.btn-padrao {
+    color: #fff;
+    padding: 0.6rem 2rem;
+    border: 0;
+    background-color: #3b1b88;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+    .btn-padrao:hover {
+        border: 0;
+        background-color: #65BAA9;
+    }
+
+

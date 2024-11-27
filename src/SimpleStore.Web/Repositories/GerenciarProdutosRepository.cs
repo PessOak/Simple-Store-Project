@@ -11,10 +11,9 @@ namespace SimpleStore.Web.Repositories
         public async Task<IEnumerable<Produto>> ExibirProdutosCadastrados(int idFornecedor)
         {
             return await _context.Produto
-    .Where(produto => produto.IdForn == idFornecedor) // Filtro pelo IdForn
-    .OrderBy(produto => produto.IdProd) // Ordena pelo Id do Produto, opcional
-    .ToListAsync();
+                .Where(produto => produto.IdForn == idFornecedor) // Filtro pelo IdForn
+                .OrderBy(produto => produto.IdProd) // Ordena pelo Id do Produto, opcional
+                .ToListAsync();
         }
     }
-
 }
