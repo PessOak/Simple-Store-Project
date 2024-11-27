@@ -12,7 +12,7 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Projeto da Base de Dados
 
-![image](https://github.com/user-attachments/assets/ea4df3bb-c0ca-4be4-9b35-6aa10b7f90ac)
+![image](https://github.com/user-attachments/assets/d8f3a460-952a-4555-a4bf-b619be693a59)
 
 ## Tecnologias Utilizadas
 
