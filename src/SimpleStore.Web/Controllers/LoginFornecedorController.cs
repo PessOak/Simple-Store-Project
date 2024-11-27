@@ -51,7 +51,7 @@ namespace SimpleStore.Web.Controllers
                     };
 
                     await HttpContext.SignInAsync(principal, props);
-                    return RedirectToAction("Index", "Produto");
+                    return RedirectToAction("Index", "GerenciarProdutos");
                 }
                 else
                 {

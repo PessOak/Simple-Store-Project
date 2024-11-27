@@ -76,7 +76,7 @@ namespace SimpleStore.Web.Controllers
             if (sucesso)
             {
                 TempData["MensagemSucesso"] = "Produto salvo com sucesso!";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "GerenciarProdutos");
             }
 
             TempData["MensagemErro"] = "Erro ao salvar o produto. Tente novamente.";
