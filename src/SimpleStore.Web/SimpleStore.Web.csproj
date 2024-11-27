@@ -34,6 +34,8 @@
     <Compile Remove="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
     <Compile Remove="Models\KEYAttribute.cs" />
     <Compile Remove="Models\Perfil.cs" />
+    <Compile Remove="Repositories\AntigoCarrinhoRepository.cs" />
+    <Compile Remove="Services\AntigoCarrinhoService.cs" />
   </ItemGroup>
 
   <ItemGroup>
