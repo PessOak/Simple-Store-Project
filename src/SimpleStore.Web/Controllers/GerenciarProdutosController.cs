@@ -20,7 +20,7 @@ namespace SimpleStore.Web.Controllers
             if (!User.Identity.IsAuthenticated || User.FindFirstValue(ClaimTypes.Role) != PapelUsuario.Fornecedor.ToString())
             {
                 ViewBag.ErrorMessage = "Você precisa estar logado para acessar esta página.";
-                return RedirectToAction("LoginFornecedor", "Index");
+                return RedirectToAction("Index", "LoginFornecedor");
             }
 
             string cnpjFornecedor = User.FindFirstValue(ClaimTypes.NameIdentifier);

@@ -3,7 +3,7 @@
 <main class="container">
     <h2 class="text-start my-4">Carrinho de compras</h2>
 
-    @if (Model.Produtos != null && Model.Produtos.Any())
+    @if (Model.Produtos != null && Model.Produtos.Any() && Model.Produtos.First().Produto.NomeProd != null)
     {
         <div class="row">
             <!-- Lista de Produtos no Carrinho -->
@@ -13,9 +13,7 @@
                     <div class="cart-item card-fundo mb-4 p-3 border rounded">
                         <div class="row align-items-center">
                             <div class="col-3">
-                                <img src="@produtoCarrinho.Produto.ImgUrl"
-                                     alt="@produtoCarrinho.Produto.NomeProd"
-                                     class="img-fluid">
+                                <img src="data:image/jpeg;base64,@Convert.ToBase64String(produtoCarrinho.Produto.ImgUrl)" alt="@produtoCarrinho.Produto.NomeProd" class="card-img-top" />
                             </div>
                             <div class="col-7">
                                 <h5 class="mb-1">@produtoCarrinho.Produto.NomeProd</h5>

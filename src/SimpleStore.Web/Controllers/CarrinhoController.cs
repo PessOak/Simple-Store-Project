@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SimpleStore.Web.Enums;
 using SimpleStore.Web.Services;
 using System.Security.Claims;
 
@@ -18,9 +19,9 @@ namespace SimpleStore.Web.Controllers
             // Obter CPF do usuário logado
             string cpfComp = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (string.IsNullOrEmpty(cpfComp))
+            if (User.IsInRole(PapelUsuario.Fornecedor.ToString()) || string.IsNullOrEmpty(cpfComp))
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Index", "LoginCliente");
             }
 
             // Tenta obter o carrinho ou cria um novo caso não exista
@@ -37,7 +38,7 @@ namespace SimpleStore.Web.Controllers
 
             if (string.IsNullOrEmpty(cpfComp))
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Index", "LoginCliente");
             }
 
             // Chama o serviço para remover o produto do carrinho
