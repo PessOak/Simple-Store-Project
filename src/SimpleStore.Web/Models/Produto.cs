@@ -27,6 +27,6 @@ namespace SimpleStore.Web.Models
         public string CategProd { get; set; }
 
         [Required(ErrorMessage = "Obrigatório enviar uma imagem do produto.")]
-        public string ImgUrl { get; set; }
+        public byte[] ImgUrl { get; set; }
     }
 }
