@@ -4,6 +4,7 @@ using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
@@ -47,8 +48,18 @@ namespace SimpleStore.Web.Controllers
 
             if (User.Identity.IsAuthenticated)
             {
-                var idFornecedor = int.Parse(User.FindFirst("IdForn")?.Value ?? "1");
-                produto.IdForn = idFornecedor;
+                // Busca o ClaimTypes.NameIdentifier para obter o Id do Fornecedor
+                var idFornecedorClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+                if (int.TryParse(idFornecedorClaim, out var idFornecedor))
+                {
+                    produto.IdForn = idFornecedor;
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Não foi possível identificar o fornecedor.";
+                    return RedirectToAction("LoginFornecedor");
+                }
             }
             else
             {
@@ -76,7 +87,7 @@ namespace SimpleStore.Web.Controllers
             if (sucesso)
             {
                 TempData["MensagemSucesso"] = "Produto salvo com sucesso!";
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "GerenciarProdutos");
             }
 
             TempData["MensagemErro"] = "Erro ao salvar o produto. Tente novamente.";
