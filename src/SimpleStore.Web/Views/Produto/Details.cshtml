@@ -26,9 +26,9 @@
                     }
 
                     <!-- Thumbnails de imagens adicionais -->
-                    <img src="~/img/placeholder.jpg" alt="Imagem Adicional" class="imagem-carrossel product-image mb-2" onclick="changeImage(this)">
-                    <img src="~/img/placeholder.jpg" alt="Imagem Adicional" class="imagem-carrossel product-image mb-2" onclick="changeImage(this)">
-                    <img src="~/img/placeholder.jpg" alt="Imagem Adicional" class="imagem-carrossel product-image mb-2" onclick="changeImage(this)">
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImgUrl)" alt="Imagem Adicional" class="imagem-carrossel product-image mb-2" onclick="changeImage(this)">
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImgUrl)" alt="Imagem Adicional" class="imagem-carrossel product-image mb-2" onclick="changeImage(this)">
+                    <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImgUrl)" alt="Imagem Adicional" class="imagem-carrossel product-image mb-2" onclick="changeImage(this)">
                 </div>
 
                 <div class="col-9" id="main-img">
