@@ -7,11 +7,16 @@ namespace SimpleStore.Web.Services
     {
         private readonly GerenciarProdutosRepository _gerenciarProdutosRepository = gerenciarProdutosRepository;
 
-    public async Task<IEnumerable<Produto>> ExibirProdutosCadastrados()
+        public async Task<IEnumerable<Produto>> ExibirProdutosCadastrados(int idFornecedor)
         {
-            var produtoExiste = await _gerenciarProdutosRepository.ExibirProdutosCadastrados();
+            var produtos = await _gerenciarProdutosRepository.ExibirProdutosCadastrados(idFornecedor);
 
-            return produtoExiste;
+            if (produtos == null || !produtos.Any())
+            {
+                throw new Exception("Nenhum produto encontrado para o fornecedor especificado.");
+            }
+
+            return produtos;
         }
     }
 }

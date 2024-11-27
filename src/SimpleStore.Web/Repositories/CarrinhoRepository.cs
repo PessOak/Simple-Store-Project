@@ -56,8 +56,6 @@ namespace SimpleStore.Web.Repositories
                     {
                         carrinhoAtual = carrinhoRow;
                         carrinho[carrinhoRow.IdCarrinho] = carrinhoAtual;
-                        //carrinhoAtual.Produtos = new List<ProdutoCarrinho>();
-                        //carrinho.Add(carrinhoRow.IdCarrinho, carrinhoAtual);
                     }
 
                     if (produtoCarrinhoRow != null)
@@ -67,7 +65,6 @@ namespace SimpleStore.Web.Repositories
                         {
                             produtoCarrinhoRow.Produto = produtoRow;
                         }
-                        //produtoCarrinhoRow.Produto = produtoRow;
                         carrinhoAtual.Produtos.Add(produtoCarrinhoRow);
                     }
 
