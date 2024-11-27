@@ -37,6 +37,8 @@ builder.Services.AddScoped<PerfilFornecedorService>();
 builder.Services.AddScoped<PerfilFornecedorRepository>();
 builder.Services.AddScoped<GerenciarProdutosService>();
 builder.Services.AddScoped<GerenciarProdutosRepository>();
+builder.Services.AddScoped<CadastroProdutoService>();
+builder.Services.AddScoped<CadastroProdutoRepository>();
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
