@@ -1,0 +1,80 @@
+
+/* Container dos produtos */
+.list-group-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Imagem dos produtos */
+.list-group-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Detalhes do produto */
+.list-group-item h5 {
+    font-weight: bold;
+    color: #232323;
+}
+
+.list-group-item p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #616161;
+}
+
+/* Botão de contato com fornecedor */
+.btn-outline-primary {
+    color: #3b1b88;
+    border-color: #3b1b88;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-outline-primary:hover {
+    background-color: #3b1b88;
+    color: #ffffff;
+}
+
+/* Resumo do pedido */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #232323;
+}
+
+.card-body p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #616161;
+}
+
+/* Botão confirmar pedido */
+.btn-success {
+    background-color: #3b1b88;
+    border-color: #3b1b88;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-success:hover {
+    background-color: #2e146b;
+    border-color: #2e146b;
+}
