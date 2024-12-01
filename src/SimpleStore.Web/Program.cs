@@ -39,6 +39,9 @@ builder.Services.AddScoped<GerenciarProdutosService>();
 builder.Services.AddScoped<GerenciarProdutosRepository>();
 builder.Services.AddScoped<CadastroProdutoService>();
 builder.Services.AddScoped<CadastroProdutoRepository>();
+builder.Services.AddScoped<FinalizarPedidoService>();
+builder.Services.AddScoped<FinalizarPedidoRepository>();
+
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
