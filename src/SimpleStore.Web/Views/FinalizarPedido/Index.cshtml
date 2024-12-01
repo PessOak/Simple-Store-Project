@@ -1,0 +1,72 @@
+@model SimpleStore.Web.Models.Pedido
+
+@{
+    ViewData["Title"] = "Finalizar Pedido";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Recuperando os dados passados pelo controller
+    var produtos = ViewData["Produtos"] as IEnumerable<dynamic>;
+    var totalPedido = (float)ViewData["TotalPedido"];
+}
+
+<h2 class="text-center my-4">Finalizar Pedido</h2>
+
+<div class="row">
+    <!-- Lista de Produtos no Carrinho -->
+    <div class="col-md-8">
+        <div class="list-group">
+            @if (produtos != null && produtos.Any())
+            {
+                @foreach (var produto in produtos)
+                {
+                    <div class="list-group-item mb-3">
+                        <div class="row align-items-center">
+                            <div class="col-3">
+                                <img src="@produto.Imagem" alt="@produto.Nome" class="img-thumbnail"
+                                     style="width: 100%; height: auto; object-fit: cover;">
+                            </div>
+                            <div class="col-7">
+                                <h5 class="mb-1">@produto.Nome</h5>
+                                <p class="mb-1"><strong>Quantidade:</strong> @produto.Quantidade</p>
+                                <p class="mb-1"><strong>Preço Total:</strong> R$ @produto.PrecoTotal.ToString("F2")</p>
+                                <a href="@produto.LinkFornecedor" target="_blank" class="btn btn-outline-primary btn-sm">
+                                    Contatar Fornecedor
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="alert alert-warning text-center">
+                    Seu carrinho está vazio. <a href="@Url.Action("Index", "Produto")">Explore nossos produtos</a>.
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Resumo do Pedido -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resumo do Pedido</h4>
+                <hr />
+                <p><strong>Valor Total:</strong> R$ @totalPedido.ToString("F2")</p>
+                <form asp-action="Confirmar" method="post">
+                    <input type="hidden" asp-for="IdCarrinho" />
+                    <input type="hidden" asp-for="ValorTotalPedido" value="@totalPedido" />
+                    <button type="submit" class="btn btn-success w-100 mt-3">Confirmar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/Views/FinalizarPedido/Index.cshtml.css" />
+}
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
