@@ -48,6 +48,11 @@ namespace SimpleStore.Web.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [HttpPost]
+        public IActionResult FinalizarCompra(int idCarrinho)
+        {
+            // Redireciona para a página de Finalizar Pedido
+            return RedirectToAction("Index", "FinalizarPedido", new { idCarrinho });
+        }
     }
 }
