@@ -19,7 +19,7 @@
                                 <h5 class="mb-1">@produtoCarrinho.Produto.NomeProd</h5>
                                 <p class="mb-1 text-muted">@produtoCarrinho.Produto.DescProd</p>
                                 <p class="mb-0">
-                                    <strong>PreÁo Unit·rio:</strong>
+                                    <strong>Pre√ßo Unit√°rio:</strong>
                                     @produtoCarrinho.Produto.PrecoProd.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))
                                 </p>
                                 <p class="mb-0">
@@ -45,7 +45,10 @@
                     <h4>Resumo do Pedido</h4>
                     <hr>
                     <p><strong>Valor Total:</strong> @Model.ValorTotalCarrinho.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("pt-BR"))</p>
-                    <a href="@Url.Action("Checkout", "Carrinho")" class="btn btn-padrao mt-2">Finalizar Compra</a>
+                    <form asp-action="FinalizarCompra" method="post">
+                        <input type="hidden" name="idCarrinho" value="@Model.IdCarrinho" />
+                        <button type="submit" class="btn btn-padrao mt-2">Finalizar Compra</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -53,7 +56,7 @@
     else
     {
         <div class="alert alert-warning text-center mt-5">
-            Seu carrinho est· vazio! Explore nossos <a href="@Url.Action("Index", "Produto")">produtos</a>.
+            Seu carrinho est√° vazio! Explore nossos <a href="@Url.Action("Index", "Produto")">produtos</a>.
         </div>
     }
 </main>
