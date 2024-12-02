@@ -1,29 +1,26 @@
-message: Please cite this software using these metadata.
-title:
+cff-version: 1.0.1
+message: Sistema para marketplace
+title: SimpleStore
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Chain
+    given-names: Arthur
+  - family-names: Anjos
+    given-names: Diego 
+  - family-names: Silva 
+    given-names: Erasmo 
+  - family-names: Melo 
+    given-names: Jéssica 
+  - family-names: Carvalho 
+    given-names: Rafael 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Pietrobon
+    given-names: Carlos
 keywords:
-  - 
-  - 
-repository-code: 
+  - marketplace
+  - simplestore
+  - produtos
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t5-simplestore
+license: CC-BY-4.0
 version: 1.0.0
-date-released: 2023-10-31
+date-released: 2024-06-26
