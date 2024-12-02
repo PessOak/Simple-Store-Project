@@ -62,9 +62,17 @@ necessidades da nossa solução.
 
 - Imagem do quadro Kanban utilizado para gestão do projeto:
 
+#### 1ª etapa
 ![image](https://github.com/user-attachments/assets/2361b37a-e678-4ce0-97e6-017db976ba53)
+
+#### 2ª etapa
 ![image](https://github.com/user-attachments/assets/f977cfab-1263-48b8-8df6-67646d00008b)
+
+#### 3ª etapa
 ![image](https://github.com/user-attachments/assets/68982751-7d5b-4872-91e1-1645540602f0)
+
+#### 4ª etapa
+![image](https://github.com/user-attachments/assets/fb3b50c1-145c-4ff4-af7c-84ad41ba73cd)
 
 
 - Link para o kanban:
