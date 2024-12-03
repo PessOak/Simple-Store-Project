@@ -1,4 +1,5 @@
-﻿using SimpleStore.Web.Models;
+﻿using Microsoft.Extensions.FileProviders;
+using SimpleStore.Web.Models;
 using SimpleStore.Web.Repositories;
 
 namespace SimpleStore.Web.Services
@@ -17,6 +18,23 @@ namespace SimpleStore.Web.Services
             }
 
             return produtos;
+        }
+
+        public async Task<Produto> BuscarPeloId(int? id)
+        {
+            var dados = await _gerenciarProdutosRepository.BuscarPeloId(id);
+            
+            if(dados == null)
+            {
+                throw new Exception("Produto não encontrado.");
+            }
+
+            return dados;
+        }
+
+        public async Task<Produto> AtualizarProduto(Produto produto)
+        {
+            return await _gerenciarProdutosRepository.AtualizarProduto(produto);
         }
     }
 }

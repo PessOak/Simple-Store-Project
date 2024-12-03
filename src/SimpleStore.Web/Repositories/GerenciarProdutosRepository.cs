@@ -15,5 +15,19 @@ namespace SimpleStore.Web.Repositories
                 .OrderBy(produto => produto.IdProd) // Ordena pelo Id do Produto, opcional
                 .ToListAsync();
         }
+
+        public async Task<Produto> BuscarPeloId(int? id)
+        {
+            var dados = await _context.Produto.FindAsync(id);
+            return dados;
+
+        }
+
+        public async Task<Produto> AtualizarProduto(Produto produto)
+        {
+            _context.Produto.Update(produto);
+            await _context.SaveChangesAsync();
+            return produto;
+        }
     }
 }

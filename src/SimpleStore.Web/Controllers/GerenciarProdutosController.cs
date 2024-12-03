@@ -1,16 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimpleStore.Web.Enums;
+using SimpleStore.Web.Models;
 using SimpleStore.Web.Services;
 using System.Security.Claims;
 
 namespace SimpleStore.Web.Controllers
 {
-    public class GerenciarProdutosController : Controller 
+    public class GerenciarProdutosController : Controller
     {
-       
+
         private readonly GerenciarProdutosService _gerenciarProdutosService;
 
-        public GerenciarProdutosController(GerenciarProdutosService gerenciarProdutosService) {
+        public GerenciarProdutosController(GerenciarProdutosService gerenciarProdutosService)
+        {
             _gerenciarProdutosService = gerenciarProdutosService;
         }
 
@@ -37,6 +39,31 @@ namespace SimpleStore.Web.Controllers
                 ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
+        }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            var dados = await _gerenciarProdutosService.BuscarPeloId(id);
+
+            return View(dados);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, Produto produto)
+        {
+
+            if (id != produto.IdProd)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                await _gerenciarProdutosService.AtualizarProduto(produto);
+                return RedirectToAction("Index");
+            }
+
+            return View();
         }
     }
 }
