@@ -111,6 +111,17 @@
                                 </a>
                             </li>
                         }
+
+                        @if (User.IsInRole("Fornecedor"))
+                        {
+                            <li class="nav-item me-3">
+                                <a class="link-entrar nav-link ps-0 cor-branca-hover"
+                                   href="/GerenciarProdutos">Gerenciar Produtos
+                               </a>
+                            </li>
+                        }
+
+
                     </ul>
                 </div>
             </div>
