@@ -80,5 +80,34 @@ namespace SimpleStore.Web.Controllers
                 return View(produto);
             }
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var produto = await _gerenciarProdutosService.BuscarPeloId(id);
+
+            if (produto == null) return NotFound();
+
+            return View(produto);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                await _gerenciarProdutosService.DeletarProduto(id);
+                TempData["MensagemSucesso"] = "Produto deletado com sucesso!";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                TempData["MensagemErro"] = $"Erro ao deletar o produto: {ex.Message}";
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
     }
 }

@@ -40,5 +40,11 @@ namespace SimpleStore.Web.Services
         {
             await _gerenciarProdutosRepository.AtualizarProduto(produto);
         }
+
+        public async Task DeletarProduto(int id)
+        {
+            await _gerenciarProdutosRepository.DeletarProduto(id);
+        }
+
     }
 }

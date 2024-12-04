@@ -48,5 +48,19 @@ namespace SimpleStore.Web.Repositories
 
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeletarProduto(int id)
+        {
+            var produto = await _context.Produto.FindAsync(id);
+
+            if (produto == null)
+            {
+                throw new Exception("Produto não encontrado.");
+            }
+
+            _context.Produto.Remove(produto);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

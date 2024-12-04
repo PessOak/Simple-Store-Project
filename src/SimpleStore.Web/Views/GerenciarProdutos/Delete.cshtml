@@ -1,0 +1,19 @@
+﻿@model Produto
+
+<div class="container mt-5">
+    <h2 class="text-center">Deletar Produto</h2>
+
+    <p class="text-center">Tem certeza de que deseja deletar o produto <strong>@Model.NomeProd</strong>?</p>
+
+    <div class="d-flex justify-content-center mb-3">
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImgUrl)" alt="Imagem do Produto" style="max-width: 200px; height: auto;" />
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdProd" />
+            <button type="submit" class="btn btn-danger me-3">Deletar</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
