@@ -1,12 +1,16 @@
-﻿using Microsoft.Extensions.FileProviders;
-using SimpleStore.Web.Models;
+﻿using SimpleStore.Web.Models;
 using SimpleStore.Web.Repositories;
 
 namespace SimpleStore.Web.Services
 {
-    public class GerenciarProdutosService(GerenciarProdutosRepository gerenciarProdutosRepository)
+    public class GerenciarProdutosService
     {
-        private readonly GerenciarProdutosRepository _gerenciarProdutosRepository = gerenciarProdutosRepository;
+        private readonly GerenciarProdutosRepository _gerenciarProdutosRepository;
+
+        public GerenciarProdutosService(GerenciarProdutosRepository gerenciarProdutosRepository)
+        {
+            _gerenciarProdutosRepository = gerenciarProdutosRepository;
+        }
 
         public async Task<IEnumerable<Produto>> ExibirProdutosCadastrados(int idFornecedor)
         {
@@ -23,8 +27,8 @@ namespace SimpleStore.Web.Services
         public async Task<Produto> BuscarPeloId(int? id)
         {
             var dados = await _gerenciarProdutosRepository.BuscarPeloId(id);
-            
-            if(dados == null)
+
+            if (dados == null)
             {
                 throw new Exception("Produto não encontrado.");
             }
@@ -32,9 +36,9 @@ namespace SimpleStore.Web.Services
             return dados;
         }
 
-        public async Task<Produto> AtualizarProduto(Produto produto)
+        public async Task AtualizarProduto(Produto produto)
         {
-            return await _gerenciarProdutosRepository.AtualizarProduto(produto);
+            await _gerenciarProdutosRepository.AtualizarProduto(produto);
         }
     }
 }

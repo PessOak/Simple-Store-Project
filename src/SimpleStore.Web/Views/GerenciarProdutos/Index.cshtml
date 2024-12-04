@@ -47,7 +47,7 @@
                                         <p class="card-title"> <span m-4">Código do produto:</span> @produto.IdProd</p>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <a href="/Produtos/Edit/1" class="btn btn-editar btn-sm">Editar</a>
+                                        <a href="@Url.Action("Edit", "GerenciarProdutos", new { id = produto.IdProd })" class="btn btn-editar btn-sm">Editar</a>
                                         <button class="btn btn-remover btn-sm ms-2">Deletar</button>
                                     </div>
                                 </div>

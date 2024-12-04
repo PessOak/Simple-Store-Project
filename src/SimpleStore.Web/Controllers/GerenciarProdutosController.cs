@@ -8,7 +8,6 @@ namespace SimpleStore.Web.Controllers
 {
     public class GerenciarProdutosController : Controller
     {
-
         private readonly GerenciarProdutosService _gerenciarProdutosService;
 
         public GerenciarProdutosController(GerenciarProdutosService gerenciarProdutosService)
@@ -18,20 +17,17 @@ namespace SimpleStore.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-
             if (!User.Identity.IsAuthenticated || User.FindFirstValue(ClaimTypes.Role) != PapelUsuario.Fornecedor.ToString())
             {
                 ViewBag.ErrorMessage = "Você precisa estar logado para acessar esta página.";
                 return RedirectToAction("Index", "LoginFornecedor");
             }
 
-            string cnpjFornecedor = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            int cnpj = int.Parse(cnpjFornecedor);
-
+            int idFornecedor = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             try
             {
                 ViewBag.ErrorMessage = null;
-                var produtos = await _gerenciarProdutosService.ExibirProdutosCadastrados(cnpj);
+                var produtos = await _gerenciarProdutosService.ExibirProdutosCadastrados(idFornecedor);
                 return View(produtos);
             }
             catch (Exception ex)
@@ -43,27 +39,46 @@ namespace SimpleStore.Web.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            var dados = await _gerenciarProdutosService.BuscarPeloId(id);
+            if (id == null) return NotFound();
 
-            return View(dados);
+            var produto = await _gerenciarProdutosService.BuscarPeloId(id);
+
+            if (produto == null) return NotFound();
+
+            return View(produto);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Produto produto)
         {
+            if (id != produto.IdProd) return NotFound();
 
-            if (id != produto.IdProd)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                TempData["MensagemErro"] = "Erro na validação do modelo.";
+                return View(produto);
             }
 
-            if (ModelState.IsValid)
+            // Processar upload da imagem, se houver
+            if (produto.ImagemProduto != null && produto.ImagemProduto.Length > 0)
+            {
+                using var memoryStream = new MemoryStream();
+                await produto.ImagemProduto.CopyToAsync(memoryStream);
+                produto.ImgUrl = memoryStream.ToArray();
+            }
+
+            try
             {
                 await _gerenciarProdutosService.AtualizarProduto(produto);
-                return RedirectToAction("Index");
+                TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                return RedirectToAction(nameof(Index));
             }
-
-            return View();
+            catch (Exception ex)
+            {
+                TempData["MensagemErro"] = $"Erro ao atualizar o produto: {ex.Message}";
+                return View(produto);
+            }
         }
     }
 }

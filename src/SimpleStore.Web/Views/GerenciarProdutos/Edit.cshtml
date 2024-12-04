@@ -1,0 +1,55 @@
+﻿@model Produto
+
+<h2>Editar Produto</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="IdProd" />
+
+    <div class="mb-3">
+        <label asp-for="NomeProd" class="form-label">Nome</label>
+        <input asp-for="NomeProd" class="form-control" />
+        <span asp-validation-for="NomeProd" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PrecoProd" class="form-label">Preço</label>
+        <input asp-for="PrecoProd" class="form-control" type="number" step="0.01" />
+        <span asp-validation-for="PrecoProd" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DescProd" class="form-label">Descrição</label>
+        <textarea asp-for="DescProd" class="form-control"></textarea>
+        <span asp-validation-for="DescProd" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategProd" class="form-label">Categoria</label>
+        <input asp-for="CategProd" class="form-control" type="Tr" />
+        <span asp-validation-for="QuantProd" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="QuantProd" class="form-label">Quantidade</label>
+        <textarea asp-for="CategProd" class="form-control"></textarea>
+        <span asp-validation-for="CategProd" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ImagemProduto" class="form-label">Imagem do Produto</label>
+        <input asp-for="ImagemProduto" type="file" class="form-control" accept="image/*" />
+
+        @if (Model.ImgUrl != null)
+        {
+            <div class="mt-2">
+                <p>Imagem atual:</p>
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImgUrl)" alt="Imagem do Produto" style="max-width: 200px; height: auto;" />
+            </div>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
