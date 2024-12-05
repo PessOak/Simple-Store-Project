@@ -77,19 +77,5 @@ namespace SimpleStore.Web.Repositories
             return carrinho.Values.FirstOrDefault();
         }
 
-        public async Task<bool> RemoverProdutoDoCarrinhoAsync(string cpfComp, int idProduto)
-        {
-            var query = @"
-        DELETE FROM ProdutoCarrinho
-        WHERE IdCarrinho = (SELECT IdCarrinho FROM Carrinho WHERE CpfComp = @CpfComp)
-        AND IdProd = @IdProduto";
-
-            var resultado = await _dbConnection.ExecuteAsync(query, new { CpfComp = cpfComp, IdProduto = idProduto });
-
-            return resultado > 0; // Retorna true se o produto foi removido com sucesso
-        }
-
-
-
     }
 }

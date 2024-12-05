@@ -31,24 +31,6 @@ namespace SimpleStore.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> RemoverProduto(int idProduto)
-        {
-            // Obter CPF do usuário logado
-            string cpfComp = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (string.IsNullOrEmpty(cpfComp))
-            {
-                return RedirectToAction("Index", "LoginCliente");
-            }
-
-            // Chama o serviço para remover o produto do carrinho
-            await _carrinhoService.RemoverProdutoDoCarrinhoAsync(cpfComp, idProduto);
-
-            // Redirecionar de volta para a página do carrinho
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
         public IActionResult FinalizarCompra(int idCarrinho)
         {
             // Redireciona para a página de Finalizar Pedido

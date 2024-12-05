@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using SimpleStore.Web.Data;
 using SimpleStore.Web.Models;
 using System.Data;
+using System.Data.Common;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
 namespace SimpleStore.Web.Repositories
@@ -30,16 +32,36 @@ namespace SimpleStore.Web.Repositories
                 IdProd = produtoId,
                 QuantProdCarrinho = quantidade
             });
+        }
 
+        public async Task<bool> AtualizarValorTotalCarrinho(int idCarrinho, int produtoId, int quantidade)
+        { 
             // Atualizar o valor total do carrinho
             var valorProduto = await _dbConnection.QuerySingleOrDefaultAsync<decimal>("SELECT PrecoProd FROM Produto WHERE IdProd = @IdProd", new { IdProd = produtoId });
+            var valorTotalCarrinho = quantidade * valorProduto;
             var queryUpdateCarrinho = @"
-            UPDATE Carrinho
-            SET ValorTotalCarrinho = ValorTotalCarrinho + @valorProduto
-            WHERE IdCarrinho = @IdCarrinho";
+                    UPDATE Carrinho
+                    SET ValorTotalCarrinho = ValorTotalCarrinho + @valorTotalCarrinho
+                    WHERE IdCarrinho = @IdCarrinho"
+            ;
 
-            await _dbConnection.ExecuteAsync(queryUpdateCarrinho, new { IdCarrinho = idCarrinho, valorProduto });
+            var resultado = await _dbConnection.ExecuteAsync(queryUpdateCarrinho, new { IdCarrinho = idCarrinho, valorTotalCarrinho });
+
+            return resultado > 0; // Retorna true se o produto foi removido com sucesso
         }
+
+        public async Task<bool> RemoverProdutoDoCarrinhoAsync(int idCarrinho, int idProduto)
+        {
+            var query = @"
+        DELETE FROM ProdutoCarrinho
+        WHERE IdCarrinho = @IdCarrinho
+        AND IdProd = @IdProduto";
+
+            var resultado = await _dbConnection.ExecuteAsync(query, new { IdCarrinho = idCarrinho, IdProduto = idProduto });
+
+            return resultado > 0; // Retorna true se o produto foi removido com sucesso
+        }
+
 
         public async Task<int> ObterIdCarrinhoUsuarioAsync(string cpfComp)
         {

@@ -32,13 +32,5 @@ namespace SimpleStore.Web.Services
 
             return carrinho;
         }
-
-
-        //remoção de produto do carrinho
-        public async Task<bool> RemoverProdutoDoCarrinhoAsync(string cpfComp, int idProduto)
-        {
-            // Chama o repositório para remover o produto do carrinho
-            return await _carrinhoRepository.RemoverProdutoDoCarrinhoAsync(cpfComp, idProduto);
-        }
     }
 }
