@@ -49,7 +49,7 @@ https://simplestoresite.azurewebsites.net/
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+<li><a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-2-e2-proj-int-t4-pmv-ads-2024-2-e2-proj-simplestore/tree/main/src/SimpleStore.Web"> Código Fonte</a></li>
 
 # Apresentação
 
