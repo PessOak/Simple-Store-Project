@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Simple Store
 
 `ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
