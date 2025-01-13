@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Simple Store
 
 `ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
@@ -54,3 +55,7 @@ https://simplestoresite.azurewebsites.net/
 # Apresentação
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
+=======
+# Simple-Store-Project
+Projeto educacional produzido em grupo de um Marketplace
+>>>>>>> 7ccec81e97ea508e3ff70e76dd67488db48c5482
